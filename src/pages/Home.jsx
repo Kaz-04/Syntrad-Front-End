@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import RequestQuote from "../components/RequestQuote";
-import AboutSection from "../components/AboutUs";
+import AboutSection from "../components/Maincards";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
