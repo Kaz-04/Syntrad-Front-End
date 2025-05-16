@@ -12,70 +12,70 @@ gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     title: "Electrical Engineering",
-    image: "/assets/electrical.png",
+    image: "/assets/system.png",
     link: "/electrical",
     description:
-      "Electrical Engineering Services offer safe and efficient electrical system design, installation, and maintenance.",
+      "Professional design, diagnostics, and repair of electrical systems for residential, commercial, and industrial needs. We ensure safety, efficiency, and compliance in every project..",
   },
   {
     title: "Electronics",
-    image: "/assets/electronics.png",
+    image: "/assets/cpu.png",
     link: "/electronic",
     description:
-      "Electronics Services include the design, repair, and maintenance of electronic devices and systems.",
+      "Expert repair and maintenance for a wide range of electronic devices and components. From diagnostics to precision fixes, we restore functionality with accuracy and care.",
   },
   {
     title: "Coffee Machine Service",
-    image: "/assets/Coffee.png",
+    image: "/assets/coffee-machine.png",
     link: "/coffee",
     description:
-      "Includes cleaning, repair, and maintenance to ensure smooth and efficient machine performance.",
+      "Authorised service and expert repairs for premium coffee machines, including SAGE models. Fast, reliable solutions to keep your machine brewing at its best.",
   },
   {
     title: "Gym Equipment Repair",
-    image: "/assets/fitnessLogo.png",
+    image: "/assets/treadmill.png",
     link: "/gym",
     description:
-      "Diagnosing, fixing, and maintaining fitness machines to ensure safe and optimal performance.",
+      "Specialised repair and maintenance for treadmills, cross trainers, and other fitness machines. We ensure safe, smooth, and reliable performance for home and commercial gyms.",
   },
   {
     title: "Catering Equipment Service",
-    image: "/assets/catering.png",
+    image: "/assets/oven.png",
     link: "/catering",
     description:
-      "Catering equipment maintenance, inspection, and service for efficient food operations.",
+      "Reliable repair and servicing for commercial kitchen and catering equipment. We minimise downtime and keep your appliances running efficiently and safely.",
   },
   {
     title: "Medical Equipment Service",
-    image: "/assets/medical.png",
+    image: "/assets/dentist-chair.png",
     link: "/medical",
     description:
-      "Maintenance and repair of critical medical tools and electronic devices.",
+      "Precise diagnostics, repair, and maintenance for non-critical medical devices. We prioritise reliability, safety, and compliance to support healthcare environments.",
   },
   {
     title: "Electromechanical",
-    image: "/assets/electromechanical.png",
+    image: "/assets/water-pump.png",
     link: "/electromechanical",
     description:
-      "Repair and servicing of electromechanical systems including automation tools.",
+      "Expert repair and maintenance of systems combining electrical and mechanical components. We ensure smooth, reliable operation across a range of industrial and commercial equipment.",
   },
   {
     title: "Clocks",
-    image: "/assets/clock.webp",
+    image: "/assets/grandfather-clock.png",
     link: "/clocks",
-    description: "Repair and restoration of analog and digital timepieces.",
+    description: "Professional repair and servicing for all types of mechanical clocks. We ensure precise timekeeping and careful handling of delicate movements.",
   },
   {
     title: "Network Service",
-    image: "/assets/network.png",
+    image: "/assets/router.png",
     link: "/network",
-    description: "Setup, maintenance, and diagnostics of home/office networks.",
+    description: "Reliable installation, maintenance, and troubleshooting of wired and wireless networks to keep your home or business connected and secure.",
   },
   {
     title: "Smart Home System",
-    image: "/assets/SmartHome.png",
+    image: "/assets/smart-house.png",
     link: "/smarthome",
-    description: "Service and maintenance for smart home automation systems.",
+    description: "Installation and support for smart home technologies that enhance comfort, security, and energy efficiency in your living or working space.",
   },
 ];
 
