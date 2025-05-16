@@ -55,7 +55,7 @@ const cardData = [
     title: "Clocks",
     description:
       "Clock Services include the repair, maintenance, and restoration of clocks to ensure accurate timekeeping and proper functionality.",
-    image: "/assets/clock.webp",
+    image: "/assets/clock.png",
     link: "/clock",
   },
   {
