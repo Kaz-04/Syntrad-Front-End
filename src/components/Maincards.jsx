@@ -44,11 +44,13 @@ export default function AboutSection() {
         animate={controls}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-red-600 mb-4 sm:mb-6">What is SynTrad?</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-600 mb-4 sm:mb-6">What is SyntraD?</h2>
         <p className="text-base sm:text-lg text-gray-300 mb-8 sm:mb-12">
-          Syntrad delivers expert repair and maintenance services for a broad spectrum of electronic engineering and medical equipment throughout London.
-          We specialize in providing end-to-end solutions that ensure critical systems remain fully operational, helping organizations minimize downtime and extend the lifespan of essential equipment. Trusted by businesses across the city, our commitment is to excellence, reliability, and rapid response.
-          We look forward to the opportunity to serve you soon.
+        SyntraD Ltd is a specialist technical service provider offering expert repair, 
+        maintenance, and installation across a wide range of equipment—from coffee machines 
+        and gym equipment to medical devices, electronics, and smart home systems. 
+        Built on engineering expertise and a commitment to quality, SyntraD delivers reliable, 
+        professional service to both residential and commercial clients.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-10">
@@ -65,14 +67,14 @@ export default function AboutSection() {
               {i === 2 && <FaWhmcs className="text-white text-3xl sm:text-4xl mb-3 sm:mb-4 mx-auto" />}
 
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                {i === 0 && "Who We Are"}
-                {i === 1 && "What We Do"}
-                {i === 2 && "Why Choose Us"}
+                {i === 0 && "0% Flexible Finance"}
+                {i === 1 && "Expert Repair"}
+                {i === 2 && "Smart Solutions"}
               </h3>
               <p className="text-sm sm:text-base text-gray-300">
-                {i === 0 && "At Syntrad Ltd, we’re a team of certified electricians committed to delivering safe, reliable, and high-quality electrical solutions for homes and businesses across the region."}
-                {i === 1 && "From full installations and rewiring to maintenance and emergency repairs, Syntrad Ltd provides expert electrical services tailored to your specific needs—on time and on budget."}
-                {i === 2 && "With a reputation built on trust, professionalism, and technical excellence, Syntrad Ltd is your go-to partner for electrical work done right the first time."}
+                {i === 0 && "From coffee machines and catering equipment to medical and gym technology — we bring precision repair and servicing to every job. Our engineering expertise ensures reliability across sectors."}
+                {i === 1 && "Get the service you need now, without the upfront cost. We offer interest-free finance options (0% APR) on select repairs and installations to make quality more accessible."}
+                {i === 2 && "We don't just fix — we innovate. Discover how our smart home systems and network services can upgrade your space with intelligent, integrated technology."}
               </p>
             </motion.div>
           ))}
