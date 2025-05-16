@@ -28,39 +28,40 @@ const ImageSection = () => {
           <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-3 sm:mb-4">
             Hi, I'm{" "}
             <span className="text-red-700 font-semibold">Kaz Moorjani</span>,
-            Director & CEO, SyntraD Ltd. Kaz Moorjani leads SyntraD Ltd with a
-            hands-on, customer-first approach to technical services and product
-            support. With a strong background in engineering and practical
-            repair expertise, Kaz has built SyntraD into a reliable name for
-            high-quality appliance servicing and repair across a range of
-            premium consumer products.
+            Director & CEO of SyntraD Ltd. I lead SyntraD Ltd with a hands-on, customer-first 
+            approach to technical services and product support. With a strong background in engineering 
+            and practical repair expertise, I’ve built SyntraD into a reliable name for high-quality 
+            appliance servicing and repair across a range of premium consumer products.
           </p>
           <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-5">
-            Under Kaz’s leadership, SyntraD Ltd operates as an authorised agent
-            for SAGE coffee machines, as well as a trusted specialist in
-            treadmill and gym equipment repairs. Whether working with individual
-            clients or commercial contracts, Kaz ensures every job is completed
-            with precision, transparency, and professionalism. Leadership Focus:
-            Technical Excellence: Overseeing all repair and servicing work to
-            meet manufacturer standards. Customer Service: Prioritising fast,
-            friendly, and reliable support for both warranty and non-warranty
-            issues. Trusted Partnerships: Working closely with brands like SAGE
-            and fitness equipment providers to ensure consistent quality and
-            authorised service. Team Guidance: Supporting and mentoring
-            technicians to maintain high service standards across all jobs.
+            Under my leadership, SyntraD Ltd operates as an authorised agent for SAGE coffee machines and as a 
+            trusted specialist in treadmill and gym equipment repairs. I also lead our work across a wide range of 
+            technical services, including electrical engineering, electronics repair, catering equipment servicing, 
+            medical equipment maintenance, electromechanical systems, clock repairs, network services, and smart home 
+            system installations. 
+            </p>
+
+            <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-5">              
+            Whether I’m working with individual clients or managing commercial contracts, I ensure every job is completed 
+            with precision, transparency, and professionalism. I personally oversee all repair and servicing work to meet 
+            or exceed manufacturer standards, and I prioritise fast, friendly, and reliable support for both warranty and 
+            non-warranty issues.
+           
+            I work closely with leading brands like SAGE and fitness equipment providers to ensure consistent quality and 
+            authorised service. I also support and mentor our team of technicians, maintaining high service standards across 
+            every job we take on—no matter the size or scope.
           </p>
           <p className="text-base sm:text-lg leading-relaxed text-gray-300 mb-5 sm:mb-7">
-            Beyond the Business: Kaz also works independently through platforms
-            like Airtasker, offering technical services, small repairs, and
-            custom installations. His freelance work keeps him directly engaged
-            with customers and their everyday needs — ensuring SyntraD remains
-            practical, responsive, and rooted in real-world service.
+            Beyond the business, I also take on independent projects, offering technical services, 
+            small repairs, and custom installations. This hands-on work keeps me closely connected to 
+            customers and their everyday needs — helping ensure SyntraD remains practical, responsive, 
+            and grounded in real-world service.
           </p>
           <a
-            href="https://www.airtasker.com/users/228a70407caf-p-30688846/"
+            href="https://www.instagram.com/syntradltd/"
             className="inline-block bg-red-700 hover:bg-red-600 text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition hero-button"
           >
-            More →
+            My Instagram →
           </a>
         </motion.div>
       </div>
