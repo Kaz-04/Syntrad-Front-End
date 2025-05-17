@@ -72,8 +72,8 @@ export default function AboutSection() {
                 {i === 2 && "Smart Solutions"}
               </h3>
               <p className="text-sm sm:text-base text-gray-300">
-                {i === 0 && "From coffee machines and catering equipment to medical and gym technology — we bring precision repair and servicing to every job. Our engineering expertise ensures reliability across sectors."}
-                {i === 1 && "Get the service you need now, without the upfront cost. We offer interest-free finance options (0% APR) on select repairs and installations to make quality more accessible."}
+                {i === 0 && "Get the service you need now, without the upfront cost. We offer interest-free finance options (0% APR) on select repairs and installations to make quality more accessible.."}
+                {i === 1 && "From coffee machines and catering equipment to medical and gym technology — we bring precision repair and servicing to every job. Our engineering expertise ensures reliability across sectors."}
                 {i === 2 && "We don't just fix — we innovate. Discover how our smart home systems and network services can upgrade your space with intelligent, integrated technology."}
               </p>
             </motion.div>
