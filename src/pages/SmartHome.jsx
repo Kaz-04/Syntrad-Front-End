@@ -55,7 +55,9 @@ const SmartHome = () => {
           name="description"
           content="Upgrade your lifestyle with expert smart home system installation and automation services in London. We offer seamless control of lighting, security, heating & more."
         />
-        <!-- Meta Keywords for Smart Home Systems / Home Automation -->
+{/*
+  Meta Keywords for Smart Home Systems / Home Automation
+*/}
             <meta
       name="keywords"
       content="smart home installation London, home automation Central London, smart lighting West London, smart thermostat North London, home security South London, smart home systems East London, smart home setup Greater London, smart home solutions London, smart CCTV installation London, voice-controlled home London, smart heating London, connected home devices London, smart home network London, smart locks installation London, smart energy systems London"
