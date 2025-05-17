@@ -153,26 +153,118 @@ export default function Contact() {
       <link rel="canonical" href="https://syntradltd.co.uk/contact" />
 
       {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Contact Syntrad Ltd",
-          "description": "Get in touch with Syntrad Ltd for professional equipment repair and maintenance services in Greater London.",
-          "url": "https://syntradltd.co.uk/contact",
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "Syntrad Ltd",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+44XXXXXXXXXX",
-              "contactType": "customer service",
-              "areaServed": "GB",
-              "availableLanguage": ["English"]
-            }
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Syntrad Ltd",
+    "image": "https://syntradltd.co.uk/assets/logo.png",
+    "description": "Professional electrical, electronic, coffee machine, fitness equipment, and catering equipment repairs in London.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7 Bell Yard",
+      "addressLocality": "London",
+      "postalCode": "WC2A 2JR",
+      "addressCountry": "UK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5122",
+      "longitude": "-0.1126"
+    },
+    "url": "https://syntradltd.co.uk",
+    "telephone": "+442071125377",
+    "priceRange": "£",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:30",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "15:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/syntradltd",
+      "https://twitter.com/syntradltd"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electrical Engineering Services"
           }
-        })}
-      </script>
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electronic Repair Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Coffee Machine Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fitness Equipment Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Catering Equipment Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Medical Equipment Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Smart Home Systems Installation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Clock Repair Services"
+          }
+        }
+      ]
+    }
+  })}
+</script>
+
     </Helmet>
 
     <div className="min-h-screen bg-gradient-to-br from-black via-[#1a0000] to-black" ref={containerRef}>

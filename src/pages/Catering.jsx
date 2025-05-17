@@ -47,12 +47,12 @@ const Catering = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -65,16 +65,16 @@ const Catering = () => {
         />
         <meta
           name="keywords"
-          content="Catering equipment repair, commercial kitchen repair, oven repair, fryer maintenance, dishwasher repair, London catering service, Kaz Moorjani"
+          content="catering equipment repair, commercial kitchen equipment repair, catering appliance maintenance, catering equipment service London, restaurant equipment repair, professional catering equipment repair, catering equipment servicing, catering machine repair, kitchen appliance repair, catering equipment maintenance service, urgent catering equipment repair, catering equipment breakdown fix, catering equipment repair near me, catering equipment technician, catering equipment repair company"
         />
         <meta name="robots" content="index, follow" />
         <meta
           property="og:title"
-          content="Catering Equipment Repair Services | Syntrad"
+          content="Catering Equipment Repair Services | Syntrad Ltd"
         />
         <meta
           property="og:description"
-          content="Fast and reliable catering equipment repair services across major UK cities. Book a repair today with Syntrad."
+          content="Fast and reliable catering equipment repair services across all London. Book a repair today with Syntrad."
         />
         <meta property="og:type" content="website" />
         <meta name="author" content="Kaz Moorjani" />

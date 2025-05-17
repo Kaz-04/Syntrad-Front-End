@@ -42,12 +42,12 @@ const Medical = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -60,7 +60,7 @@ const Medical = () => {
         />
         <meta
           name="keywords"
-          content="medical equipment repair,Kaz Moorjani, dental chair repair, optometry equipment, autoclave service, X-ray machine repair, dental equipment servicing"
+          content="dental equipment repair London, optician equipment service Central London, dentistry device maintenance West London, optical instrument repair North London, dental machinery servicing South London, optometry equipment fix East London, dental chair repair Greater London Surrounds, optician tools repair London WC2A, dental device calibration London, optical equipment maintenance London"
         />
         <meta property="og:title" content="Syntrad Medical Equipment Repair" />
         <meta

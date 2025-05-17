@@ -42,12 +42,12 @@ const Clock = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -60,7 +60,7 @@ const Clock = () => {
         />
         <meta
           name="keywords"
-          content="Grandfather clock repair, antique clock restoration, pendulum clock service, chime mechanism repair, UK clock repair, on-site clock servicing,Kaz Moorjani"
+          content="clock repair, grandfather clock repair, grandmother clock repair, mother clock repair, daughter clock repair, antique clock repair, vintage clock repair, mantel clock repair, wall clock repair, mechanical clock repair, clock restoration, clock maintenance, clock servicing, clock calibration, clock cleaning, clock parts replacement, clock fixing, clock overhaul, traditional clock repair, heirloom clock repair, clock repair London"
         />
         <meta name="author" content="Kaz Moorjani" />
         <meta property="og:type" content="website" />
@@ -74,14 +74,14 @@ const Clock = () => {
         />
         <meta
           property="og:image"
-          content="https://yourdomain.com/assets/mainClock.png"
+          content="https://syntradltd.co.uk/assets/mainClock.png"
         />
         <meta
           property="og:url"
-          content="https://yourdomain.com/services/clock"
+          content="https://syntradltd.co.uk/services/clock"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://yourdomain.com/services/clock" />
+        <link rel="canonical" href="https://syntradltd.co.uk/services/clock" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black text-white font-sans py-10 px-4">
         <div className="max-w-7xl mx-auto backdrop-blur-lg bg-gradient-to-br from-red-950/20 to-black/30 border border-red-900/30 rounded-3xl shadow-2xl px-6 md:px-10 py-12">

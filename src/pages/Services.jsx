@@ -60,7 +60,7 @@ const services = [
       "Expert repair and maintenance of systems combining electrical and mechanical components. We ensure smooth, reliable operation across a range of industrial and commercial equipment.",
   },
   {
-    title: "Clocks",
+    title: "Mechanical Clocks",
     image: "/assets/grandfather-clock.png",
     link: "/clocks",
     description: "Professional repair and servicing for all types of mechanical clocks. We ensure precise timekeeping and careful handling of delicate movements.",
@@ -178,10 +178,19 @@ export default function Services() {
         />
         <meta
           name="keywords"
-          content="Syntrad services, electrical engineering, electronics repair, coffee machine maintenance, medical equipment, smart home service, catering, electromechanical repair"
+          content="electrical engineering London, electrical repair Central London, electrical services West London, electrical maintenance North London,
+electronic repair London, electronics servicing South London, electronics troubleshooting East London,
+coffee machine repair London, coffee machine servicing Greater London,
+gym equipment repair London, treadmill repair Central London, fitness equipment maintenance West London,
+catering equipment repair London, commercial kitchen equipment service North London,
+medical equipment repair London, dentistry equipment servicing South London, optician equipment maintenance East London,
+electromechanical repair London, electromechanical services Greater London,
+clock repair London, grandfather clock repair Central London, mother clock servicing West London, daughter clock maintenance North London,
+network services London, network installation South London, network troubleshooting East London,
+smart home system installation London, smart home automation Greater London"
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Syntrad Services" />
+        <meta property="og:title" content="Syntrad Ltd Services" />
         <meta
           property="og:description"
           content="Explore our expert repair and maintenance services for electronics, fitness, coffee machines, and more."

@@ -54,25 +54,25 @@ const Electrical = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds", 
   ];
 
   return (
     <>
       <Helmet>
-        <title>Electrical Engineering Services | Syntrad</title>
+        <title>Electrical Repair and Testing Services | Syntrad</title>
         <meta
           name="description"
-          content="Professional electrical engineering services for homes and commercial properties. Certified engineers for rewiring, EV charger install, fire alarm systems & more."
+          content="Trusted electrical services in London specializing in electrical repairs, installations, rewiring, fault finding, and maintenance for homes and businesses. Fast, affordable, and fully certified electricians ready to help."
         />
         <meta
           name="keywords"
-          content="Electrical engineering,Kaz Moorjani, Rewiring, EV Charger, Fire alarm, Fuse board upgrade, UK electrical services, Syntrad"
+          content="electrical repair London, emergency electrician, residential electrical services, commercial electrical repair, electrical installation, electrical wiring services, electrical fault diagnosis, circuit breaker repair, lighting installation, fuse box upgrade, electrical maintenance, certified electrician London, affordable electrical services, electrical safety inspections, electrical troubleshooting"
         />
         <meta name="author" content="Kaz Moorjani" />
         <link rel="canonical" href="https://syntrad.com/services/electrical" />

@@ -46,12 +46,12 @@ const Electromechanical = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -62,11 +62,11 @@ const Electromechanical = () => {
         </title>
         <meta
           name="description"
-          content="Professional electromechanical repair services for electric motors, industrial pumps, gearboxes, robotics, and more. Serving London, Manchester, Birmingham, and beyond."
+          content="Electromechanical repair & maintenance in London. Expert servicing of motors, generators, machinery. Fast, reliable & affordable solutions."
         />
         <meta
           name="keywords"
-          content="electromechanical repair, electric motor service, industrial pump repair, servo motor reconditioning, control panel diagnostics, robotics maintenance, gearbox repair, industrial maintenance UK"
+          content="electromechanical repair, electromechanical maintenance, motor repair London, generator servicing, machinery repair London, electromechanical solutions, industrial electromechanical services, affordable electromechanical repair, fast electromechanical service, electromechanical technician London"
         />
         <meta name="author" content="Syntrad Services" />
         <meta name="robots" content="index, follow" />

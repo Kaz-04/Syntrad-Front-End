@@ -42,12 +42,12 @@ const Network = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -60,7 +60,7 @@ const Network = () => {
         />
         <meta
           name="keywords"
-          content="network services, Wi-Fi setup, firewall security, VPN configuration, server installation, network support, cloud access, cybersecurity"
+          content="fast network setup London, secure network installation London, reliable network repair London, commercial network services London, residential network troubleshooting London, IT network support Central London, fiber optic network installation West London, wireless network solutions North London, business network upgrades South London, network security services East London, affordable network cabling Greater London, emergency network repair London, professional network engineers London, VOIP network setup London, network hardware installation London"
         />
         <meta property="og:title" content="Syntrad Network Services" />
         <meta

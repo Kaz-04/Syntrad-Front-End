@@ -50,12 +50,12 @@ const Electronic = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -66,11 +66,11 @@ const Electronic = () => {
         </title>
         <meta
           name="description"
-          content="Get fast and affordable repair services for your electronics including laptops, tablets, printers, gaming consoles, and more. Certified technicians. Warranty available."
+          content="Get fast and affordable repair services for your electronics including laptops, tablets, PCB boards, gaming consoles, and more. Certified technicians. Warranty available."
         />
         <meta
           name="keywords"
-          content="electronics repair,Kaz Moorjani, laptop repair, tablet repair, gaming console repair, printer repair, projector repair, drone repair, home theater repair, affordable electronics repair"
+          content="electronics repair Central London, electronics repair West London, electronics repair North London, electronics repair South London, electronics repair East London, electronics repair Greater London Surrounds, affordable electronics repair London, fast electronics fix Central London, electronic device repair West London, circuit board repair North London, electronic appliance repair South London, professional electronics service East London, reliable electronics technician Greater London Surrounds"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Kaz Moorjani" />
@@ -80,7 +80,7 @@ const Electronic = () => {
         />
         <meta
           property="og:description"
-          content="Get fast and affordable repair services for your electronics including laptops, tablets, printers, gaming consoles, and more. Certified technicians. Warranty available."
+          content="Get fast and affordable repair services for your electronics including laptops, tablets, PCB Boards, gaming consoles, and more. Certified technicians. Warranty available."
         />
         <meta property="og:image" content="assets/mainelectronics.png" />
         <meta property="og:url" content="your-website-url/electronic-repair" />
@@ -90,7 +90,7 @@ const Electronic = () => {
         />
         <meta
           name="twitter:description"
-          content="Get fast and affordable repair services for your electronics including laptops, tablets, printers, gaming consoles, and more. Certified technicians. Warranty available."
+          content="Get fast and affordable repair services for your electronics including laptops, tablets, PCB Boards, gaming consoles, and more. Certified technicians. Warranty available."
         />
         <meta name="twitter:image" content="assets/mainelectronics.png" />
         <meta name="twitter:card" content="summary_large_image" />

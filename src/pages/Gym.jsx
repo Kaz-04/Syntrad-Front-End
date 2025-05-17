@@ -54,25 +54,25 @@ const Gym = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
     <>
       <Helmet>
-        <title>Electrical Engineering Services | Syntrad</title>
+        <title>Expert Gym Equipment Repair & Treadmill Service in London</title>
         <meta
           name="description"
-          content="Professional electrical engineering services for homes and commercial properties. Certified engineers for rewiring, EV charger install, fire alarm systems & more."
+          content="Reliable gym equipment and treadmill repair services in London. Fast, expert maintenance to keep your fitness gear in top shape."
         />
         <meta
           name="keywords"
-          content="Electrical engineering,Kaz Moorjani, Rewiring, EV Charger, Fire alarm, Fuse board upgrade, UK electrical services, Syntrad"
+          content="gym equipment repair London, treadmill repair Central London, fitness equipment repair West London, gym machine service North London, treadmill maintenance South London, gym gear repair East London, fitness equipment fix Greater London Surrounds, gym equipment servicing London WC2A, professional gym repair London, fast treadmill repair London"
         />
         <meta name="author" content="Kaz Moorjani" />
         <link rel="canonical" href="https://syntrad.com/services/electrical" />

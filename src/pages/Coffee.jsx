@@ -141,12 +141,12 @@ const CoffeeRepair = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
 
   return (
@@ -159,9 +159,9 @@ const CoffeeRepair = () => {
         />
         <meta
           name="keywords"
-          content="coffee machine repair, espresso machine repair, pod machine repair, coffee machine service, Sage coffee machine repair, Breville repair, Kaz Moorjani, Prakash Moorjani"
+          content="coffee machine service London, coffee machine repair London, commercial coffee machine cleaning, espresso machine maintenance, coffee machine troubleshooting, coffee machine parts replacement, professional coffee machine repair, coffee machine servicing UK, coffee machine maintenance service, coffee machine technician London, coffee machine repair near me, coffee machine cleaning service, coffee machine repair for cafes, coffee machine installation and repair, coffee machine servicing company, coffee machine service Central London, coffee machine repair West London, coffee machine maintenance North London, coffee machine technician South London, coffee machine cleaning East London, coffee machine repair Greater London Surrounds"
         />
-        <meta name="author" content="Kaz Moorjani" />
+        <meta name="author" content="SyntraD Ltd" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"

@@ -39,25 +39,25 @@ const SmartHome = () => {
   ];
 
   const serviceAreas = [
-    "London",
-    "Manchester",
-    "Birmingham",
-    "Leeds",
-    "Glasgow",
-    "Liverpool",
+    "Central London",
+    "West London ",
+    "North London",
+    "South London",
+    "East London",
+    "Greater London Surrounds",
   ];
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   return (
     <>
       <Helmet>
-        <title>Smart Home & Gym Equipment Services | Syntrad UK</title>
+        <title>Smart Home & Automation Services | Syntrad Ltd UK</title>
         <meta
           name="description"
-          content="Syntrad offers smart home automation and gym equipment repair services across the UK. We handle installations, maintenance, and replacement for a wide range of home and fitness technologies."
+          content="Upgrade your lifestyle with expert smart home system installation and automation services in London. We offer seamless control of lighting, security, heating & more."
         />
         <meta
           name="keywords"
-          content="Smart Home Automation, Gym Equipment Repair, Treadmill Belt Replacement, Home Automation UK, Smart Thermostats, Security Systems, Gym Maintenance, Voice Assistant Setup, Syntrad Services"
+          content="="smart home installation London, home automation Central London, smart lighting West London, smart thermostat North London, home security South London, smart home systems East London, smart home setup Greater London, smart home solutions London, smart CCTV installation London, voice-controlled home London, smart heating London, connected home devices London, smart home network London, smart locks installation London, smart energy systems London"
         />
         <meta name="author" content="Syntrad" />
         <link rel="canonical" href="https://syntrad.com/services/smart-home" />
