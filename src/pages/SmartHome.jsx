@@ -55,14 +55,13 @@ const SmartHome = () => {
           name="description"
           content="Upgrade your lifestyle with expert smart home system installation and automation services in London. We offer seamless control of lighting, security, heating & more."
         />
-        <meta
-          name="keywords"
-          content="="smart home installation London, home automation Central London, smart lighting West London, smart thermostat North London, home security South London, smart home systems East London, smart home setup Greater London, smart home solutions London, smart CCTV installation London, voice-controlled home London, smart heating London, connected home devices London, smart home network London, smart locks installation London, smart energy systems London"
-        />
-        <meta name="author" content="Syntrad" />
+        <!-- Meta Keywords for Smart Home Systems / Home Automation -->
+            <meta
+      name="keywords"
+      content="smart home installation London, home automation Central London, smart lighting West London, smart thermostat North London, home security South London, smart home systems East London, smart home setup Greater London, smart home solutions London, smart CCTV installation London, voice-controlled home London, smart heating London, connected home devices London, smart home network London, smart locks installation London, smart energy systems London"
+    />        <meta name="author" content="Syntrad" />
         <link rel="canonical" href="https://syntrad.com/services/smart-home" />
       </Helmet>
-
       <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black text-white font-sans py-10 px-4">
         <div className="max-w-7xl mx-auto backdrop-blur-lg bg-gradient-to-br from-red-950/20 to-black/30 border border-red-900/30 rounded-3xl shadow-2xl px-6 md:px-10 py-12">
           {/* Header */}
