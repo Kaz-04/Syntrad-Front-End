@@ -84,6 +84,15 @@ export default function RequestQuote({
 
       if (data.success) {
         toast.success("Quote request sent successfully!");
+
+          // FIRE GOOGLE ADS CONVERSION
+  if (window.gtag) {
+    window.gtag("event", "conversion", {
+      send_to: "AW-17084572435/BSBkCLGcosgaEJPGx9I_", // 
+      value: 1.0,
+      currency: "GBP",
+    });
+  }
         setFormData({
           name: "",
           email: "",
