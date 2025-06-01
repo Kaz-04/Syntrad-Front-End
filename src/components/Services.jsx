@@ -52,6 +52,11 @@ const services = [
     image: "/assets/SmartHome.png",
     link: "/smarthome",
   },
+    {
+    title: "Smart Home System",
+    image: "/assets/SmartHome.png",
+    link: "/smarthome",
+  },
 ];
 
 export default function MultiServiceUI() {
