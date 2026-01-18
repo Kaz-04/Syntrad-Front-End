@@ -8,14 +8,50 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- SEO ---------------- */
+
 export const metadata = {
-  title: "Electrical Engineering Services | Syntrad",
+  title: "Electrical Engineering Services | Residential & Commercial | Syntrad UK",
   description:
-    "Certified electrical engineering services for residential & commercial properties. Rewiring, EV chargers, fire alarms & more.",
+    "Syntrad UK provides certified electrical engineering services for homes and businesses. Expert rewiring, EV charger installation, fire alarm systems, lighting, fault diagnosis, and full electrical maintenance. Reliable, safe, and professional electrical solutions across the UK.",
+  keywords: [
+    "electrical engineering services",
+    "residential electrical services",
+    "commercial electrical services",
+    "house rewiring",
+    "EV charger installation",
+    "fire alarm installation",
+    "lighting installation services",
+    "electrical fault diagnosis",
+    "electrical maintenance",
+    "professional electricians UK",
+    "certified electrical engineers",
+    "home electrical repairs",
+    "business electrical solutions",
+    "commercial wiring services",
+    "residential wiring services",
+    "electrical system upgrades",
+    "emergency electrical services",
+    "energy-efficient electrical solutions",
+    "electrical safety inspections",
+    "UK electrical services"
+  ],
+  openGraph: {
+    title: "Electrical Engineering Services | Syntrad UK",
+    description:
+      "Professional and certified electrical engineering services in the UK. Syntrad offers rewiring, EV chargers, fire alarm systems, lighting, and full electrical maintenance for homes and businesses.",
+    url: "https://www.syntradltd.co.uk/electrical",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-electrical.jpg",
+        alt: "Syntrad electrical engineering services",
+      },
+    ],
+  },
 };
 
-/* ---------------- DATA ---------------- */
+
+
 const models = [
   "Full Rewiring",
   "Fuse Board Upgrades",
@@ -49,7 +85,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function Electrical() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -57,12 +93,12 @@ export default function Electrical() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* HERO */}
+      
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/mainElectric.png')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* TEXT */}
+          
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Electrical
@@ -77,7 +113,7 @@ export default function Electrical() {
               and efficiency.
             </p>
 
-            {/* TRUST ICONS */}
+            
             <div className="flex gap-6 mt-8 text-gray-300">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Certified Engineers
@@ -90,7 +126,7 @@ export default function Electrical() {
               </div>
             </div>
 
-            {/* CTA */}
+            
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -108,7 +144,7 @@ export default function Electrical() {
             </div>
           </div>
 
-          {/* GLASS CARD */}
+          
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainElectric.png"
@@ -121,7 +157,7 @@ export default function Electrical() {
         </div>
       </div>
 
-      {/* WHAT WE DO */}
+      
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Electrical Services We Provide
@@ -161,7 +197,7 @@ export default function Electrical() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+      
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -194,7 +230,7 @@ export default function Electrical() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+      
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -210,7 +246,7 @@ export default function Electrical() {
         </div>
       </div>
 
-      {/* MODAL */}
+      
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

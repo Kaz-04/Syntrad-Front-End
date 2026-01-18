@@ -7,14 +7,49 @@ import { ArrowLeft, ShieldCheck, Wrench, Clock as ClockIcon } from "lucide-react
 import { FaMapMarkerAlt } from "react-icons/fa";
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- SEO ---------------- */
+
 export const metadata = {
-  title: "Grandfather & Antique Clock Repair | UK Specialists",
+  title: "Grandfather & Antique Clock Repair Services | UK Specialists | Syntrad",
   description:
-    "Expert repair and restoration of antique & grandfather clocks. Pendulum calibration, chime repair, full overhauls & on-site servicing across the UK.",
+    "Syntrad UK offers professional repair and restoration of antique and grandfather clocks. Services include pendulum calibration, chime repair, movement restoration, full overhauls, and on-site servicing for collectors and homes across the UK.",
+  keywords: [
+    "grandfather clock repair",
+    "antique clock repair",
+    "clock restoration services",
+    "pendulum calibration",
+    "chime repair",
+    "clock movement restoration",
+    "antique clock maintenance",
+    "grandfather clock servicing",
+    "on-site clock repair",
+    "professional clock repair UK",
+    "clock repair specialists",
+    "vintage clock restoration",
+    "mechanical clock repair",
+    "horology repair services",
+    "UK antique clock experts",
+    "full clock overhauls",
+    "traditional clock repair",
+    "heritage clock maintenance",
+    "clock repair for collectors",
+    "restored antique clocks"
+  ],
+  openGraph: {
+    title: "Grandfather & Antique Clock Repair | Syntrad UK",
+    description:
+      "Professional antique and grandfather clock repair by Syntrad UK. Pendulum calibration, chime repair, full overhauls, and on-site servicing across the UK.",
+    url: "https://www.syntradltd.co.uk/clock",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-clock.jpg",
+        alt: "Syntrad antique and grandfather clock repair services",
+      },
+    ],
+  },
 };
 
-/* ---------------- DATA ---------------- */
+
 const models = [
   "Full Movement Overhaul",
   "Pendulum Calibration",
@@ -42,7 +77,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function ClockService() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -50,13 +85,13 @@ export default function ClockService() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* HERO */}
+      
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/mainClock.jpeg')] bg-cover bg-center opacity-20" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* TEXT */}
+         
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Grandfather & Antique
@@ -69,7 +104,7 @@ export default function ClockService() {
               accuracy.
             </p>
 
-            {/* TRUST ICONS */}
+            
             <div className="flex gap-6 mt-8 text-gray-300 flex-wrap">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Fully Insured
@@ -82,7 +117,7 @@ export default function ClockService() {
               </div>
             </div>
 
-            {/* CTAs */}
+            
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -100,7 +135,7 @@ export default function ClockService() {
             </div>
           </div>
 
-          {/* GLASS CARD */}
+          
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainClock.jpeg"
@@ -113,7 +148,7 @@ export default function ClockService() {
         </div>
       </div>
 
-      {/* WHAT WE REPAIR */}
+      
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Clock Services We Offer
@@ -136,7 +171,7 @@ export default function ClockService() {
                 hover:shadow-lg hover:shadow-red-600/30
               "
             >
-              {/* IMAGE */}
+              
               <div className="relative w-full h-[160px] flex items-center justify-center overflow-hidden">
                 <Image
                   src={clockImages[i]}
@@ -146,7 +181,7 @@ export default function ClockService() {
                 />
               </div>
 
-              {/* TITLE */}
+              
               <h3 className="mt-4 text-center text-lg font-semibold text-gray-200">
                 {model}
               </h3>
@@ -155,7 +190,7 @@ export default function ClockService() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+      
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -185,7 +220,7 @@ export default function ClockService() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+     
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -201,7 +236,7 @@ export default function ClockService() {
         </div>
       </div>
 
-      {/* MODAL */}
+      
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

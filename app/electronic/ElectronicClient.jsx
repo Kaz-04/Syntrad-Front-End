@@ -7,14 +7,49 @@ import { ArrowLeft, ShieldCheck, Wrench, Clock } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- SEO ---------------- */
+
 export const metadata = {
-  title: "Electronic Repair Services | Affordable and Fast Electronics Repairs",
+  title: "Electronic Repair Services | Fast & Affordable Electronics Repairs | Syntrad UK",
   description:
-    "Get fast and affordable repair services for electronics including laptops, tablets, gaming consoles, audio systems, and more. Certified technicians with warranty available.",
+    "Syntrad UK offers professional electronic repair services for laptops, tablets, smartphones, gaming consoles, audio systems, TVs, and more. Certified technicians, fast turnaround, warranty-backed repairs, and reliable service across the UK.",
+  keywords: [
+    "electronic repair services",
+    "electronics repair UK",
+    "laptop repair",
+    "tablet repair",
+    "smartphone repair",
+    "gaming console repair",
+    "audio system repair",
+    "TV repair services",
+    "fast electronics repair",
+    "affordable electronics repair",
+    "certified technicians",
+    "warranty electronics repair",
+    "electronics troubleshooting",
+    "professional electronics servicing",
+    "home electronics repair",
+    "office electronics maintenance",
+    "electronics repair UK",
+    "electronics maintenance services",
+    "electronics upgrade services",
+    "reliable electronics repair"
+  ],
+  openGraph: {
+    title: "Electronic Repair Services | Syntrad UK",
+    description:
+      "Professional and reliable electronics repair services in the UK. Repair laptops, tablets, gaming consoles, audio systems, TVs, and more. Fast, certified, and warranty-backed repairs by Syntrad UK.",
+    url: "https://www.syntradltd.co.uk/electronics",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-electronics.jpg",
+        alt: "Syntrad electronic repair services",
+      },
+    ],
+  },
 };
 
-/* ---------------- DATA ---------------- */
+
 const models = [
   "Laptop Repair",
   "Tablet Repair",
@@ -46,7 +81,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function Electronic() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -54,12 +89,12 @@ export default function Electronic() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* HERO */}
+      
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/mainelectronics.png')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* TEXT */}
+          
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Electronic
@@ -101,7 +136,7 @@ export default function Electronic() {
             </div>
           </div>
 
-          {/* GLASS CARD */}
+          
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainelectronics.png"
@@ -114,7 +149,7 @@ export default function Electronic() {
         </div>
       </div>
 
-      {/* WHAT WE REPAIR */}
+      
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Electronics We Repair
@@ -154,7 +189,7 @@ export default function Electronic() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+      
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -187,7 +222,7 @@ export default function Electronic() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+      
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -203,7 +238,7 @@ export default function Electronic() {
         </div>
       </div>
 
-      {/* MODAL */}
+      
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

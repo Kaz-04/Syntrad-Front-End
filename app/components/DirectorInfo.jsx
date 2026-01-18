@@ -7,12 +7,12 @@ import { directorData } from "../../public/assets/assets";
 export default function ImageSection() {
   return (
     <section className="relative bg-white py-16 px-4">
-      {/* Outer Frame */}
+      
       <div className="max-w-6xl mx-auto border border-gray-200 rounded-3xl shadow-2xl bg-black">
 
         <div className="flex flex-col md:flex-row overflow-hidden rounded-3xl">
 
-          {/* Image (UNCHANGED COLORS) */}
+          
           <div className="relative w-full md:w-2/5 h-72 md:h-auto">
             <Image
               src={directorData.image}
@@ -22,11 +22,11 @@ export default function ImageSection() {
               priority
             />
 
-            {/* Red Overlay Frame */}
+            
             <div className="absolute inset-0 border-4 border-red-700 pointer-events-none" />
           </div>
 
-          {/* Content */}
+          
           <motion.div
             className="relative flex-1 p-8 md:p-12"
             initial={{ opacity: 0, y: 50 }}
@@ -34,7 +34,7 @@ export default function ImageSection() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            {/* Decorative Line */}
+            
             <div className="w-14 h-1 bg-red-700 mb-6" />
 
             <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-2">
@@ -57,7 +57,7 @@ export default function ImageSection() {
               {directorData.beyond}
             </p>
 
-            {/* CTA */}
+            
             <a
               href={directorData.airtasker}
               target="_blank"

@@ -19,7 +19,7 @@ export default function RequestQuoteModal({ service, onClose }) {
     message: "",
   });
 
-  /* lock scroll */
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -27,7 +27,7 @@ export default function RequestQuoteModal({ service, onClose }) {
     };
   }, []);
 
-  /* auto select service */
+  
   useEffect(() => {
     setForm(prev => ({ ...prev, service: service || "" }));
   }, [service]);

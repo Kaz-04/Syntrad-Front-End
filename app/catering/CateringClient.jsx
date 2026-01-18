@@ -8,14 +8,48 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 import { models, cateringImages, serviceAreas } from "../../public/assets/assets";
 
-/* ---------------- SEO ---------------- */
 export const metadata = {
-  title: "Catering Equipment Repair Services | Syntrad",
+  title: "Catering Equipment Repair Services | Commercial Kitchen Specialists | Syntrad UK",
   description:
-    "Professional catering equipment repair for commercial kitchens. Trusted engineers, fast response, premium service across London.",
+    "Syntrad UK provides professional catering equipment repair and maintenance services for commercial kitchens. Expert servicing for ovens, fryers, dishwashers, grills, refrigeration units, and more. Fast response, trusted engineers, and premium service across the UK.",
+  keywords: [
+    "catering equipment repair",
+    "commercial kitchen equipment servicing",
+    "oven repair",
+    "fryer repair",
+    "grill maintenance",
+    "dishwasher repair",
+    "refrigeration unit servicing",
+    "commercial kitchen maintenance",
+    "emergency catering equipment repair",
+    "professional kitchen equipment engineers",
+    "trusted catering service UK",
+    "fast catering equipment repair",
+    "restaurant equipment maintenance",
+    "cafe kitchen equipment repair",
+    "kitchen appliance repair",
+    "food service equipment repair",
+    "commercial catering solutions",
+    "premium catering equipment service",
+    "UK catering equipment specialists",
+    "reliable kitchen repair services"
+  ],
+  openGraph: {
+    title: "Catering Equipment Repair Services | Syntrad UK",
+    description:
+      "Professional catering equipment repair by Syntrad UK. Servicing ovens, fryers, grills, dishwashers, refrigeration units, and more for commercial kitchens. Trusted engineers, fast response, and premium service.",
+    url: "https://www.syntradltd.co.uk/catering",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-catering.jpg",
+        alt: "Syntrad catering equipment repair services",
+      },
+    ],
+  },
 };
 
-/* ---------------- PAGE ---------------- */
+
 export default function Catering() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -84,17 +118,17 @@ export default function Catering() {
         </div>
       </div>
 
-     {/* WHAT WE REPAIR */}
-<div className="max-w-7xl mx-auto px-6 py-24 bg-black ">
-  <h2 className="text-4xl font-bold text-center mb-14">
-    Equipment We Specialise In
-  </h2>
 
-  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-    {models.map((model, i) => (
-      <div
-        key={i}
-        className="
+      <div className="max-w-7xl mx-auto px-6 py-24 bg-black ">
+        <h2 className="text-4xl font-bold text-center mb-14">
+          Equipment We Specialise In
+        </h2>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {models.map((model, i) => (
+            <div
+              key={i}
+              className="
           group
           bg-gradient-to-br from-black via-[#1a0000] to-black
           border-l-4 border-red-600
@@ -108,30 +142,29 @@ export default function Catering() {
           transition
           hover:shadow-lg hover:shadow-red-600/30
         "
-      >
-       {/* Image Wrapper */}
-       
-<div className="relative w-full h-[160px] flex items-center justify-center overflow-hidden">
-  <Image
-    src={cateringImages[i]}
-    alt={model}
-    fill
-    className="object-contain"
-  />
-</div>
+            >
 
 
-        {/* Title */}
-        <h3 className="mt-4 text-center text-lg font-semibold text-gray-200">
-          {model}
-        </h3>
+              <div className="relative w-full h-[160px] flex items-center justify-center overflow-hidden">
+                <Image
+                  src={cateringImages[i]}
+                  alt={model}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+
+
+              <h3 className="mt-4 text-center text-lg font-semibold text-gray-200">
+                {model}
+              </h3>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
 
-      {/* SERVICE VALUE */}
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -161,7 +194,7 @@ export default function Catering() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -177,7 +210,7 @@ export default function Catering() {
         </div>
       </div>
 
-      {/* MODAL */}
+
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

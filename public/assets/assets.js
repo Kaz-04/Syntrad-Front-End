@@ -471,7 +471,7 @@ export const offerData = {
   titleMain: "ON YOUR FIRST APPOINTMENT",
   note: "** Conditions apply",
   buttonText: "Request Quote",
-  image: "/assets/serviceMain.png"
+  image: "/assets/homeMain.png"
 };
 
 // Amplink

@@ -9,9 +9,31 @@ import RequestQuote from "../components/RequestQuote";
 
 /* ---------------- SEO ---------------- */
 export const metadata = {
-  title: "Medical Equipment Repair Services | Syntrad",
+  title: "Medical Equipment Repair & Maintenance | Syntrad UK",
   description:
-    "Professional medical equipment repair for dental and optometry clinics. Trusted engineers, fast response, premium service across the UK.",
+    "Syntrad UK provides expert medical equipment repair and maintenance services for dental, optometry, and healthcare clinics. Fast response, certified engineers, calibration, servicing, emergency repairs, and preventive maintenance across the UK. Trusted, reliable, and professional medical device support.",
+  keywords: [
+    "medical equipment repair",
+    "medical device servicing",
+    "dental equipment repair",
+    "optometry equipment repair",
+    "healthcare equipment maintenance",
+    "medical device calibration",
+    "emergency medical equipment repair",
+    "preventive maintenance for clinics",
+    "clinic equipment servicing",
+    "biomedical equipment repair",
+    "hospital equipment maintenance",
+    "trusted medical equipment engineers",
+    "fast medical equipment repair",
+    "medical device troubleshooting",
+    "professional medical equipment service",
+    "UK medical equipment repair",
+    "diagnostic equipment repair",
+    "dental clinic equipment maintenance",
+    "optometry clinic equipment service",
+    "medical technology repair services"
+  ],
 };
 
 /* ---------------- PAGE ---------------- */

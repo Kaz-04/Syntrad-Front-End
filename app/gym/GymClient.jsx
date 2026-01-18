@@ -7,6 +7,47 @@ import { ArrowLeft, ShieldCheck, Clock, Wrench } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import RequestQuote from "../components/RequestQuote";
 
+export const metadata = {
+  title: "Gym & Fitness Equipment Repair Services | Syntrad UK",
+  description:
+    "Syntrad UK provides professional gym and fitness equipment repair, maintenance, and servicing. Expert treadmill, elliptical, and multi-gym repairs, preventive maintenance, and fast, reliable support for gyms, fitness centers, and home gyms across the UK.",
+  keywords: [
+    "gym equipment repair",
+    "fitness equipment servicing",
+    "treadmill repair",
+    "elliptical machine service",
+    "multi-gym maintenance",
+    "commercial gym equipment repair",
+    "home gym equipment service",
+    "exercise machine repair",
+    "fitness center maintenance",
+    "gym equipment troubleshooting",
+    "preventive maintenance for gyms",
+    "gym repair services UK",
+    "professional gym equipment engineers",
+    "reliable fitness equipment repair",
+    "gym machine calibration",
+    "gym equipment replacement parts",
+    "gym equipment servicing UK",
+    "fitness machine repair specialists",
+    "fast gym equipment repair",
+    "trusted gym service providers"
+  ],
+  openGraph: {
+    title: "Gym Equipment Repair & Maintenance | Syntrad UK",
+    description:
+      "Expert gym and fitness equipment repair, maintenance, and servicing by Syntrad UK. Trusted treadmill, elliptical, and multi-gym repair services for commercial and home gyms across the UK.",
+    url: "https://www.syntradltd.co.uk/gym",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-gym.jpg",
+        alt: "Syntrad gym and fitness equipment repair services",
+      },
+    ],
+  },
+};
+
 export default function GymPage() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -45,13 +86,13 @@ export default function GymPage() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* ================= HERO ================= */}
+      
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/mainGym.png')] bg-cover bg-center opacity-20" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* TEXT */}
+          
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Gym Equipment
@@ -63,7 +104,7 @@ export default function GymPage() {
               Trusted by gyms, studios, and home users who need reliable equipment.
             </p>
 
-            {/* TRUST ICONS */}
+            
             <div className="flex gap-6 mt-8 text-gray-300 flex-wrap">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Certified Technicians
@@ -76,7 +117,7 @@ export default function GymPage() {
               </div>
             </div>
 
-            {/* CTA */}
+            
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -94,7 +135,7 @@ export default function GymPage() {
             </div>
           </div>
 
-          {/* GLASS CARD */}
+          
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainGym.png"
@@ -107,7 +148,7 @@ export default function GymPage() {
         </div>
       </div>
 
-      {/* ================= WHAT WE REPAIR ================= */}
+      
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Equipment We Repair
@@ -130,7 +171,7 @@ export default function GymPage() {
                 hover:shadow-lg hover:shadow-red-600/30
               "
             >
-              {/* IMAGE */}
+              
               <div className="relative w-full h-[160px] flex items-center justify-center overflow-hidden">
                 <Image
                   src={gymImages[i]}
@@ -140,7 +181,7 @@ export default function GymPage() {
                 />
               </div>
 
-              {/* TITLE */}
+              
               <h3 className="mt-4 text-center text-lg font-semibold text-gray-200">
                 {model}
               </h3>
@@ -149,7 +190,7 @@ export default function GymPage() {
         </div>
       </div>
 
-      {/* ================= SERVICE VALUE ================= */}
+      
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -179,7 +220,7 @@ export default function GymPage() {
         </div>
       </div>
 
-      {/* ================= SERVICE AREAS ================= */}
+      
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -195,7 +236,7 @@ export default function GymPage() {
         </div>
       </div>
 
-      {/* ================= MODAL ================= */}
+      
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

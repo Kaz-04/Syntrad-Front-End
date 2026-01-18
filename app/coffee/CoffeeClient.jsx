@@ -8,14 +8,49 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- SEO ---------------- */
+
 export const metadata = {
-  title: "Coffee Machine Repair Services | Syntrad",
+  title: "Coffee Machine Repair Services | Domestic & Commercial | Syntrad UK",
   description:
-    "Professional coffee machine repairs for domestic & commercial machines. Fast response, genuine parts, trusted engineers.",
+    "Syntrad UK offers professional coffee machine repair services for domestic and commercial machines. Fast response, genuine parts, certified engineers, preventive maintenance, and emergency repairs across the UK.",
+  keywords: [
+    "coffee machine repair",
+    "domestic coffee machine service",
+    "commercial coffee machine repair",
+    "espresso machine repair",
+    "bean-to-cup machine servicing",
+    "coffee machine maintenance",
+    "coffee machine troubleshooting",
+    "coffee machine spare parts",
+    "emergency coffee machine repair",
+    "professional coffee machine engineers",
+    "fast coffee machine repair",
+    "trusted coffee machine service UK",
+    "coffee machine installation",
+    "cafe coffee machine repair",
+    "office coffee machine servicing",
+    "coffee machine cleaning and maintenance",
+    "barista coffee machine repair",
+    "UK coffee machine repair services",
+    "genuine coffee machine parts",
+    "preventive coffee machine maintenance"
+  ],
+  openGraph: {
+    title: "Coffee Machine Repair Services | Syntrad UK",
+    description:
+      "Expert coffee machine repair and maintenance services by Syntrad UK. Servicing domestic and commercial machines with fast response, genuine parts, and certified engineers.",
+    url: "https://www.syntradltd.co.uk/coffee",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-coffee.jpg",
+        alt: "Syntrad coffee machine repair services",
+      },
+    ],
+  },
 };
 
-/* ---------------- DATA ---------------- */
+
 const models = [
   "Oracle Touch",
   "Oracle Dual Boiler",
@@ -53,7 +88,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function CoffeeRepair() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -61,12 +96,12 @@ export default function CoffeeRepair() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* HERO */}
+
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/mainCoffee.png')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* Text */}
+
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Coffee Machine
@@ -78,7 +113,7 @@ export default function CoffeeRepair() {
               diagnostics, genuine parts, and engineers who understand precision.
             </p>
 
-            {/* Trust Icons */}
+
             <div className="flex gap-6 mt-8 text-gray-300">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Certified Engineers
@@ -91,7 +126,7 @@ export default function CoffeeRepair() {
               </div>
             </div>
 
-            {/* CTAs */}
+
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -109,7 +144,7 @@ export default function CoffeeRepair() {
             </div>
           </div>
 
-          {/* Glass Card */}
+
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainCoffee.png"
@@ -122,7 +157,7 @@ export default function CoffeeRepair() {
         </div>
       </div>
 
-      {/* WHAT WE REPAIR */}
+
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Coffee Machines We Repair
@@ -162,7 +197,7 @@ export default function CoffeeRepair() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -192,7 +227,7 @@ export default function CoffeeRepair() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -208,7 +243,7 @@ export default function CoffeeRepair() {
         </div>
       </div>
 
-      {/* MODAL */}
+
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

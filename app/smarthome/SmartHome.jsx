@@ -7,14 +7,36 @@ import { ArrowLeft, ShieldCheck, Wrench, Clock } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- SEO ---------------- */
+
 export const metadata = {
-  title: "Smart Home Automation Services | Syntrad UK",
+  title: "Smart Home Automation & Installation Services | Syntrad UK",
   description:
-    "Professional smart home installation, automation & repair services across the UK. Lighting, security, thermostats & more.",
+    "Syntrad UK offers professional smart home automation, installation, and repair services. Expert solutions for smart lighting, security systems, thermostats, home networks, IoT devices, voice control, energy management, and full smart home integration. Reliable smart home setup, maintenance, and upgrades across the UK.",
+  keywords: [
+    "smart home automation",
+    "smart home installation",
+    "smart home repair",
+    "smart lighting systems",
+    "home security systems",
+    "smart thermostats",
+    "IoT home devices",
+    "voice-controlled home",
+    "home automation solutions",
+    "energy-efficient smart home",
+    "remote home control",
+    "smart sensors",
+    "smart home maintenance",
+    "home network setup",
+    "smart home integration",
+    "automated home systems",
+    "connected home devices",
+    "smart appliances",
+    "home automation services",
+    "smart home upgrades"
+  ],
 };
 
-/* ---------------- DATA ---------------- */
+
 const models = [
   "Lighting Automation",
   "Security Systems",
@@ -42,7 +64,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function SmartHome() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -50,13 +72,13 @@ export default function SmartHome() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* HERO */}
+
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/assets/smartHomesetup.jpg')] bg-cover bg-center opacity-20" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* TEXT */}
+
+
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Smart Home
@@ -68,7 +90,7 @@ export default function SmartHome() {
               for modern connected homes across the UK.
             </p>
 
-            {/* TRUST ICONS */}
+
             <div className="flex gap-6 mt-8 text-gray-300 flex-wrap">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Certified Engineers
@@ -81,7 +103,7 @@ export default function SmartHome() {
               </div>
             </div>
 
-            {/* CTAs */}
+
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -99,7 +121,7 @@ export default function SmartHome() {
             </div>
           </div>
 
-          {/* GLASS CARD IMAGE */}
+
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/smartHomesetup.jpg"
@@ -112,7 +134,7 @@ export default function SmartHome() {
         </div>
       </div>
 
-      {/* WHAT WE REPAIR */}
+
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Smart Systems We Work On
@@ -135,7 +157,7 @@ export default function SmartHome() {
                 hover:shadow-lg hover:shadow-red-600/30
               "
             >
-              {/* IMAGE */}
+
               <div className="relative w-full h-[160px] flex items-center justify-center overflow-hidden">
                 <Image
                   src={homeImages[i]}
@@ -145,7 +167,7 @@ export default function SmartHome() {
                 />
               </div>
 
-              {/* TITLE */}
+
               <h3 className="mt-4 text-center text-lg font-semibold text-gray-200">
                 {model}
               </h3>
@@ -154,7 +176,7 @@ export default function SmartHome() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -184,7 +206,7 @@ export default function SmartHome() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -200,7 +222,7 @@ export default function SmartHome() {
         </div>
       </div>
 
-      {/* MODAL */}
+
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

@@ -8,7 +8,46 @@ import AboutSection from '../components/AboutSection';
 import MultiServiceUI from '../components/MultiService';
 import ReviewCarousel from '../components/Review';
 
-
+export const metadata = {
+  title: "About Syntrad UK | Expert Repair & Maintenance Services",
+  description:
+    "Learn about Syntrad UK, a trusted provider of professional repair and maintenance services. Serving homes, businesses, and commercial clients with electrical, electronics, gym, coffee machine, medical equipment, smart home, and EV charger solutions across the UK.",
+  keywords: [
+    "Syntrad",
+    "about Syntrad",
+    "professional repair services",
+    "maintenance services",
+    "electrical services",
+    "electronics repair",
+    "gym equipment repair",
+    "coffee machine repair",
+    "medical equipment repair",
+    "smart home installation",
+    "EV charger installation",
+    "trusted service provider",
+    "certified engineers",
+    "reliable repair company",
+    "UK service experts",
+    "commercial and residential repair",
+    "professional maintenance solutions",
+    "UK equipment servicing",
+    "full-service repair company",
+    "company history Syntrad"
+  ],
+  openGraph: {
+    title: "About Syntrad UK – Trusted Repair & Maintenance Experts",
+    description:
+      "Discover Syntrad UK, a professional repair and maintenance company providing certified services for electrical, electronics, gym, coffee machine, medical equipment, smart home, and EV charger solutions across the UK.",
+    url: "https://www.syntradltd.co.uk/about",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-about.jpg",
+        alt: "About Syntrad UK – professional repair and maintenance services",
+      },
+    ],
+  },
+};
 
 gsap.registerPlugin(ScrollTrigger);
 

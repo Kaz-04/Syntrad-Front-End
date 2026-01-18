@@ -8,7 +8,48 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 import RequestQuote from "../components/RequestQuote";
 
-/* ---------------- DATA ---------------- */
+export const metadata = {
+  title: "Electromechanical Repair & Maintenance Services | Syntrad UK",
+  description:
+    "Syntrad UK provides professional electromechanical repair and maintenance services for industrial machinery, motors, pumps, generators, and other equipment. Fast, reliable, and certified engineers for businesses and factories across the UK.",
+  keywords: [
+    "electromechanical repair",
+    "electromechanical maintenance",
+    "industrial machinery repair",
+    "motor repair services",
+    "pump maintenance and repair",
+    "generator servicing",
+    "mechanical and electrical equipment repair",
+    "electromechanical troubleshooting",
+    "factory equipment maintenance",
+    "commercial electromechanical services",
+    "preventive maintenance for machinery",
+    "electromechanical engineers UK",
+    "industrial equipment repair UK",
+    "machine servicing and repair",
+    "fast electromechanical repair",
+    "reliable industrial equipment service",
+    "electromechanical installation and maintenance",
+    "industrial machinery servicing",
+    "electromechanical solutions",
+    "professional electromechanical service"
+  ],
+  openGraph: {
+    title: "Electromechanical Repair & Maintenance | Syntrad UK",
+    description:
+      "Professional electromechanical repair and maintenance services by Syntrad UK. Expert servicing for industrial machinery, motors, pumps, generators, and other mechanical & electrical equipment. Fast and reliable service across the UK.",
+    url: "https://www.syntradltd.co.uk/electromechanical",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-electromechanical.jpg",
+        alt: "Syntrad electromechanical repair services",
+      },
+    ],
+  },
+};
+
+
 const models = [
   "Electric Motor Repair",
   "Industrial Pump Servicing",
@@ -38,7 +79,7 @@ const serviceAreas = [
   "Liverpool",
 ];
 
-/* ---------------- PAGE ---------------- */
+
 export default function Electromechanical() {
   const [showRequestQuote, setShowRequestQuote] = useState(false);
   const router = useRouter();
@@ -46,18 +87,18 @@ export default function Electromechanical() {
   return (
     <section className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/30 via-black to-black text-white">
 
-      {/* ================= HERO (IDENTICAL TO CATERING) ================= */}
+
       <div className="relative overflow-hidden">
-        {/* BACKGROUND IMAGE LAYER */}
+
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: "url('/assets/mainMachine.png')" }}
         />
 
-        {/* CONTENT */}
+
         <div className="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-          {/* TEXT */}
+
           <div>
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
               Electromechanical
@@ -72,7 +113,7 @@ export default function Electromechanical() {
               where downtime is not an option.
             </p>
 
-            {/* TRUST ICONS */}
+
             <div className="flex gap-6 mt-8 text-gray-300 flex-wrap">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="text-red-500" /> Certified Engineers
@@ -85,7 +126,7 @@ export default function Electromechanical() {
               </div>
             </div>
 
-            {/* CTA */}
+
             <div className="mt-10 flex flex-wrap gap-4">
               <button
                 onClick={() => setShowRequestQuote(true)}
@@ -103,7 +144,7 @@ export default function Electromechanical() {
             </div>
           </div>
 
-          {/* GLASS IMAGE CARD */}
+
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
             <Image
               src="/assets/mainMachine.png"
@@ -115,9 +156,9 @@ export default function Electromechanical() {
           </div>
         </div>
       </div>
-      {/* ================= END HERO ================= */}
 
-      {/* WHAT WE REPAIR (IDENTICAL CARD UI) */}
+
+
       <div className="max-w-7xl mx-auto px-6 py-24 bg-black">
         <h2 className="text-4xl font-bold text-center mb-14">
           Equipment We Specialise In
@@ -152,7 +193,7 @@ export default function Electromechanical() {
         </div>
       </div>
 
-      {/* SERVICE VALUE */}
+
       <div className="bg-gradient-to-b from-black to-red-950/20 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           {[
@@ -182,7 +223,7 @@ export default function Electromechanical() {
         </div>
       </div>
 
-      {/* SERVICE AREAS */}
+
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h2 className="text-4xl font-bold mb-8">Service Areas</h2>
 
@@ -198,7 +239,7 @@ export default function Electromechanical() {
         </div>
       </div>
 
-      {/* MODAL */}
+
       {showRequestQuote && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl">

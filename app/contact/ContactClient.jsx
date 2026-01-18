@@ -108,7 +108,7 @@ export default function Contact() {
         ref={containerRef}
         className="min-h-screen bg-gradient-to-br from-black via-[#1a0000] to-black"
       >
-        {/* Header */}
+
         <div className="relative py-20 text-center mt-20">
           <h1 className="text-6xl font-bold text-white mb-4">
             Get in Touch with Our <span className="text-red-600">Experts</span>
@@ -119,7 +119,7 @@ export default function Contact() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 pb-20 mt-10">
-          {/* LEFT */}
+
           <div className="contact-section space-y-8">
             <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20 space-y-6">
               {[
@@ -151,29 +151,29 @@ export default function Contact() {
                     <p className="text-gray-300">{i.text2}</p>
                   </div>
                 </div>
-                ))}
-                <div className="flex items-center gap-4 pt-4">
-                  <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
-                    <Facebook className="w-6 h-6 text-white" />
-                  </a>
-                  <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
-                    <Instagram className="w-6 h-6 text-white" />
-                  </a>
-                  <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
-                    <Twitter className="w-6 h-6 text-white" />
-                  </a>
-                  <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
-                    <Linkedin className="w-6 h-6 text-white" />
-                  </a>
-                </div>
+              ))}
+              <div className="flex items-center gap-4 pt-4">
+                <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
+                  <Facebook className="w-6 h-6 text-white" />
+                </a>
+                <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
+                  <Instagram className="w-6 h-6 text-white" />
+                </a>
+                <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
+                  <Twitter className="w-6 h-6 text-white" />
+                </a>
+                <a href="#" className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors">
+                  <Linkedin className="w-6 h-6 text-white" />
+                </a>
+              </div>
             </div>
 
-            {/* MAP — UNTOUCHED */}
+
             <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-            <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-5 h-5 text-red-600" />
-                  <span className="text-sm sm:text-base text-gray-300">7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom</span>
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-5 h-5 text-red-600" />
+                <span className="text-sm sm:text-base text-gray-300">7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom</span>
+              </div>
               <iframe
                 className="w-full h-80 rounded-lg"
                 loading="lazy"
@@ -183,7 +183,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* FORM */}
+
           <div className="contact-section">
             <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
               <h2 className="text-3xl font-bold text-white mb-6">
@@ -191,7 +191,7 @@ export default function Contact() {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name */}
+
                 <div>
                   <label className="text-gray-300">Your Name</label>
                   <div className="relative mt-2">
@@ -207,7 +207,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Email */}
+
                 <div>
                   <label className="text-gray-300">Your Email</label>
                   <div className="relative mt-2">
@@ -223,7 +223,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Phone — FIXED */}
+
                 <div>
                   <label className="text-gray-300">Phone Number</label>
                   <div className="relative mt-2">
@@ -244,7 +244,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Service — UNTOUCHED */}
+
                 <select
                   name="service"
                   value={formData.service}
@@ -272,7 +272,7 @@ export default function Contact() {
                   ))}
                 </select>
 
-                {/* Date & Time — UNTOUCHED */}
+
                 <div className="grid grid-cols-2 gap-4">
                   <input
                     type="date"
@@ -292,7 +292,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Message */}
+
                 <textarea
                   name="message"
                   placeholder="Message"

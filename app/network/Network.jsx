@@ -9,9 +9,31 @@ import RequestQuote from "../components/RequestQuote";
 
 /* ---------------- SEO ---------------- */
 export const metadata = {
-  title: "Network Services | Syntrad UK",
+  title: "Network Services & IT Solutions | Syntrad UK",
   description:
-    "Professional network services including Wi-Fi setup, firewall security, server installation, VPN configuration and cloud access.",
+    "Syntrad UK provides professional network services and IT solutions, including Wi-Fi setup, firewall security, server installation, VPN configuration, cloud access, network troubleshooting, LAN/WAN management, network optimization, and IT support for businesses and homes across the UK.",
+  keywords: [
+    "network services",
+    "IT solutions",
+    "Wi-Fi setup",
+    "network installation",
+    "firewall security",
+    "VPN configuration",
+    "cloud access services",
+    "network troubleshooting",
+    "LAN management",
+    "WAN management",
+    "network optimization",
+    "IT support",
+    "business network services",
+    "home network setup",
+    "secure network setup",
+    "server installation services",
+    "network monitoring",
+    "network maintenance",
+    "IT consulting",
+    "managed network services"
+  ],
 };
 
 /* ---------------- DATA ---------------- */

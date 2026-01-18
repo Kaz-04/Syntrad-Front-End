@@ -16,7 +16,7 @@ const Offer = () => {
       ref={ref}
       className="relative bg-black text-white py-32 overflow-hidden"
     >
-      {/* Giant background word */}
+
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="text-[20vw] font-extrabold text-white/5 tracking-tight select-none">
           OFFER
@@ -25,7 +25,7 @@ const Offer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
 
-        {/* Image - dominant */}
+
         <motion.div
           className="lg:col-span-5 flex justify-center relative"
           initial={{ opacity: 0, y: 80 }}
@@ -43,7 +43,7 @@ const Offer = () => {
           />
         </motion.div>
 
-        {/* Text - offset & strong */}
+
         <motion.div
           className="lg:col-span-7 space-y-8"
           initial={{ opacity: 0, y: 80 }}
@@ -59,7 +59,7 @@ const Offer = () => {
             </span>
           </h1>
 
-          {/* Accent line */}
+
           <div className="w-20 h-[3px] bg-red-600 rounded-full" />
 
           <p className="text-gray-300 max-w-xl text-lg leading-relaxed">
@@ -86,7 +86,7 @@ const Offer = () => {
                 →
               </span>
 
-              {/* underline */}
+
               <span className="
       absolute mt-6 h-[1.5px] w-0
       bg-red-500

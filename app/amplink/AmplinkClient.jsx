@@ -11,9 +11,51 @@ import {
   Leaf,
 } from "lucide-react";
 
-import { amplinkProduct as product } from "@/public/assets/assets";
+import { amplinkProduct as product } from "../../public/assets/assets";
 import PricingTable from "../components/PricingSection";
 import RequestQuoteModal from "../components/RequestQuote";
+
+export const metadata = {
+  title: "EV Charger Installation & Repair Services | Syntrad UK",
+  description:
+    "Syntrad UK provides professional EV charger installation, repair, and maintenance services for homes, offices, and commercial properties. Certified engineers, fast service, and reliable solutions for electric vehicle charging across the UK.",
+  keywords: [
+    "EV charger installation",
+    "EV charger repair",
+    "electric vehicle charger service",
+    "home EV charger installation",
+    "commercial EV charging solutions",
+    "EV charging point maintenance",
+    "electric vehicle charging station",
+    "rapid EV charger setup",
+    "EV charger troubleshooting",
+    "EV charger upgrades",
+    "certified EV charger engineers",
+    "fast EV charger repair",
+    "reliable EV charging solutions",
+    "electric car charger service",
+    "UK EV charger installation",
+    "on-site EV charger service",
+    "smart EV charger installation",
+    "EV charger maintenance UK",
+    "EV charger safety checks",
+    "EV charger installation companies UK"
+  ],
+  openGraph: {
+    title: "EV Charger Installation & Repair | Syntrad UK",
+    description:
+      "Professional EV charger installation, repair, and maintenance by Syntrad UK. Certified engineers provide fast, reliable solutions for home, office, and commercial electric vehicle charging across the UK.",
+    url: "https://www.syntradltd.co.uk/amplink",
+    type: "website",
+    images: [
+      {
+        url: "https://www.syntradltd.co.uk/assets/og-evcharger.jpg",
+        alt: "Syntrad EV charger installation and repair services",
+      },
+    ],
+  },
+};
+
 
 export default function AmplinkClient() {
   const [activeImage, setActiveImage] = useState(0);
@@ -29,43 +71,40 @@ export default function AmplinkClient() {
       `,
       }}>
 
-      {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-  {/* IMAGE */}
-  <div>
-    <div className="border bg-white border-gray-800 p-6 sm:p-10">
-      <Image
-        src={product.images[activeImage]}
-        alt={product.name}
-        width={520}
-        height={420}
-        className="mx-auto object-contain w-full h-auto max-h-[420px]"
-        priority
-      />
-    </div>
-  </div>
+        <div>
+          <div className="p-6 sm:p-10">
+            <Image
+              src={product.images[activeImage]}
+              alt={product.name}
+              width={520}
+              height={420}
+              className="mx-auto object-contain w-full h-auto max-h-[420px]"
+              priority
+            />
+          </div>
+        </div>
 
-  {/* DETAILS */}
-  <div>
-    <h1 className="text-2xl sm:text-3xl lg:text-4xl text-red-600 font-semibold">
-      {product.name}
-    </h1>
+        <div>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl text-red-600 font-semibold">
+            {product.name}
+          </h1>
 
-    <p className="mt-3 text-xs sm:text-sm uppercase tracking-wide text-gray-400">
-      {product.subtitle}
-    </p>
+          <p className="mt-3 text-xs sm:text-sm uppercase tracking-wide text-gray-400">
+            {product.subtitle}
+          </p>
 
-    <p className="mt-6 sm:mt-8 text-xl sm:text-2xl font-semibold">
-      {product.basePrice}
-    </p>
+          <p className="mt-6 sm:mt-8 text-xl sm:text-2xl font-semibold">
+            {product.basePrice}
+          </p>
 
-    <p className="mt-1 text-sm tracking-wide text-gray-400">
-      Smart, Connected EV charging with optional WIFI, 4G & RFID control.
-    </p>
+          <p className="mt-1 text-sm tracking-wide text-gray-400">
+            Smart, Connected EV charging with optional WIFI, 4G & RFID control.
+          </p>
 
-    <button
-      onClick={() => setSelectedService("EV Charger")}
-      className="
+          <button
+            onClick={() => setSelectedService("EV Charger")}
+            className="
         w-full sm:w-[15.5rem] py-3 rounded-lg mt-8
         bg-gradient-to-r from-red-600 to-red-700
         text-white font-semibold tracking-wide
@@ -74,55 +113,52 @@ export default function AmplinkClient() {
         hover:shadow-red-500/50
         focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black
       "
-    >
-      Request Quote
-    </button>
+          >
+            Request Quote
+          </button>
 
-    {selectedService && (
-      <RequestQuoteModal
-        service={selectedService}
-        onClose={() => setSelectedService(null)}
-      />
-    )}
+          {selectedService && (
+            <RequestQuoteModal
+              service={selectedService}
+              onClose={() => setSelectedService(null)}
+            />
+          )}
 
-    {/* INSTALLATION NOTICE */}
-    <div className="mt-10 sm:mt-14 border border-gray-600 p-5 sm:p-6">
-      <h3 className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">
-        Installation Pricing Notice
-      </h3>
+          <div className="mt-10 sm:mt-14 border border-gray-600 p-5 sm:p-6">
+            <h3 className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">
+              Installation Pricing Notice
+            </h3>
 
-      <p className="mt-4 text-sm leading-relaxed text-gray-300">
-        Installation services for the AmpLink start at{" "}
-        <strong className="text-white">£475</strong>. Final costs vary based on
-        site complexity. A detailed quote is provided before any work begins.
-      </p>
+            <p className="mt-4 text-sm leading-relaxed text-gray-300">
+              Installation services for the AmpLink start at{" "}
+              <strong className="text-white">£475</strong>. Final costs vary based on
+              site complexity. A detailed quote is provided before any work begins.
+            </p>
 
-      <div className="mt-4 h-[1px] w-12 bg-red-700" />
-    </div>
+            <div className="mt-4 h-[1px] w-12 bg-red-700" />
+          </div>
 
-    {/* COLOR SELECT */}
-    <p className="mt-8 sm:mt-4 text-xl sm:text-2xl text-center font-semibold">
-      Select Color
-    </p>
+          <p className="mt-8 sm:mt-4 text-xl sm:text-2xl text-center font-semibold">
+            Select Color
+          </p>
 
-    <div className="flex flex-wrap gap-3 mt-4 justify-center">
-      {product.images.map((img, i) => (
-        <button
-          key={i}
-          onClick={() => setActiveImage(i)}
-          className={`w-20 h-14 bg-white border ${
-            activeImage === i ? "border-red-700" : "border-gray-700"
-          }`}
-        >
-          <Image src={img} alt="" width={80} height={56} className="object-contain" />
-        </button>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="flex flex-wrap gap-3 mt-4 justify-center">
+            {product.images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveImage(i)}
+                className={`w-20 h-14 bg-white border ${activeImage === i ? "border-red-700" : "border-gray-700"
+                  }`}
+              >
+                <Image src={img} alt="" width={80} height={56} className="object-contain" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
-      {/* ================= TECHNICAL FEATURES ================= */}
+
       <section className="py-10 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-semibold">
@@ -149,10 +185,10 @@ export default function AmplinkClient() {
         </div>
       </section>
 
-      {/* ================= SOLAR ================= */}
+
       <section className="py-24 bg-neutral-950 border-t border-gray-900">
 
-        {/* TOP CONTENT (2-column) */}
+
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
           <div>
@@ -179,7 +215,7 @@ export default function AmplinkClient() {
 
         </div>
 
-        {/* PRICING TABLE (FULL WIDTH) */}
+
         <div className="mt-20 mx-auto max-w-6xl border border-black/30 bg-gradient-to-br from-white/60 via-gray-300/40 to-gray-900/40 backdrop-blur-lg p-12 rounded-2xl shadow-xl">
           <PricingTable />
         </div>
@@ -187,7 +223,7 @@ export default function AmplinkClient() {
       </section>
 
 
-      {/* ================= METERED ================= */}
+
       <section className="py-20 border-t border-gray-900">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -218,13 +254,11 @@ export default function AmplinkClient() {
         </div>
       </section>
 
-      {/* ================= TRUST ================= */}
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto bg-white rounded-xl p-12 
                   border-2 border-red-400 
                   shadow-[0_10px_30px_10px_rgba(239,68,68,0.3)]">
 
-          {/* CTA Button */}
           <div className="text-center mb-10">
             <button
               onClick={() => setSelectedService("EV Charger")}
@@ -243,12 +277,12 @@ export default function AmplinkClient() {
             </button>
           </div>
 
-          {/* Section Title */}
+
           <h2 className="text-center text-2xl md:text-3xl font-semibold text-black mb-12">
             Trusted, Certified, Globally Manufactured
           </h2>
 
-          {/* Logos Grid */}
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
             <Logo src="/assets/zero.png" alt="OZEV Approved" className="mx-auto" />
             <Logo src="/assets/octopus.png" alt="Octopus Energy" className="mx-auto" />
@@ -264,8 +298,6 @@ export default function AmplinkClient() {
     </main>
   );
 }
-
-/* ---------------- COMPONENTS ---------------- */
 
 const Tech = ({ icon: Icon, title, text }) => (
   <div className="border border-gray-800 p-8">

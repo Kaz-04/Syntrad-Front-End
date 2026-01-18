@@ -1,27 +1,47 @@
 import ServicesClient from "./ServiceClient";
 
-
-
 export const metadata = {
-  title: "Our Services | Syntrad",
+  title: "Professional Repair & Maintenance Services | Syntrad UK",
   description:
-    "Explore Syntrad's professional services including Electrical, Electronics, Coffee Machine Repair, Medical Equipment Servicing, and more.",
-  keywords:
-    "Syntrad services, electrical engineering, electronics repair, coffee machine maintenance, medical equipment service",
+    "Syntrad UK offers expert repair and maintenance services across a wide range of equipment: electrical, electronics, coffee machines, gym equipment, medical devices, smart home systems, networking solutions, and more. Fast, reliable, and professional services for homes, clinics, gyms, and businesses across the UK.",
+  keywords: [
+    "Syntrad services",
+    "electrical repair",
+    "electronics repair",
+    "coffee machine repair",
+    "coffee machine servicing",
+    "medical equipment repair",
+    "dental equipment service",
+    "optometry equipment maintenance",
+    "gym equipment repair",
+    "fitness equipment servicing",
+    "smart home automation",
+    "smart home installation",
+    "network services",
+    "Wi-Fi setup",
+    "firewall security",
+    "VPN configuration",
+    "cloud access",
+    "IT support services",
+    "home automation repair",
+    "commercial equipment servicing",
+    "professional maintenance services"
+  ],
   openGraph: {
-    title: "Syntrad Services",
+    title: "Syntrad Services – Expert Repair & Maintenance",
     description:
-      "Expert repair and maintenance services for electronics, fitness, coffee machines, and more.",
+      "Explore Syntrad UK's full range of professional services, including electrical, electronics, coffee machines, gym equipment, medical devices, smart home, and network solutions. Reliable, fast, and trusted by homes and businesses across the UK.",
     url: "https://syntradltd.co.uk/services",
     type: "website",
     images: [
       {
         url: "https://syntradltd.co.uk/assets/og-services.jpg",
+        alt: "Syntrad repair and maintenance services",
       },
     ],
   },
 };
 
 export default function ServicesPage() {
-  return <ServicesClient/>
+  return <ServicesClient />;
 }
