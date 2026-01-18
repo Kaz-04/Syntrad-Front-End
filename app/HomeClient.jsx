@@ -43,7 +43,7 @@ export default function HomePage() {
       href="/contact"
       className="border border-red-600 hover:bg-red-600 px-8 py-3 rounded-lg transition text-white text-center z-[999]"
     >
-      Request Quote
+      Contact Us
     </Link>
   </div>
 </motion.div>
