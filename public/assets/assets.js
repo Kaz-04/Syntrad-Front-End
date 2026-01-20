@@ -372,7 +372,7 @@ export const serviceCards = [
     title: "Electrical Engineering",
     id: "electrical",
     description: "Electrical Engineering Services offer safe and efficient electrical system design, installation, and maintenance.",
-    image: "/assets/electrical.png",
+    image: "/assets/electricalM.png",
     link: "/electrical",
   },
   {
@@ -380,7 +380,7 @@ export const serviceCards = [
     id: "electronics",
     description:
       "Electronics Services include the design, repair, and maintenance of electronic devices and systems.",
-    image: "/assets/electronics.png",
+    image: "/assets/electronicsM.png",
     link: "/electronic",
   },
   {
@@ -388,7 +388,7 @@ export const serviceCards = [
     id: "coffee",
     description:
       "Coffee Machine Service includes cleaning, repair, and maintenance to ensure smooth and efficient machine performance.",
-    image: "/assets/Coffee.png",
+    image: "/assets/coffeeM.png",
     link: "/coffee",
   },
   {
@@ -396,7 +396,7 @@ export const serviceCards = [
     id: "gym",
     description:
       "Gym Equipment Repair Service involves diagnosing, fixing, and maintaining fitness machines to ensure safe and optimal performance.",
-    image: "/assets/fitnessLogo.png",
+    image: "/assets/gymM.png",
     link: "/gym",
   },
   {
@@ -404,7 +404,7 @@ export const serviceCards = [
     id: "catering",
     description:
       "Catering Equipment Service includes maintenance and repair of kitchen appliances to ensure efficient and reliable food service operations.",
-    image: "/assets/catering.png",
+    image: "/assets/cateringM.png",
     link: "/catering",
   },
   {
@@ -412,7 +412,7 @@ export const serviceCards = [
     id: "medical",
     description:
       "Medical Equipment Service involves the maintenance, calibration, and repair of medical devices to ensure accuracy, safety, and compliance.",
-    image: "/assets/medical.png",
+    image: "/assets/medicalM.png",
     link: "/medical",
   },
   {
@@ -420,7 +420,7 @@ export const serviceCards = [
     id: "electromechanical",
     description:
       "Electromechanical Services involve the maintenance and repair of systems combining electrical and mechanical components.",
-    image: "/assets/electromechanical.png",
+    image: "/assets/electromachniecslM.png",
     link: "/electromechanical",
   },
   {
@@ -428,7 +428,7 @@ export const serviceCards = [
     id: "clock",
     description:
       "Clock Services include the repair, maintenance, and restoration of clocks.",
-    image: "/assets/clock.webp",
+    image: "/assets/clockM.png",
     link: "/clock",
   },
   {
@@ -436,7 +436,7 @@ export const serviceCards = [
     id: "network",
     description:
       "Network Service involves setup, maintenance, and troubleshooting of networks.",
-    image: "/assets/network.png",
+    image: "/assets/networkM.png",
     link: "/network",
   },
   {
@@ -444,7 +444,7 @@ export const serviceCards = [
     id: "smarthome",
     description:
       "Smart Home System service includes installation and maintenance of connected devices.",
-    image: "/assets/SmartHome.png",
+    image: "/assets/homeM.png",
     link: "/smarthome",
   },
 ];
