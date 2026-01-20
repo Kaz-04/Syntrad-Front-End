@@ -147,7 +147,7 @@ export default function AmplinkClient() {
               <button
                 key={i}
                 onClick={() => setActiveImage(i)}
-                className={`w-20 h-14 bg-white border ${activeImage === i ? "border-red-700" : "border-gray-700"
+                className={`w-20 h-14 border ${activeImage === i ? "border-red-700" : "border-gray-700"
                   }`}
               >
                 <Image src={img} alt="" width={80} height={56} className="object-contain" />

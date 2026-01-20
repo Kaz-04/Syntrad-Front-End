@@ -420,7 +420,7 @@ export const serviceCards = [
     id: "electromechanical",
     description:
       "Electromechanical Services involve the maintenance and repair of systems combining electrical and mechanical components.",
-    image: "/assets/electromachniecslM.png",
+    image: "/assets/electromachenicalM.png",
     link: "/electromechanical",
   },
   {
