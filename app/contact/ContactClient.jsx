@@ -83,6 +83,12 @@ export default function Contact() {
         formData,
         "iqQJ7aU0zbtuutWY0"
       );
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17084572435/QmPWCLvpyo8cEJPGx9I_'
+      });
+    }
+
 
       toast.success("Message sent successfully!");
       setFormData({
