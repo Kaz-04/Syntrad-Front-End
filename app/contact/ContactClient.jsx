@@ -132,7 +132,7 @@ export default function Contact() {
                 {
                   icon: MapPin,
                   title: "Location",
-                  text: "7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom",
+                  text: "11 Old Bond Street, W1S 4PN, Mayfair. London, United Kingdom",
                 },
                 { icon: Phone, title: "Phone", text: "+44 20 7112 5377" },
                 {
@@ -143,8 +143,8 @@ export default function Contact() {
                 {
                   icon: Clock,
                   title: "Hours",
-                  text: "Monday - Saturday: 11:00 AM - 17:00 PM",
-                  text2: "Sunday: 08:30 AM - 20:00 PM"
+                  text: "Monday - Saturday: 8:00 AM - 9:00 PM",
+                  text2: "Sunday: 08:30 AM - 5:00 PM"
                 },
               ].map((i, idx) => (
                 <div key={idx} className="flex gap-5">
