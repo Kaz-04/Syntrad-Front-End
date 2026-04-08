@@ -297,7 +297,7 @@ export const footerData = {
   brand: {
     logo: "/assets/logo.png",
     description: "Empowering Your Success. © 2025 Syntrad. All rights reserved.",
-    copyright: "© 2025 Syntrad. All rights reserved.",
+    copyright: "© 2026 Syntrad. All rights reserved.",
   },
 
   quickLinks: [
