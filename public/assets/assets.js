@@ -311,9 +311,9 @@ export const footerData = {
     email: "hello@syntradltd.co.uk",
     phone: "+442071125377",
     address:
-      "7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom",
+      "11 Old Bond Street, W1S 4PN, Mayfair, London, United Kingdom",
     locationUrl:
-      "https://www.google.com/maps/search/?api=1&query=7,+Bell+Yard,+WC2A+2JR,+Greater+London,+London,+United+Kingdom",
+      "https://www.google.com/maps/search/?api=1&query=11+Old+Bond+Street+London+W1S+4PN",
   },
 
   socials: [
