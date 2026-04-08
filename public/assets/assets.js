@@ -455,8 +455,6 @@ export const directorData = {
   name: "Kaz Moorjani",
   title: "Director Of Syntrad Ltd",
   image: "/assets/owner.jpeg",
-  airtasker:
-    "https://www.airtasker.com/users/228a70407caf-p-30688846/",
   intro:
     "Kaz Moorjani leads SyntraD Ltd with a hands-on, customer-first approach to technical services and product support. With a strong background in engineering and practical repair expertise, Kaz has built SyntraD into a reliable name for high-quality appliance servicing and repair across a range of premium consumer products.",
   leadership:
