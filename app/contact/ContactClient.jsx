@@ -178,7 +178,7 @@ export default function Contact() {
             <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-5 h-5 text-red-600" />
-                <span className="text-sm sm:text-base text-gray-300">7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom</span>
+                <span className="text-sm sm:text-base text-gray-300">11 Old Bond Street, Mayfair, London, United Kingdom</span>
               </div>
               <iframe
                 className="w-full h-80 rounded-lg"
