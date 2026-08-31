@@ -277,19 +277,19 @@ export const LogoImage = [
   },
   {
     title: "turkey",
-    bgImage:"/Turkey.png",
+    bgImage: "/Turkey.png",
   },
   {
     title: "octopus",
-    bgImage:"/Octopus.png",
+    bgImage: "/Octopus.png",
   },
   {
     title: "uk",
-    bgImage:"/Unnamed.png",
+    bgImage: "/Unnamed.png",
   },
   {
     title: "zero",
-    bgImage:"/Zero.png",
+    bgImage: "/Zero.png",
   },
 ]
 
@@ -454,7 +454,7 @@ export const serviceCards = [
 export const directorData = {
   name: "Kaz Moorjani",
   title: "Director Of Syntrad Ltd",
-  image: "/assets/owner.jpeg",
+  image: "/assets/kaz-moorjani.jpeg",
   airtasker:
     "https://www.airtasker.com/users/228a70407caf-p-30688846/",
   intro:
