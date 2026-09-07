@@ -296,8 +296,8 @@ export const LogoImage = [
 export const footerData = {
   brand: {
     logo: "/assets/logo.png",
-    description: "Empowering Your Success. © 2025 Syntrad. All rights reserved.",
-    copyright: "© 2025 Syntrad. All rights reserved.",
+    description: "Empowering Your Success. © 2026 Syntrad. All rights reserved.",
+    copyright: "© 2026 Syntrad. All rights reserved.",
   },
 
   quickLinks: [
@@ -311,7 +311,7 @@ export const footerData = {
     email: "hello@syntradltd.co.uk",
     phone: "+442071125377",
     address:
-      "7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom",
+      "11 Old Bond Street, Mayfair, Greater London W1S 4PN",
     locationUrl:
       "https://www.google.com/maps/search/?api=1&query=7,+Bell+Yard,+WC2A+2JR,+Greater+London,+London,+United+Kingdom",
   },
