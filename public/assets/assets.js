@@ -1,246 +1,9 @@
-import Two_Seven_One_Eight_Five_One from './27185_1.webp';
-import Alignment from './alignment.jpg';
-import Assambly from './assambly.webp';
-import Audio from './audio.jpeg';
-import Autoclave from './autoclave.jpg';
-import AutomatedBlindds from './AutomatedBlindds.jpeg';
-import Bambino_Plus from './bambino-plus.jpeg';
-import Bambino from './bambino.webp';
-import Barista_Express from './baristaexpress.jpg';
-import Barista_Pro from './baristapro.jpg';
-import Barista_Touch from './baristaTouch.jpeg';
-import BeltBeplacement from './beltBeplacement.webp';
-import Car from './car.jpeg';
-import Catering_Equipment from './catering-equipment.jpg';
-import Catering from './catering.png';
-import Catering_Part from './cateringPart.png';
-import Chime from './chime.jpg';
-import Climate from './climate.jpeg';
-import Clock from './clock.webp';
-import Cloud from './cloud.webp';
-import Coffee from './Coffee.png';
-import CoffePart from './coffePart.png';
-import Complex_Machine from './Complex_doing_everything_household_machine__kompleks_melakukan_segalanya_mesin_rumah-removebg-preview.png';
-import Console from './console.webp';
-import ControlPanel_Jpeg from './controlPanel.jpeg';
-import ControlPanel_Jpg from './controlPanel.jpg';
-import DataWiring from './dataWiring.jpg';
-import Deltech_Chair from './Deltech-Chair.jpg';
-import Drone from './drone.jpg';
-import DualBoiler from './dualboiler.jpg';
-import Duo_Temp from './duo-temp.jpeg';
-import Electrical from './electrical.png';
-import Electromechanical from './electromechanical.png';
-import Electronics_Repair_Replace from './electronics-repair-replace.jpeg';
-import Electronics_Jpg from './electronics.jpg';
-import Electronics_Png from './electronics.png';
-import Elliptical from './elliptical.jpeg';
-import Emergency from './emergency.jpg';
-import EV_Charger_Installation from './EV-Charger-Installation.jpg';
-import ExcersiseBike from './excersiseBike.jpeg';
-import Express from './express.jpeg';
-import FanRepair from './fanRepair.jpg';
-import FireAlarm from './firealarm.jpg';
-import Firewall from './firewall.webp';
-import FitnessLogo from './fitnessLogo.png';
-import FullRewire from './fullRewire.jpg';
-import FuseboardUpgrade from './fuseboardUpgrade.jpeg';
-import Gas_Fryer from './Gas-Fryer.jpg';
-import Gearbox from './gearbox.jpeg';
-import Glass_Washer from './Glass-washer.webp';
-import Grill from './grill.jpg';
-import GymSupply from './gymSuppply.jpeg';
-import HifiPart from './hifiPart.png';
-import Home_Lighting_Security from './home-lighting-security.jpg';
-import Home from './home.webp';
-import HomeMain from './homeMain.png';
-import HomeNetwork from './homeNetwork.jpeg';
-import HomeTheatre from './homeTheatre.jpg';
-import Hotplate from './hotplate.webp';
-import IndustrialPumps from './industrialPumps.jpeg';
-import Laptop from './laptop.jpeg';
-import Layer11 from './layer11.png';
-import Lightning from './lightning.webp';
-import LightningAutomation from './LightningAutomation.jpeg';
-import LightningControl from './lightningControl.jpg';
-import Logo from './logo.png';
-import MainCatring from './mainCatring.jpg';
-import MainClock from './mainClock.jpeg';
-import MainCoffee from './mainCoffee.png';
-import MainElectric from './mainElectric.png';
-import MainElectronics from './mainelectronics.png';
-import MainGym from './mainGym.png';
-import MainMachine from './mainMachine.png';
-import MainMedical from './mainMedical.png';
-import MainNetwork from './mainnetwork.png';
-import MediaIntegration from './mediaIntegration.png';
-import Medical from './medical.png';
-import Microwave from './microwave.jpg';
-import Moter from './moter.webp';
-import Motor from './motor.webp';
-import Network from './network.png';
-import Octopus from './octopus.png';
-import Ophtalmic from './ophtalmic.webp';
-import Optometry from './optometry.webp';
-import Oracle from './oracle.jpg';
-import OracleTouch from './oracletouch.jpg';
-import Oven from './oven.webp';
-import Overhaul from './overhaul.webp';
-import Owner from './owner.jpeg';
-import PCB from './pcb.jpeg';
-import Pendulum from './pendulum.webp';
-import PrinterRepair from './printerRepair.jpg';
-import Projector from './projector.jpg';
-import Pump from './pump.jpg';
-import RemoteAccess from './remoteAccess.webp';
-import ResidentialWiring from './residentialWiring.webp';
-import Restoration from './restoration.jpg';
-import RoboticRepair from './RoboticRepair2.jpg';
-import Security from './security.webp';
-import Server from './server.jpg';
-import ServiceMain from './serviceMain.png';
-import Servo from './servo.jpeg';
-import Smart from './Smart.jpeg';
-import SmartHome from './SmartHome.png';
-import SmartHomeSetup from './smartHomesetup.jpg';
-import Structure from './structure.jpg';
-import Tablet from './tablet.jpg';
-import Teeth from './Teeth.png';
-import Testing from './testing.jpg';
-import Toaster from './toaster.jpg';
-import Touch_Impress from './touch-impress.jpeg';
-import TreadmillRepair from './treadmillRepair.jpg';
-import Turkey from './turkey.png';
-import Unnamed from './unnamed.png';
-import VoiceControl from './voiceControl.jpg';
-import VPN from './vpn.png';
-import Weight from './weight.jpg';
-import Wifi from './wifi.webp';
-import Xray from './xray.jpeg';
-import Zero from './zero.png';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Owner from './owner2.jpeg';
+import { FaLinkedinIn } from "react-icons/fa";
+import { Mail, Phone } from "lucide-react";
 
 export const assets = {
-  Two_Seven_One_Eight_Five_One,
-  Alignment,
-  Assambly,
-  Audio,
-  Autoclave,
-  AutomatedBlindds,
-  Bambino_Plus,
-  Bambino,
-  Barista_Express,
-  Barista_Pro,
-  Barista_Touch,
-  BeltBeplacement,
-  Car,
-  Catering_Equipment,
-  Catering,
-  Catering_Part,
-  Chime,
-  Climate,
-  Clock,
-  Cloud,
-  Coffee,
-  CoffePart,
-  Complex_Machine,
-  Console,
-  ControlPanel_Jpeg,
-  ControlPanel_Jpg,
-  DataWiring,
-  Deltech_Chair,
-  Drone,
-  DualBoiler,
-  Duo_Temp,
-  Electrical,
-  Electromechanical,
-  Electronics_Repair_Replace,
-  Electronics_Jpg,
-  Electronics_Png,
-  Elliptical,
-  Emergency,
-  EV_Charger_Installation,
-  ExcersiseBike,
-  Express,
-  FanRepair,
-  FireAlarm,
-  Firewall,
-  FitnessLogo,
-  FullRewire,
-  FuseboardUpgrade,
-  Gas_Fryer,
-  Gearbox,
-  Glass_Washer,
-  Grill,
-  GymSupply,
-  HifiPart,
-  Home_Lighting_Security,
-  Home,
-  HomeMain,
-  HomeNetwork,
-  HomeTheatre,
-  Hotplate,
-  IndustrialPumps,
-  Laptop,
-  Layer11,
-  Lightning,
-  LightningAutomation,
-  LightningControl,
-  Logo,
-  MainCatring,
-  MainClock,
-  MainCoffee,
-  MainElectric,
-  MainElectronics,
-  MainGym,
-  MainMachine,
-  MainMedical,
-  MainNetwork,
-  MediaIntegration,
-  Medical,
-  Microwave,
-  Moter,
-  Motor,
-  Network,
-  Octopus,
-  Ophtalmic,
-  Optometry,
-  Oracle,
-  OracleTouch,
-  Oven,
-  Overhaul,
   Owner,
-  PCB,
-  Pendulum,
-  PrinterRepair,
-  Projector,
-  Pump,
-  RemoteAccess,
-  ResidentialWiring,
-  Restoration,
-  RoboticRepair,
-  Security,
-  Server,
-  ServiceMain,
-  Servo,
-  Smart,
-  SmartHome,
-  SmartHomeSetup,
-  Structure,
-  Tablet,
-  Teeth,
-  Testing,
-  Toaster,
-  Touch_Impress,
-  TreadmillRepair,
-  Turkey,
-  Unnamed,
-  VoiceControl,
-  VPN,
-  Weight,
-  Wifi,
-  Xray,
-  Zero,
 };
 
 export const EVCharger = [
@@ -277,57 +40,73 @@ export const LogoImage = [
   },
   {
     title: "turkey",
-    bgImage: "/Turkey.png",
+    bgImage:"/Turkey.png",
   },
   {
     title: "octopus",
-    bgImage: "/Octopus.png",
+    bgImage:"/Octopus.png",
   },
   {
     title: "uk",
-    bgImage: "/Unnamed.png",
+    bgImage:"/Unnamed.png",
   },
   {
     title: "zero",
-    bgImage: "/Zero.png",
+    bgImage:"/Zero.png",
   },
 ]
 
 export const footerData = {
   brand: {
     logo: "/assets/logo.png",
-    description: "Empowering Your Success. © 2025 Syntrad. All rights reserved.",
-    copyright: "© 2025 Syntrad. All rights reserved.",
+    tagline: "Precision. Power. Reliability.",
+    description: "Advanced engineering, electronics and specialist equipment solutions. Built for performance. Designed for reliability.",
+    copyright: "© 2027 Syntrad Ltd. All rights reserved.",
   },
 
   quickLinks: [
     { label: "Home", href: "/" },
+    { label: "Repair & Service", href: "/repair-and-service" },
+    { label: "Engineering", href: "/engineering" },
+    { label: "Projects", href: "/projects" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "EV Charger", href: "/amplink" },
+    { label: "Contact", href: "/contact" },
+  ],
+
+  services: [
+    { label: "Automation & Control Systems", href: "/engineering/automation" },
+    { label: "Electrical & Electronic Engineering", href: "/engineering/electrical" },
+    { label: "Electromechanical Systems", href: "/engineering/electromechanical" },
+    { label: "Specialist Equipment Engineering", href: "/services" },
+    { label: "Connected Infrastructure & IoT", href: "/engineering/iot" },
+    { label: "Energy & EV Infrastructure", href: "/engineering/ev-charging" },
   ],
 
   contact: {
     email: "hello@syntradltd.co.uk",
     phone: "+442071125377",
     address:
-      "7, Bell Yard, WC2A 2JR, Greater London, London, United Kingdom",
+      "11 Old Bond Street, Mayfair, London, W1S 4PN",
     locationUrl:
-      "https://www.google.com/maps/search/?api=1&query=7,+Bell+Yard,+WC2A+2JR,+Greater+London,+London,+United+Kingdom",
+      "https://www.google.com/maps/search/?api=1&query=11+Old+Bond+Street,+Mayfair,+London,+W1S+4PN",
+    hours: "Monday – Friday: 8:00 AM – 9:00 PM, Saturday – Sunday: Closed.",
   },
 
   socials: [
     {
-      href: "https://www.facebook.com/kazmoorjani/",
-      icon: <FaFacebookF />,
-    },
-    {
-      href: "https://www.instagram.com/syntradltd/",
-      icon: <FaInstagram />,
-    },
-    {
+      label: "LinkedIn",
       href: "https://www.linkedin.com/in/kaz-moorjani/",
-      icon: <FaLinkedinIn />,
+      icon: <FaLinkedinIn size={16} />,
+    },
+    {
+      label: "Email",
+      href: "mailto:hello@syntradltd.co.uk",
+      icon: <Mail size={16} />,
+    },
+    {
+      label: "Phone",
+      href: "tel:+442071125377",
+      icon: <Phone size={16} />,
     },
   ],
 };
@@ -449,12 +228,10 @@ export const serviceCards = [
   },
 ];
 
-// Director Information
-
 export const directorData = {
   name: "Kaz Moorjani",
   title: "Director Of Syntrad Ltd",
-  image: "/assets/kaz-moorjani.jpeg",
+  image: "/assets/owner2.jpeg",
   airtasker:
     "https://www.airtasker.com/users/228a70407caf-p-30688846/",
   intro:
@@ -465,7 +242,6 @@ export const directorData = {
     "Beyond the Business: Kaz also works independently through platforms like Airtasker, offering technical services, small repairs, and custom installations. His freelance work keeps him directly engaged with customers and their everyday needs — ensuring SyntraD remains practical, responsive, and rooted in real-world service."
 };
 
-// Offer
 export const offerData = {
   titleHighlight: "20% OFF",
   titleMain: "ON YOUR FIRST APPOINTMENT",
@@ -473,8 +249,6 @@ export const offerData = {
   buttonText: "Request Quote",
   image: "/assets/homeMain.png"
 };
-
-// Amplink
 
 export const amplinkProduct = {
   name: "AmpLink Elite",
@@ -553,7 +327,6 @@ export const reviews = [
   },
 ];
 
-// src/data/assets.js
 export const models = [
   "Commercial Oven Repair",
   "Grill Maintenance & Repairs",

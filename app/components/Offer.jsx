@@ -25,7 +25,6 @@ const Offer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
 
-
         <motion.div
           className="lg:col-span-5 flex justify-center relative"
           initial={{ opacity: 0, y: 80 }}
@@ -43,7 +42,6 @@ const Offer = () => {
           />
         </motion.div>
 
-
         <motion.div
           className="lg:col-span-7 space-y-8"
           initial={{ opacity: 0, y: 80 }}
@@ -59,13 +57,11 @@ const Offer = () => {
             </span>
           </h1>
 
-
           <div className="w-20 h-[3px] bg-red-600 rounded-full" />
 
           <p className="text-gray-300 max-w-xl text-lg leading-relaxed">
             {offerData.note}
           </p>
-
 
           <div className=" pt-0">
             <motion.button
@@ -85,7 +81,6 @@ const Offer = () => {
               <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>
-
 
               <span className="
       absolute mt-6 h-[1.5px] w-0

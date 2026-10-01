@@ -1,66 +1,52 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Users,
-  Lock,
-  ArrowRight,
-  Headphones,
-  Bot,
-  Cpu,
-  PackageSearch,
-  BatteryCharging,
-  CloudCog,
-  Home as HomeIcon,
-  CheckCircle2,
+  MapPin, Mail, Clock, Users, Lock, ArrowRight, CheckCircle2,
 } from "lucide-react";
 
+import PageHero from "../components/PageHero";
+import SectionHeading from "../components/SectionHeading";
+import UrgentCall from "../components/UrgentCall";
+import Container from "../components/container";
+import FeatureCardGrid from "../components/FeatureCardGrid";
+import TypeDropdown, { projectTypeOptions } from "../components/TypeDropdown";
+import ContactPopup from "../components/ContactPopup";
+
 const contactCards = [
-  {
-    icon: MapPin,
-    title: "Our Address",
-    lines: ["Syntrad Ltd", "10 Old Bond Street", "Mayfair, London, W1S 4PN"],
-  },
-  {
-    icon: Phone,
-    title: "Telephone",
-    lines: ["+44 20 7125 2397"],
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    lines: ["hello@syntradltd.co.uk"],
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    lines: ["Monday – Friday: 8:30 AM – 5:00 PM", "Saturday – Sunday: Closed"],
-  },
+  { icon: MapPin, title: "Our Address", desc: (
+    <>
+      <span className="block">Syntrad Ltd</span>
+      <span className="block">10 Old Bond Street</span>
+      <span className="block">Mayfair, London, W1S 4PN</span>
+    </>
+  ) },
+  { icon: "/assets/icons/icon_headset.png", title: "Telephone", desc: "+44 20 7125 2397" },
+  { icon: Mail, title: "Email", desc: "hello@syntradltd.co.uk" },
+  { icon: Clock, title: "Business Hours", desc: (
+    <>
+      <span className="block">Monday – Friday: 8:30 AM – 5:00 PM</span>
+      <span className="block">Saturday – Sunday: Closed</span>
+    </>
+  ) },
   {
     icon: Users,
     title: "Serving London & the UK",
-    lines: [
-      "Based in London, delivering engineering excellence across the Home Counties and selected locations throughout the UK.",
-    ],
+    desc: "Based in London, delivering engineering excellence across the Home Counties and selected locations throughout the UK.",
   },
 ];
 
 const projectCategories = [
-  { icon: Bot, title: "Automation & Controls", desc: "Control systems, PLC programming, SCADA, HMI and process automation." },
-  { icon: Cpu, title: "Electrical Engineering", desc: "Power distribution, panel design, wiring, testing and electrical installations." },
-  { icon: PackageSearch, title: "Specialist Equipment", desc: "Design, build and support for bespoke and specialist engineering solutions." },
-  { icon: BatteryCharging, title: "EV & Energy", desc: "EV charging infrastructure, power systems and energy efficiency solutions." },
-  { icon: CloudCog, title: "IoT & Networks", desc: "Connected systems, sensor networks, data integration and remote monitoring." },
-  { icon: HomeIcon, title: "Premium Residential", desc: "Smart home systems, luxury automation and bespoke residential solutions." },
+  { icon: "/assets/icons/icon_robot_arm.png", title: "Automation & Controls", desc: "Control systems, PLC programming, SCADA, HMI and process automation.", href: "/solutions/automation" },
+  { icon: "/assets/icons/icon_electrical_transparent.png", title: "Electrical Engineering", desc: "Power distribution, panel design, wiring, testing and electrical installations.", href: "/solutions/electrical" },
+  { icon: "/assets/icons/04_Specialist_Diagnostics.png", title: "Specialist Equipment", desc: "Design, build and support for bespoke and specialist engineering solutions.", href: "/solutions/equipment" },
+  { icon: "/assets/icons/02_EV_Charging.png", title: "EV & Energy", desc: "EV charging infrastructure, power systems and energy efficiency solutions.", href: "/solutions/energy" },
+  { icon: "/assets/icons/23_Sensor_Control.png", title: "IoT & Networks", desc: "Connected systems, sensor networks, data integration and remote monitoring.", href: "/solutions/iot" },
+  { icon: "/assets/icons/01_Smart_Home.png", title: "Premium Residential", desc: "Smart home systems, luxury automation and bespoke residential solutions.", href: "/sectors/premium-residential" },
 ];
 
 const includeItems = [
@@ -72,15 +58,22 @@ const includeItems = [
   "Desired outcome or deliverables",
 ];
 
-const serviceCities = [
-  { name: "Oxford", top: "12%", left: "18%" },
-  { name: "Luton", top: "6%", left: "52%" },
-  { name: "Chelmsford", top: "14%", left: "82%" },
-  { name: "Reading", top: "48%", left: "14%" },
-  { name: "London", top: "50%", left: "50%", primary: true },
-  { name: "Croydon", top: "70%", left: "56%" },
-  { name: "Maidstone", top: "72%", left: "84%" },
-];
+const urgencyGroups = [[
+  { value: "Standard", label: "Standard — no immediate rush" },
+  { value: "Priority", label: "Priority — within a few days" },
+  { value: "Emergency", label: "Emergency — immediate attention needed" },
+]];
+
+const emptyForm = {
+  name: "",
+  email: "",
+  telephone: "",
+  postcode: "",
+  projectType: "",
+  equipment: "",
+  description: "",
+  urgency: "",
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -91,74 +84,24 @@ const stagger = {
   show: { transition: { staggerChildren: 0.1 } },
 };
 
-function HeroIllustration() {
-  return (
-    <motion.svg
-      viewBox="0 0 500 500"
-      className="w-full max-w-md mx-auto"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-    >
-      <defs>
-        <radialGradient id="coreGlowC" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#ff2d2d" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="#ff2d2d" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id="edgeC" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#ff4d4d" />
-          <stop offset="100%" stopColor="#7a0000" />
-        </linearGradient>
-      </defs>
-
-      {[190, 150, 110].map((r, i) => (
-        <motion.circle
-          key={r}
-          cx="250" cy="250" r={r}
-          fill="none" stroke="#ffffff14" strokeWidth="1" strokeDasharray="4 6"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20 + i * 8, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "250px 250px" }}
-        />
-      ))}
-
-      <circle cx="250" cy="250" r="90" fill="url(#coreGlowC)" />
-
-      <motion.g animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-        <polygon points="250,150 320,190 250,230 180,190" fill="url(#edgeC)" opacity="0.95" />
-        <polygon points="180,190 250,230 250,320 180,280" fill="#4a0000" opacity="0.9" />
-        <polygon points="320,190 250,230 250,320 320,280" fill="#2a0000" opacity="0.9" />
-        <polygon points="250,150 320,190 250,230 180,190" fill="none" stroke="#ff8080" strokeWidth="1.5" />
-        <line x1="250" y1="230" x2="250" y2="320" stroke="#ff8080" strokeWidth="1" opacity="0.5" />
-      </motion.g>
-
-      {[0, 120, 240].map((deg, i) => (
-        <motion.circle
-          key={deg} r="5" fill="#ff2d2d"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
-          style={{ transformOrigin: "250px 250px" }}
-          cx={250 + 190 * Math.cos((deg * Math.PI) / 180)}
-          cy={250 + 190 * Math.sin((deg * Math.PI) / 180)}
-        />
-      ))}
-    </motion.svg>
-  );
-}
+const inputClass =
+  "w-[95%] px-3.5 py-1.5 bg-[#111111] border border-white/10 rounded-lg text-[13px] text-white placeholder:text-gray-600 focus:outline-none focus:border-red-600/60 transition-colors";
+const labelClass = "text-[12.5px] font-medium text-gray-300 mb-1 block";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    telephone: "",
-    postcode: "",
-    projectType: "",
-    equipment: "",
-    description: "",
-    urgency: "",
-  });
+  const [formData, setFormData] = useState(emptyForm);
   const [isLoading, setIsLoading] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    const type = new URLSearchParams(window.location.search).get("type");
+    if (type && projectTypeOptions.includes(type)) {
+      setFormData((p) => ({ ...p, projectType: type }));
+      setTimeout(() => {
+        document.getElementById("enquiry-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 300);
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -171,24 +114,14 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        "service_123456",
-        "template_s7dq4z9",
-        formData,
-        "iqQJ7aU0zbtuutWY0"
-      );
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  formData,
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+);
 
       toast.success("Enquiry submitted successfully!");
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        telephone: "",
-        postcode: "",
-        projectType: "",
-        equipment: "",
-        description: "",
-        urgency: "",
-      });
+      setFormData(emptyForm);
     } catch (err) {
       toast.error("Failed to submit enquiry");
     } finally {
@@ -196,306 +129,256 @@ export default function Contact() {
     }
   };
 
-  const inputClass =
-    "w-full px-4 py-2.5 bg-[#111111] border border-white/10 rounded-lg text-white placeholder:text-gray-600 focus:outline-none focus:border-red-600/60 transition-colors";
-  const labelClass = "text-sm font-medium text-gray-300 mb-2 block";
-
-  return (   
-    <div className="flex flex-col w-full overflow-hidden bg-black text-white font-body">
+  return (
+    <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
       <Toaster />
 
-      {/* HERO */}
-      <section className="relative w-full flex items-center mt-10 py-3 md:py-4 border-b border-white/10 overflow-hidden"> 
-
-  <motion.div
-    className="absolute top-0 right-0 w-[40vw] h-[70vh] bg-red-700/20 blur-3xl z-0"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1.5 }}
-  />
-
-  <div className="w-full max-w-[1180px] mx-auto px-4 lg:px-0 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 z-20">
-
-    {/* HERO TEXT */}
-    <motion.div
-      className="w-full md:w-[58%]"
-      variants={stagger}
-      initial="hidden"
-      animate="show"
-    >
-      <motion.p
-        variants={fadeUp}
-        className="text-red-600 text-xs md:text-sm font-semibold tracking-wide uppercase mb-2"
-      >
-        Contact / Start a Project
-      </motion.p>
-
-      <motion.h1
-        variants={fadeUp}
-        className="font-display text-[42px] md:text-[46px] lg:text-[50px] font-bold leading-[1.08] mb-3"
-      >
-        Start a Project or Request{" "}
-        <span className="text-red-600">
-          Technical Support
-        </span>
-      </motion.h1>
-
-      <motion.p
-        variants={fadeUp}
-        className="text-gray-400 text-[18px] max-w-2xl leading-relaxed"
-      >
-        Syntrad welcomes project enquiries, fault investigations and
-        specialist technical support requests.
-      </motion.p>
-    </motion.div>
-
-    {/* HERO IMAGE */}
-    <motion.div
-      className="w-full md:w-[42%] flex justify-center md:justify-end items-center"
-      initial={{ opacity: 0, scale: 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <img
-        src="/assets/mainImg.png"
-        alt="Main Illustration"
-        width={400}
-        height={420}
-        className="w-full max-w-[380px] md:max-w-[440px] h-auto object-contain mt-10"
+      <PageHero
+        pageLabel="Contact"
+        heading={["Start a Project or", "Request Technical Support"]}
+        description="Syntrad welcomes project enquiries, fault investigations and specialist technical support requests."
+        visual={
+          <>
+            <img
+              src="/assets/hero/contact.png"
+              alt="Syntrad engineering illustration"
+              className="absolute inset-0 w-full h-full object-contain object-right md:scale-[1.2] md:origin-right"
+            />
+            <div
+              className="absolute inset-y-0 right-0 w-[14%] pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(270deg, rgba(127,29,29,0.55) 0%, rgba(69,10,10,0.25) 45%, rgba(0,0,0,0) 100%)",
+              }}
+            />
+          </>
+        }
       />
-    </motion.div>
 
-  </div>
-</section>
+      <section className="border-b border-white/10">
+        <Container className="pt-2 pb-9">
+          <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10">
 
-      {/* GET IN TOUCH + FORM */}
-      <section className="py-8 md:py-10 border-b border-white/10">
-        <div className="w-full max-w-[1180px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-[340px_1fr] gap-8">
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
+              <SectionHeading title="Get in Touch" />
 
-          {/* Get in Touch */}
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-            <motion.h2 variants={fadeUp} className="font-display text-2xl font-bold mb-6 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1 before:bottom-1 before:w-1 before:bg-red-600">
-              Get in Touch
-            </motion.h2>
-            <motion.div variants={fadeUp} className="bg-[#0d0d0d] border border-white/10 rounded-xl divide-y divide-white/10">
-              {contactCards.map(({ icon: Icon, title, lines }) => (
-                <div key={title} className="flex items-start gap-4 p-5">
-                  <div className="w-10 h-10 rounded-lg border border-red-600/40 flex items-center justify-center shrink-0">
-                    <Icon className="text-red-600" size={18} />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-semibold text-sm mb-1">{title}</p>
-                    {lines.map((line) => (
-                      <p key={line} className="text-gray-400 text-sm">{line}</p>
-                    ))}
-                  </div>
-                </div>
-              ))}
+              <FeatureCardGrid
+                variant="row"
+                cols="grid-cols-1"
+                rowIconSize={22}
+                rowIconBoxSize={44}
+                cardHeight={92}
+                cardPadding="p-3"
+                items={contactCards}
+              />
             </motion.div>
-          </motion.div>
 
-          {/* Enquiry Form */}
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-            <motion.h2 variants={fadeUp} className="font-display text-2xl font-bold mb-6 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1 before:bottom-1 before:w-1 before:bg-red-600">
-              Send Us an Enquiry
-            </motion.h2>
+            <motion.div id="enquiry-form" className="flex flex-col scroll-mt-24" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
+              <SectionHeading title="Send Us an Enquiry" />
 
-            <motion.form variants={fadeUp} onSubmit={handleSubmit} className="bg-[#0d0d0d] border border-white/10 rounded-xl p-6 sm:p-8 space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className={labelClass}>Name <span className="text-red-600">*</span></label>
-                  <input name="name" value={formData.name} onChange={handleChange} placeholder="Your full name" className={inputClass} required />
-                </div>
-                <div>
-                  <label className={labelClass}>Company <span className="text-red-600">*</span></label>
-                  <input name="company" value={formData.company} onChange={handleChange} placeholder="Your company name" className={inputClass} required />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className={labelClass}>Email <span className="text-red-600">*</span></label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" className={inputClass} required />
-                </div>
-                <div>
-                  <label className={labelClass}>Telephone <span className="text-red-600">*</span></label>
-                  <input
-                    type="tel"
-                    name="telephone"
-                    value={formData.telephone}
-                    onChange={(e) => setFormData((p) => ({ ...p, telephone: e.target.value.replace(/[^0-9+ ]/g, "") }))}
-                    placeholder="+44 20 1234 5678"
-                    className={inputClass}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className={labelClass}>Site Postcode <span className="text-red-600">*</span></label>
-                  <input name="postcode" value={formData.postcode} onChange={handleChange} placeholder="e.g. W1S 4PN" className={inputClass} required />
-                </div>
-                <div>
-                  <label className={labelClass}>Project Type <span className="text-red-600">*</span></label>
-                  <select name="projectType" value={formData.projectType} onChange={handleChange} className={inputClass} required>
-                    <option value="">Select project type</option>
-                    {projectCategories.map((c) => (
-                      <option key={c.title} value={c.title} className="bg-black">{c.title}</option>
-                    ))}
-                    <option value="Other" className="bg-black">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className={labelClass}>System or Equipment <span className="text-red-600">*</span></label>
-                <input name="equipment" value={formData.equipment} onChange={handleChange} placeholder="e.g. Control Panel, BMS, EV Charger, etc." className={inputClass} required />
-              </div>
-
-              <div>
-                <label className={labelClass}>Description <span className="text-red-600">*</span></label>
-                <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Please provide details about your project, system or issue..." className={`${inputClass} h-28 resize-none`} required />
-              </div>
-
-              <div>
-                <label className={labelClass}>Urgency <span className="text-red-600">*</span></label>
-                <select name="urgency" value={formData.urgency} onChange={handleChange} className={inputClass} required>
-                  <option value="">Select urgency</option>
-                  <option value="Standard" className="bg-black">Standard — no immediate rush</option>
-                  <option value="Priority" className="bg-black">Priority — within a few days</option>
-                  <option value="Emergency" className="bg-black">Emergency — immediate attention needed</option>
-                </select>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-red-600 hover:bg-red-700 disabled:opacity-60 py-3.5 rounded-lg text-white font-semibold transition inline-flex items-center justify-center gap-2"
+              <motion.form
+                variants={fadeUp}
+                onSubmit={handleSubmit}
+                className="flex flex-1 flex-col gap-3 bg-[#0d0d0d] border border-white/10 rounded-lg p-4 sm:p-5"
               >
-                {isLoading ? "Submitting..." : "Submit Enquiry"} <ArrowRight size={18} />
-              </button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-3">
+                  <div>
+                    <label htmlFor="name" className={labelClass}>Name <span className="text-red-600">*</span></label>
+                    <input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your full name" className={inputClass} required />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className={labelClass}>Email <span className="text-red-600">*</span></label>
+                    <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" className={inputClass} required />
+                  </div>
 
-              <p className="text-gray-500 text-xs flex items-center justify-center gap-2">
-                <Lock size={12} /> Your information is secure and will only be used to respond to your enquiry.
-              </p>
-            </motion.form>
-          </motion.div>
-        </div>
+                  <div>
+                    <label htmlFor="telephone" className={labelClass}>Telephone <span className="text-red-600">*</span></label>
+                    <input
+                      id="telephone"
+                      type="tel"
+                      name="telephone"
+                      value={formData.telephone}
+                      onChange={(e) => setFormData((p) => ({ ...p, telephone: e.target.value.replace(/[^0-9+ ]/g, "") }))}
+                      placeholder="+44 20 1234 5678"
+                      className={inputClass}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="postcode" className={labelClass}>Site Postcode <span className="text-red-600">*</span></label>
+                    <input id="postcode" name="postcode" value={formData.postcode} onChange={handleChange} placeholder="e.g. W1S 4PN" className={inputClass} required />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>Project Type <span className="text-red-600">*</span></label>
+                    <TypeDropdown
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={(v) => setFormData((p) => ({ ...p, projectType: v }))}
+                      placeholder="Select project type"
+                      required
+                      className="w-[95%]"
+                    />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Urgency <span className="text-red-600">*</span></label>
+                    <TypeDropdown
+                      name="urgency"
+                      value={formData.urgency}
+                      onChange={(v) => setFormData((p) => ({ ...p, urgency: v }))}
+                      groups={urgencyGroups}
+                      placeholder="Select urgency"
+                      required
+                      className="w-[95%]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="equipment" className={labelClass}>System or Equipment <span className="text-red-600">*</span></label>
+                  <input id="equipment" name="equipment" value={formData.equipment} onChange={handleChange} placeholder="e.g. Control Panel, BMS, EV Charger, etc." className={inputClass} required />
+                </div>
+
+                <div className="flex flex-1 flex-col">
+                  <label htmlFor="description" className={labelClass}>Description <span className="text-red-600">*</span></label>
+                  <textarea id="description" name="description" value={formData.description} onChange={handleChange} placeholder="Please provide details about your project, system or issue..." className={`${inputClass} min-h-[88px] flex-1 resize-none`} required />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="mt-2 w-full bg-red-600 hover:bg-red-700 disabled:opacity-60 py-2.5 rounded-md text-[13px] text-white font-semibold transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  {isLoading ? "Submitting..." : "Submit Enquiry"} <ArrowRight size={16} />
+                </button>
+
+                <p className="mt-1 text-gray-500 text-[12px] flex items-center justify-center gap-2">
+                  <Lock size={12} /> Your information is secure and will only be used to respond to your enquiry.
+                </p>
+              </motion.form>
+            </motion.div>
+
+          </div>
+        </Container>
       </section>
 
-      {/* PROJECT CATEGORIES */}
-      <section className="py-8 md:py-10 border-b border-white/10">
-        <div className="w-full max-w-[1180px] mx-auto px-4 lg:px-0">
-          <h2 className="font-display text-3xl font-bold mb-10">Project Categories</h2>
+      <section className="border-b border-white/10">
+        <Container className="pt-2 pb-9">
+          <SectionHeading title="Project Categories" />
+
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3"
-            variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
           >
-            {projectCategories.map(({ icon: Icon, title, desc }) => (
+            {projectCategories.map(({ icon, title, desc, href, scale }) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="bg-[#111111] border border-white/10 rounded-md p-3 hover:border-red-600/50 transition-colors flex flex-col items-center text-center"
+                className="group relative bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg p-4 transition-colors w-full min-h-[240px] flex flex-col items-center text-center"
               >
-                <Icon className="text-red-600 mb-4" size={54} strokeWidth={1.6} />
-                <h3 className="font-display font-semibold text-sm mb-2 leading-snug">{title}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed">{desc}</p>
+                <div className="w-16 h-16 mb-3 shrink-0 flex items-center justify-center">
+                  <img
+                    src={icon}
+                    alt=""
+                    className="w-full h-full object-contain object-center"
+                    style={scale ? { transform: `scale(${scale})` } : undefined}
+                  />
+                </div>
+                <h3 className="font-display font-semibold text-[13.5px] leading-[1.25] mb-2">{title}</h3>
+                <p className="text-[#8a8a8a] text-[11px] leading-[1.45] flex-1">{desc}</p>
+                <Link
+                  href={href}
+                  className="text-red-500 group-hover:text-red-400 text-[11.5px] font-medium inline-flex items-center gap-1 mt-3 transition-colors after:absolute after:inset-0 after:rounded-lg"
+                >
+                  Learn more
+                  <ArrowRight size={11} className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
               </motion.div>
             ))}
           </motion.div>
-        </div>
+        </Container>
       </section>
 
-      {/* WHAT TO INCLUDE + SERVICE AREA */}
-      <section className="py-8 md:py-10 border-b border-white/10">
-       <div className="w-full max-w-[1180px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 items-start">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6 }}>
-            <h2 className="font-display text-2xl font-bold mb-5">What to Include</h2>
-            <ul className="space-y-3.5">
-              {includeItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-red-600 mt-0.5 shrink-0" size={18} />
-                  <span className="text-gray-300 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+      <section className="border-b border-white/10">
+        <Container className="pt-2 pb-9">
+          <div className="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] gap-10 items-start">
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="bg-[#0d0d0d] border border-red-600/30 rounded-2xl p-6 sm:p-8"
-          >
-            <p className="text-lg font-display font-semibold mb-1">Our Service Area</p>
-            <p className="text-red-600 font-display text-xl font-bold mb-3">
-              London, Home Counties &amp; Selected UK Support
-            </p>
-            <p className="text-gray-400 text-sm mb-5 max-w-lg">
-              We deliver projects and technical support across London, the Home
-              Counties and selected locations throughout the UK.
-            </p>
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+              <motion.h2 variants={fadeUp} className="font-display text-2xl font-bold mb-5">
+                What to Include
+              </motion.h2>
+              <motion.ul variants={fadeUp} className="space-y-3.5">
+                {includeItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 size={16} strokeWidth={1.7} className="text-red-500 mt-0.5 shrink-0" />
+                    <span className="text-gray-300 text-[13px] leading-[1.4]">{item}</span>
+                  </li>
+                ))}
+              </motion.ul>
+            </motion.div>
 
-            <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden bg-[#0a0a0a] border border-white/10 mb-5">
-              <div className="absolute inset-0 opacity-40" style={{
-                backgroundImage: "radial-gradient(circle, #ffffff10 1px, transparent 1px)",
-                backgroundSize: "24px 24px",
-              }} />
-              <div className="absolute left-1/2 top-1/2 w-52 h-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/25 blur-2xl" />
-              {serviceCities.map(({ name, top, left, primary }) => (
-                <div key={name} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1" style={{ top, left }}>
-                  <span className={`rounded-full ${primary ? "w-3 h-3 bg-red-500" : "w-2 h-2 bg-red-500/70"}`} />
-                  <span className={`text-xs whitespace-nowrap ${primary ? "text-red-500 font-semibold" : "text-gray-400"}`}>{name}</span>
-                </div>
-              ))}
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="relative min-w-0 overflow-hidden bg-[#0d0d0d] border border-red-600/70 rounded-xl"
+            >
+              <div className="relative z-10 p-5 sm:p-6 md:absolute md:inset-0 md:max-w-[40%] md:flex md:flex-col md:justify-center md:items-start">
+                <p className="font-display text-[15px] font-semibold mb-1">Our Service Area</p>
+                <p className="text-red-500 font-display text-lg leading-[1.2] font-bold mb-2">
+                  London, Home Counties &amp; Selected UK Support
+                </p>
+                <p className="text-[#999] text-[12.5px] leading-[1.5] mb-4">
+                  We deliver projects and technical support across London, the Home
+                  Counties and selected locations throughout the UK.
+                </p>
 
-            <Link href="/service-area" className="inline-flex items-center gap-2 border border-red-600 hover:bg-red-600 px-5 py-2.5 rounded-lg text-sm font-medium transition">
-              View Full Service Coverage <ArrowRight size={16} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA BANNER */}
-      <section>
-              <div className="max-w-[1220px] mx-auto px-4 lg:px-0 py-5">
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.55 }}
-                  className="relative rounded-md overflow-hidden border border-red-700/50 bg-gradient-to-r from-[#390505] via-[#240303] to-[#110000] px-5 py-5 flex flex-col md:flex-row items-center justify-between gap-4"
+                <Link
+                  href="/service-area"
+                  className="inline-flex items-center gap-1.5 text-red-500 text-[12.5px] font-medium px-4 py-1.5 rounded-md border border-red-600/60 bg-gradient-to-b from-red-600/15 to-red-600/5 hover:border-red-600/70 hover:from-red-600/25 hover:to-red-600/10 transition-colors"
                 >
-                  <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_20%_50%,rgba(255,40,40,.5),transparent_35%)]" />
-      
-                  <div className="relative flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border border-red-600 flex items-center justify-center shrink-0">
-                      <Headphones className="text-white" size={22} />
-                    </div>
-      
-                    <div>
-                      <h3 className="font-display text-[19px] md:text-[21px] font-bold leading-tight mb-1">
-                        Need a fast response on a critical issue?
-                      </h3>
-      
-                      <p className="text-[#999] text-[10px]">
-                        Our engineers are ready to help. Fast response. Expert solutions. Minimal downtime.
-                      </p>
-                    </div>
-                  </div>
-      
-                  <Link
-                    href="/contact"
-                    className="relative bg-red-600 hover:bg-red-700 px-5 py-2.5 rounded-md text-[11px] font-semibold whitespace-nowrap inline-flex items-center gap-2 transition-colors"
-                  >
-                    Get in Touch Today
-                    <ArrowRight size={12} />
-                  </Link>
-                </motion.div>
+                  View Full Service Coverage
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
-            </section>
 
-    </div>
+              <div className="relative md:aspect-[7/2] md:min-h-[250px]">
+                <img
+                  src="/assets/images/map.png"
+                  alt="Map of Syntrad's service area across London and the Home Counties"
+                  className="block w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover md:scale-[1.015]"
+                />
+                <div className="hidden md:block absolute inset-y-0 left-0 w-[45%] bg-gradient-to-r from-[#0d0d0d] via-[#0d0d0d]/70 to-transparent pointer-events-none" />
+              </div>
+            </motion.div>
+
+          </div>
+        </Container>
+      </section>
+
+      <div
+        onClickCapture={(e) => {
+          if (e.target.closest("a, button")) {
+            e.preventDefault();
+            e.stopPropagation();
+            setPopupOpen(true);
+          }
+        }}
+      >
+        <UrgentCall
+          title="Ready to elevate your engineering project?"
+          subtitle="Our engineers are ready to listen, understand and deliver."
+          buttonLabel="Call Us Now"
+          buttonHref="tel:+442071252397"
+        />
+      </div>
+
+      <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
+
+    </main>
   );
 }

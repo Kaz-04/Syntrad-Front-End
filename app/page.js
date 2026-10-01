@@ -1,9 +1,11 @@
 import HomePage from "./HomeClient";
+import { createPageMetadata } from "./seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Syntrad London | Expert Electrical & Electronic Repairs for Homes & Businesses",
   description:
     "Syntrad London provides professional repair services for electrical and electronic equipment, including coffee machines, gym equipment, appliances, gadgets, and commercial systems. Fast, reliable, and certified solutions across London.",
+  path: "/",
   keywords: [
     "Electrical repair",
     "Electronic repair",
@@ -39,38 +41,10 @@ export const metadata = {
     "Electronics repair company",
     "Home electrical services",
     "Commercial electronics maintenance",
-    "Gadget repair solutions"
+    "Gadget repair solutions",
   ],
-  authors: [{ name: "Syntrad Ltd" }],
-  robots: "index, follow",
-
-  openGraph: {
-    title: "Syntrad London | Expert Electrical & Electronic Repairs for Homes & Businesses",
-    description:
-      "Looking for professional repair services in London? Syntrad specializes in coffee machines, gym equipment, appliances, gadgets, and commercial systems. Reliable, fast, and certified solutions.",
-    url: "https://www.syntradltd.co.uk/",
-    siteName: "Syntrad",
-    images: [
-      {
-        url: "https://syntradltd.co.uk/assets/homeMain.png",
-        width: 1200,
-        height: 630,
-        alt: "Syntrad Electrical & Electronic Repair Services in London",
-      },
-    ],
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Syntrad London | Expert Electrical & Electronic Repairs for Homes & Businesses",
-    description:
-      "Syntrad provides certified repair services for coffee machines, gym equipment, appliances, gadgets, and commercial systems in London. Fast and reliable solutions.",
-    images: ["https://syntradltd.co.uk/assets/homeMain.png"],
-    site: "@SyntradLtd",
-    creator: "@SyntradLtd",
-  },
-};
+  image: "https://www.syntradltd.co.uk/assets/homeMain.png",
+});
 
 export default function Page() {
   return <HomePage />;

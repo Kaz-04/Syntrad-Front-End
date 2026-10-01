@@ -24,7 +24,7 @@ export default function AboutSection() {
             className="
     bg-black
     text-white
-    pt-32 pb-20   /* 👈 pushes content below header */
+    pt-32 pb-20
     px-4 sm:px-8
   "
         >
@@ -36,21 +36,18 @@ export default function AboutSection() {
                 animate={controls}
                 className="max-w-6xl mx-auto text-center"
             >
-                
+
                 <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">
                     <span className="text-red-500">What is</span>{" "}
                     <span className="text-white">SynTrad?</span>
                 </h2>
 
-
-                
                 <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-14 leading-relaxed">
                     Syntrad delivers expert repair and maintenance services for a broad spectrum of electronic engineering and medical equipment throughout London.
                     We specialize in providing end-to-end solutions that ensure critical systems remain fully operational, helping organizations minimize downtime and extend the lifespan of essential equipment. Trusted by businesses across the city, our commitment is to excellence, reliability, and rapid response.
                     We look forward to the opportunity to serve you soon.
                 </p>
 
-                
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {aboutCards.map((item, index) => (
                         <motion.div

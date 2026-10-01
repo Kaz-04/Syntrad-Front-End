@@ -9,7 +9,6 @@ export default function ServicesCard() {
     <section className="bg-black py-20">
       <div className="container mx-auto px-4">
 
-
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             The Best Services We Provide
@@ -17,10 +16,8 @@ export default function ServicesCard() {
           <div className="w-20 h-1 bg-red-600 mx-auto" />
         </div>
 
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-          
           {serviceCards.slice(0, 8).map((card, index) => (
             <Link
               href={card.link}
@@ -65,7 +62,6 @@ export default function ServicesCard() {
             </Link>
           ))}
 
-          
           <div className="col-span-full flex flex-wrap justify-center gap-8">
             {serviceCards.slice(8).map((card, index) => (
               <Link

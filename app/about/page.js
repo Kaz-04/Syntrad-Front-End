@@ -1,24 +1,21 @@
 import AboutClient from "./AboutClient";
+import { createPageMetadata } from "../seo";
 
-export const metadata = {
-  title: 'About Us | Syntrad Services',
+export const metadata = createPageMetadata({
+  title: "About Syntrad | Electrical, Repair & Engineering Experts",
   description:
-    'Learn more about Syntrad, our mission, expert repair services, and customer reviews.',
+    "Learn more about Syntrad, our mission, engineering expertise, and our customer-first approach to electrical, electronic and specialist repair services.",
+  path: "/about",
   keywords: [
-    'Syntrad Services',
-    'Electronic Repair',
-    'Electrical Services',
-    'Customer Reviews',
+    "About Syntrad",
+    "Electrical repair company",
+    "Engineering experts",
+    "Customer reviews",
+    "Electronic repair services",
+    "London engineering specialists",
   ],
-  authors: [{ name: 'Kaz Moorjani' }],
-  openGraph: {
-    title: 'About Us | Syntrad Services',
-    description:
-      'Delivering expert repair and maintenance solutions with customer satisfaction.',
-    url: 'https://www.syntrad.com/about',
-    images: ['/assets/about-banner.jpg'],
-  },
-};
+  image: "https://www.syntradltd.co.uk/assets/homeMain.png",
+});
 
 export default function AboutPage() {
   return <AboutClient/>;

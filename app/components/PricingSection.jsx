@@ -3,7 +3,6 @@ export default function PricingTable() {
     <section className=" px-4 md:px-12">
       <div className="max-w-7xl mx-auto space-y-16">
 
-     
         <PricingSection title="Residential / Domestic Installations">
           <PriceCard title="Dwelling Installation ≤ 10m" desc="Fixed standard install" price="£275" />
           <PriceCard title="Dwelling Installation ≥ 10m" desc="Per additional metre" price="£22.50 / metre" />
@@ -13,7 +12,6 @@ export default function PricingTable() {
           <PriceCard title="EV Ready Socket Only" price="£145" />
         </PricingSection>
 
-        
         <PricingSection title="Commercial Installations">
           <PriceCard title="1-Phase ≤ 10m" desc="Commercial install" price="£265" />
           <PriceCard title="3-Phase ≤ 10m" desc="Commercial install" price="£525" />
@@ -24,7 +22,6 @@ export default function PricingTable() {
           <PriceCard title="Emergency Stop Button" price="£55 – £95" />
         </PricingSection>
 
-        
         <PricingSection title="Optional Add-Ons">
           <PriceCard title="Wi-Fi Extender / Mesh" price="£45 – £65" />
           <PriceCard title="AmpLink Elite X Colour Customisation" price="£35" />
@@ -32,8 +29,7 @@ export default function PricingTable() {
           <PriceCard title="Extended Warranty (3 Years)" price="£65" />
           <PriceCard title="Remote Monitoring Setup" price="£35" />
         </PricingSection>
-        
-        
+
         <PricingSection title="Special Conditions">
           <PriceCard title="Limited Access Areas" price="TBA" />
           <PriceCard title="Listed / Conservation Buildings" price="TBA" />
@@ -45,8 +41,6 @@ export default function PricingTable() {
     </section>
   );
 }
-
-
 
 function PricingSection({ title, children }) {
   return (
@@ -65,8 +59,7 @@ function PricingSection({ title, children }) {
 function PriceCard({ title, desc, price }) {
   return (
     <div className="relative bg-black border border-white/10 rounded-2xl p-6 shadow-lg transition hover:border-red-600">
-      
-      
+
       <span className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-red-600 to-transparent rounded-t-2xl" />
 
       <h3 className="text-lg font-semibold text-white">

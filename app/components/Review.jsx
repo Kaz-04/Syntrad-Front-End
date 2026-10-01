@@ -27,12 +27,11 @@ export default function ReviewCarousel() {
       </h2>
 
       <div className="flex items-center gap-4 max-w-6xl w-full">
-        
+
         <button onClick={handlePrev} aria-label="Previous reviews">
           <ChevronLeft className="w-8 h-8 text-red-500 hover:text-white transition" />
         </button>
 
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1">
           {reviews
             .slice(startIndex, startIndex + visibleCount)
@@ -64,7 +63,6 @@ export default function ReviewCarousel() {
             ))}
         </div>
 
-        
         <button onClick={handleNext} aria-label="Next reviews">
           <ChevronRight className="w-8 h-8 text-red-500 hover:text-white transition" />
         </button>

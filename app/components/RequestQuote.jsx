@@ -19,7 +19,6 @@ export default function RequestQuoteModal({ service, onClose }) {
     message: "",
   });
 
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -27,7 +26,6 @@ export default function RequestQuoteModal({ service, onClose }) {
     };
   }, []);
 
-  
   useEffect(() => {
     setForm(prev => ({ ...prev, service: service || "" }));
   }, [service]);
@@ -89,7 +87,6 @@ export default function RequestQuoteModal({ service, onClose }) {
                <Field label="Name" icon={<User size={16} />}>
                 <input name="name" value={form.name} onChange={handleChange} required />
               </Field>
-              
 
               <Field label="Email" icon={<Mail size={16} />}>
                 <input type="email" name="email" value={form.email} onChange={handleChange} required />
@@ -135,7 +132,6 @@ export default function RequestQuoteModal({ service, onClose }) {
               <Field label="Time" icon={<Clock size={16} />}>
                 <input type="time" name="time" value={form.time} onChange={handleChange} />
               </Field>
-            
 
             <Field label="Message" icon={<MessageSquare size={16} />}>
               <textarea name="message" rows={4} coloms={8} value={form.message} onChange={handleChange} />
