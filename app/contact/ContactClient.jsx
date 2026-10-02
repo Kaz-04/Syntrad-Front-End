@@ -30,7 +30,7 @@ const contactCards = [
     desc: (
       <>
         <span className="block">Syntrad Ltd</span>
-        <span className="block">10 Old Bond Street</span>
+        <span className="block">11 Old Bond Street</span>
         <span className="block">Mayfair, London, W1S 4PN</span>
       </>
     ),
@@ -38,7 +38,7 @@ const contactCards = [
   {
     icon: "/assets/icons/icon_headset.png",
     title: "Telephone",
-    desc: "+44 20 7125 2397",
+    desc: "+44 20 7112 5377",
   },
   { icon: Mail, title: "Email", desc: "hello@syntradltd.co.uk" },
   {
@@ -290,7 +290,7 @@ export default function Contact() {
                           telephone: e.target.value.replace(/[^0-9+ ]/g, ""),
                         }))
                       }
-                      placeholder="+44 20 1234 5678"
+                      placeholder="+44 20 7112 5377"
                       className={inputClass}
                       required
                     />
@@ -488,14 +488,6 @@ export default function Contact() {
                   We deliver projects and technical support across London, the
                   Home Counties and selected locations throughout the UK.
                 </p>
-
-                <Link
-                  href="/service-area"
-                  className="inline-flex items-center gap-1.5 text-red-500 text-[12.5px] font-medium px-4 py-1.5 rounded-md border border-red-600/60 bg-gradient-to-b from-red-600/15 to-red-600/5 hover:border-red-600/70 hover:from-red-600/25 hover:to-red-600/10 transition-colors"
-                >
-                  View Full Service Coverage
-                  <span aria-hidden="true">→</span>
-                </Link>
               </div>
 
               <div className="relative md:aspect-[7/2] md:min-h-[250px]">
@@ -524,7 +516,7 @@ export default function Contact() {
           title="Ready to elevate your engineering project?"
           subtitle="Our engineers are ready to listen, understand and deliver."
           buttonLabel="Call Us Now"
-          buttonHref="tel:+442071252397"
+          buttonHref="tel:+442071125377"
         />
       </div>
 

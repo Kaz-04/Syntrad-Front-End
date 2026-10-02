@@ -171,57 +171,46 @@ const stagger = {
 export default function AboutClient() {
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-      <div className="[&>section]:min-h-[300px] md:[&>section]:min-h-[340px] [&>section]:border-b-0">
-        <PageHero
-          heading={
-            <>
-              <span className="text-white">
-                Built Around Engineering,
-                <br />
-                Reliability and Practical
-                <br />
-              </span>
-              <span className="text-red-600 drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]">
-                Problem-Solving.
-              </span>
-            </>
-          }
-          description="Syntrad is an engineering-led company focused on complex systems, electronics, automation, specialist equipment and high-value technical solutions. We partner with businesses to solve difficult problems, improve performance and deliver results that matter."
-          buttons={[
-            {
-              label: "Discuss a Project",
-              href: "/contact",
-              icon: ArrowRight,
-              variant: "filled",
-            },
-            {
-              label: "Request Technical Support",
-              href: "/contact",
-              icon: Headphones,
-              variant: "outline",
-            },
-          ]}
-          visual={
-            <>
-              <Image
-                src="/assets/Hero/pro.png"
-                alt="Syntrad Engineering"
-                fill
-                priority
-                className="object-contain object-center md:scale-[1.15] md:origin-center md:translate-x-[7%]"
-              />
-
-              <div
-                className="absolute inset-y-0 right-0 w-[14%] pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(270deg, rgba(127,29,29,0.55) 0%, rgba(69,10,10,0.25) 45%, rgba(0,0,0,0) 100%)",
-                }}
-              />
-            </>
-          }
-        />
-      </div>
+      <PageHero
+        pageLabel="About"
+        heading={[
+          "Built Around Engineering,",
+          "Reliability and Practical",
+          "Problem-Solving.",
+        ]}
+        headingAccentIndex={2}
+        description="Syntrad is an engineering-led company focused on complex systems, electronics, automation, specialist equipment and high-value technical solutions. We partner with businesses to solve difficult problems, improve performance and deliver results that matter."
+        buttons={[
+          {
+            label: "Discuss a Project",
+            href: "/contact",
+            icon: ArrowRight,
+            variant: "filled",
+          },
+          {
+            label: "Request Technical Support",
+            href: "/contact",
+            icon: Headphones,
+            variant: "outline",
+          },
+        ]}
+        visual={
+          <>
+            <img
+              src="/assets/Hero/contact.png"
+              alt="Syntrad engineering illustration"
+              className="absolute inset-0 w-full h-full object-contain object-right md:scale-[1.18] md:origin-right md:translate-x-[8%]"
+            />
+            <div
+              className="absolute inset-y-0 right-0 w-[14%] pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(270deg, rgba(127,29,29,0.55) 0%, rgba(69,10,10,0.25) 45%, rgba(0,0,0,0) 100%)",
+              }}
+            />
+          </>
+        }
+      />
 
       <section>
         <Container className="pt-6 md:pt-8 pb-0">
@@ -304,7 +293,7 @@ export default function AboutClient() {
                 ))}
               </div>
               <a
-                href={KAZ_LINKEDIN_URL}
+                href="https://www.linkedin.com/in/kaz-moorjani/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 self-start inline-flex items-center gap-1.5 text-red-500 text-[12px] font-medium px-4 py-1.5 rounded-md border border-red-600/50 bg-gradient-to-b from-red-600/15 to-red-600/5 hover:border-red-600/70 hover:from-red-600/25 hover:to-red-600/10 transition-colors"

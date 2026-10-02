@@ -84,7 +84,7 @@ export const footerData = {
 
   contact: {
     email: "hello@syntradltd.co.uk",
-    phone: "+442071125377",
+    phone: "+44 20 7112 5377",
     address:
       "11 Old Bond Street, Mayfair, London, W1S 4PN",
     locationUrl:

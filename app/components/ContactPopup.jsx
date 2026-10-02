@@ -2,15 +2,15 @@
 
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Phone, Mail, X } from "lucide-react";
+import { Phone, MessageCircle, Mail, X } from "lucide-react";
 
-const PHONE_HREF = "tel:+442071252397";
-const PHONE_TEXT = "+44 20 7125 2397";
+const PHONE_HREF = "tel:+442071125377";
+const PHONE_TEXT = "+44 20 7112 5377";
+const WHATSAPP_HREF = "https://api.whatsapp.com/send?phone=442071125377";
 const EMAIL = "hello@syntradltd.co.uk";
 const EMAIL_HREF = `mailto:${EMAIL}`;
 
 export default function ContactPopup({ open, onClose }) {
-
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -54,24 +54,60 @@ export default function ContactPopup({ open, onClose }) {
               <X size={18} />
             </button>
 
-            <h3 id="contact-popup-title" className="font-display text-lg font-bold mb-1">
+            <h3
+              id="contact-popup-title"
+              className="font-display text-lg font-bold mb-1"
+            >
               How would you like to reach us?
             </h3>
-            <p className="text-[#8a8a8a] text-[12.5px] mb-5">Choose an option below.</p>
+            <p className="text-[#8a8a8a] text-[12.5px] mb-5">
+              Choose an option below.
+            </p>
 
             <div className="space-y-3">
-
               <a
                 href={PHONE_HREF}
                 onClick={onClose}
                 className="flex items-center gap-4 rounded-lg border border-white/10 bg-[#111111] hover:border-red-600/60 hover:bg-red-600/10 px-4 py-3 transition-colors"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600/60">
-                  <Phone size={18} strokeWidth={1.7} className="text-red-500" />
+                  <Phone
+                    size={18}
+                    strokeWidth={1.7}
+                    className="text-red-500"
+                  />
                 </span>
                 <span className="block">
-                  <span className="block text-[14px] font-semibold text-white">Call us</span>
-                  <span className="block text-[12.5px] text-gray-400">{PHONE_TEXT}</span>
+                  <span className="block text-[14px] font-semibold text-white">
+                    Call us
+                  </span>
+                  <span className="block text-[12.5px] text-gray-400">
+                    {PHONE_TEXT}
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="flex items-center gap-4 rounded-lg border border-white/10 bg-[#111111] hover:border-red-600/60 hover:bg-red-600/10 px-4 py-3 transition-colors"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600/60">
+                  <MessageCircle
+                    size={18}
+                    strokeWidth={1.7}
+                    className="text-red-500"
+                  />
+                </span>
+                <span className="block">
+                  <span className="block text-[14px] font-semibold text-white">
+                    WhatsApp us
+                  </span>
+                  <span className="block text-[12.5px] text-gray-400">
+                    Message us on WhatsApp
+                  </span>
                 </span>
               </a>
 
@@ -84,8 +120,12 @@ export default function ContactPopup({ open, onClose }) {
                   <Mail size={18} strokeWidth={1.7} className="text-red-500" />
                 </span>
                 <span className="block">
-                  <span className="block text-[14px] font-semibold text-white">Email us</span>
-                  <span className="block text-[12.5px] text-gray-400">{EMAIL}</span>
+                  <span className="block text-[14px] font-semibold text-white">
+                    Email us
+                  </span>
+                  <span className="block text-[12.5px] text-gray-400">
+                    {EMAIL}
+                  </span>
                 </span>
               </a>
             </div>

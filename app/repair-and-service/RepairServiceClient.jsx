@@ -23,6 +23,7 @@ import {
   FileSearch,
   CalendarCheck,
   Settings2,
+  Whatsapp
 } from "lucide-react";
 
 import PageHero from "../components/PageHero";
@@ -260,41 +261,44 @@ export default function RepairServiceClient() {
                 className="relative bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-r-lg overflow-hidden transition-colors"
               >
                 {img ? (
-                  <div className="relative h-[200px] w-full">
-                    <Image
-                      src={img}
-                      alt={
-                        typeof title === "string" ? title : "Repair & service"
-                      }
-                      fill
-                      sizes="25vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
-
-                    <div className="absolute inset-x-0 bottom-0 pb-3 z-10 flex flex-col">
-                      <Icon
-                        size={42}
-                        strokeWidth={1.5}
-                        className="text-red-500 mb-1.5 ml-3 drop-shadow-[0_0_14px_rgba(220,38,38,0.8)]"
+                  <Link
+                    href={href}
+                    aria-label={`Learn more about ${title}`}
+                    className="block group"
+                  >
+                    <div className="relative h-[200px] w-full">
+                      <Image
+                        src={img}
+                        alt={
+                          typeof title === "string" ? title : "Repair & service"
+                        }
+                        fill
+                        sizes="25vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                       />
-                      <div className="px-3 flex flex-col">
-                        <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] text-white mb-1">
-                          {title}
-                        </h3>
-                        <p className="text-gray-300 text-[10.5px] leading-[1.4] mb-2">
-                          {desc}
-                        </p>
-                        <Link
-                          href={href}
-                          className="text-red-500 hover:text-red-400 text-[11px] font-medium inline-flex items-center gap-1 w-fit transition-colors"
-                        >
-                          Learn more
-                          <ArrowRight size={10} />
-                        </Link>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
+
+                      <div className="absolute inset-x-0 bottom-0 pb-3 z-10 flex flex-col">
+                        <Icon
+                          size={42}
+                          strokeWidth={1.5}
+                          className="text-red-500 mb-1.5 ml-3 drop-shadow-[0_0_14px_rgba(220,38,38,0.8)]"
+                        />
+                        <div className="px-3 flex flex-col">
+                          <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] text-white mb-1">
+                            {title}
+                          </h3>
+                          <p className="text-gray-300 text-[10.5px] leading-[1.4] mb-2">
+                            {desc}
+                          </p>
+                          <span className="text-red-500 hover:text-red-400 text-[11px] font-medium inline-flex items-center gap-1 w-fit transition-colors">
+                            Learn more
+                            <ArrowRight size={10} />
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ) : (
                   <div className="h-[200px] w-full flex flex-col p-3">
                     <Icon
