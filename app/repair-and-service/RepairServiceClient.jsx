@@ -216,7 +216,7 @@ export default function RepairServiceClient() {
           visual={
             <>
               <img
-                src="/assets/hero/contact.png"
+                src="/assets/Hero/contact.png"
                 alt="Syntrad engineering illustration"
                 className="absolute inset-0 w-full h-full object-contain object-right md:scale-[1.1] md:origin-right md:translate-x-[8%]"
               />

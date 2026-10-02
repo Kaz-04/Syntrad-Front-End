@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import {
-  Settings2, Zap, ShieldCheck, Users, ArrowRight, Headphones,
-  Thermometer, Radio,
+  Settings2,
+  Zap,
+  ShieldCheck,
+  Users,
+  ArrowRight,
+  Headphones,
+  Thermometer,
+  Radio,
 } from "lucide-react";
 
 import PageHero from "../components/PageHero";
@@ -15,10 +21,26 @@ import Container from "../components/container";
 import ContactPopup from "../components/ContactPopup";
 
 const heroFeatures = [
-  { icon: Settings2, title: "Real Projects", desc: "Proven results, measurable impact" },
-  { icon: Zap, title: "Technical Expertise", desc: "Complex challenges, reliable solutions" },
-  { icon: ShieldCheck, title: "Across Multiple Sectors", desc: "From homes to commercial facilities" },
-  { icon: Users, title: "Trusted by Clients", desc: "Ongoing partnerships across the UK" },
+  {
+    icon: Settings2,
+    title: "Real Projects",
+    desc: "Proven results, measurable impact",
+  },
+  {
+    icon: Zap,
+    title: "Technical Expertise",
+    desc: "Complex challenges, reliable solutions",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Across Multiple Sectors",
+    desc: "From homes to commercial facilities",
+  },
+  {
+    icon: Users,
+    title: "Trusted by Clients",
+    desc: "Ongoing partnerships across the UK",
+  },
 ];
 
 const featuredProject = {
@@ -78,7 +100,6 @@ export default function ProjectsClient() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -95,13 +116,18 @@ export default function ProjectsClient() {
           description="Real Syntrad work across specialist repairs, automation, electrical systems and integrated technical projects. See how we solve complex technical challenges for homes and commercial facilities across the UK."
           buttons={[
             { label: "Start a Project", href: "/contact", icon: ArrowRight },
-            { label: "Request Technical Support", href: "#technical-advice", icon: Headphones, variant: "outline" },
+            {
+              label: "Request Technical Support",
+              href: "#technical-advice",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           features={heroFeatures}
           visual={
             <>
               <img
-                src="/assets/hero/contact.png"
+                src="/assets/Hero/contact.png"
                 alt="Syntrad project delivery illustration"
                 className="absolute inset-0 w-full h-full object-contain object-right md:scale-[1.1] md:origin-right md:translate-x-[8%]"
               />
@@ -121,7 +147,10 @@ export default function ProjectsClient() {
         <Container className="pt-2 pb-9">
           <SectionHeading title="Featured Case Study" />
           <div className="mt-6">
-            <FeaturedProjectCard project={featuredProject} stats={featuredStats} />
+            <FeaturedProjectCard
+              project={featuredProject}
+              stats={featuredStats}
+            />
           </div>
         </Container>
       </section>
@@ -150,7 +179,6 @@ export default function ProjectsClient() {
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }

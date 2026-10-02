@@ -1,9 +1,17 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import {
-  ArrowRight, Headphones, BatteryCharging, Gauge, ShieldCheck, MapPin,
-  ClipboardList, Ruler, Plug, BadgeCheck,
+  ArrowRight,
+  Headphones,
+  BatteryCharging,
+  Gauge,
+  ShieldCheck,
+  MapPin,
+  ClipboardList,
+  Ruler,
+  Plug,
+  BadgeCheck,
 } from "lucide-react";
 
 import PageHero from "../../components/PageHero";
@@ -15,7 +23,7 @@ import UrgentCall from "../../components/UrgentCall";
 import Container from "../../components/container";
 import ContactPopup from "../../components/ContactPopup";
 
-const HERO_DIR = "/assets/hero/";
+const HERO_DIR = "/assets/Hero/";
 const IMG_DIR = "/assets/images/";
 const ICON_DIR = "/assets/icons/";
 
@@ -27,70 +35,257 @@ const resolveHref = (href, projectType = DEFAULT_TYPE) =>
   href ?? `/contact?type=${encodeURIComponent(projectType)}`;
 
 const heroFeatures = [
-  { icon: BatteryCharging, title: "Future-Ready Charging", desc: "Smart, scalable EV solutions for every site" },
-  { icon: Gauge, title: "Intelligent Load Management", desc: "Charge more vehicles without a supply upgrade" },
-  { icon: ShieldCheck, title: "Safe & Compliant", desc: "Installed and tested to UK regulations" },
-  { icon: MapPin, title: "London Based", desc: "Serving homes and businesses across the UK" },
+  {
+    icon: BatteryCharging,
+    title: "Future-Ready Charging",
+    desc: "Smart, scalable EV solutions for every site",
+  },
+  {
+    icon: Gauge,
+    title: "Intelligent Load Management",
+    desc: "Charge more vehicles without a supply upgrade",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Safe & Compliant",
+    desc: "Installed and tested to UK regulations",
+  },
+  {
+    icon: MapPin,
+    title: "London Based",
+    desc: "Serving homes and businesses across the UK",
+  },
 ];
 
 const evSolutions = [
-  { icon: ic("15_Smart_Home_Control.png"), title: "Domestic EV Charging", desc: "Smart home chargers, supplied, installed, tested and configured for your property.", href: resolveHref() },
-  { icon: ic("icon_building_automation_transparent.png"), title: "Commercial EV Infrastructure", desc: "Scalable charging for workplaces, fleets, car parks and public sites.", href: resolveHref() },
-  { icon: ic("23_Sensor_Control.png"), title: "Smart Charging", desc: "Schedule charging around cheaper tariffs, track usage and cut running costs.", href: resolveHref() },
-  { icon: ic("03_Energy_Management.png"), title: "Solar Integration", desc: "Pair EV charging with solar PV to use more of your own clean energy.", href: resolveHref("/solutions/energy") },
-  { icon: ic("icon_transformer.png"), title: "Load Management", desc: "Balance power demand across chargers and the building to protect your supply.", href: resolveHref("/solutions/energy") },
-  { icon: ic("icon_electrical_transparent.png"), title: "Multi-Charger Setups", desc: "Design and install multiple chargers for homes, businesses and fleets.", href: resolveHref() },
+  {
+    icon: ic("15_Smart_Home_Control.png"),
+    title: "Domestic EV Charging",
+    desc: "Smart home chargers, supplied, installed, tested and configured for your property.",
+    href: resolveHref(),
+  },
+  {
+    icon: ic("icon_building_automation_transparent.png"),
+    title: "Commercial EV Infrastructure",
+    desc: "Scalable charging for workplaces, fleets, car parks and public sites.",
+    href: resolveHref(),
+  },
+  {
+    icon: ic("23_Sensor_Control.png"),
+    title: "Smart Charging",
+    desc: "Schedule charging around cheaper tariffs, track usage and cut running costs.",
+    href: resolveHref(),
+  },
+  {
+    icon: ic("03_Energy_Management.png"),
+    title: "Solar Integration",
+    desc: "Pair EV charging with solar PV to use more of your own clean energy.",
+    href: resolveHref("/solutions/energy"),
+  },
+  {
+    icon: ic("icon_transformer.png"),
+    title: "Load Management",
+    desc: "Balance power demand across chargers and the building to protect your supply.",
+    href: resolveHref("/solutions/energy"),
+  },
+  {
+    icon: ic("icon_electrical_transparent.png"),
+    title: "Multi-Charger Setups",
+    desc: "Design and install multiple chargers for homes, businesses and fleets.",
+    href: resolveHref(),
+  },
 ];
 
 const evServices = [
-  { icon: ic("05_Bespoke_Engineering.png"), title: "Site Survey & Design", desc: "Supply assessment, cable routes, charger positions and a clear quote." },
-  { icon: ic("icon_electrical_transparent.png"), title: "Charger Installation", desc: "Wallbox and pedestal installs, from single-phase homes to three-phase sites." },
-  { icon: ic("icon_transformer.png"), title: "Supply & Distribution Upgrades", desc: "Consumer unit, distribution board and cabling upgrades to support charging." },
-  { icon: ic("icon_building_automation_transparent.png"), title: "Network & Backend Setup", desc: "Charger networking, user access, tariffs and remote monitoring." },
-  { icon: ic("03_Energy_Management.png"), title: "Solar & Battery Pairing", desc: "Connecting chargers to solar PV and battery storage where suitable." },
-  { icon: ic("icon_maintenance_transparent.png"), title: "Servicing & Maintenance", desc: "Scheduled inspections, firmware updates, repairs and ongoing support." },
+  {
+    icon: ic("05_Bespoke_Engineering.png"),
+    title: "Site Survey & Design",
+    desc: "Supply assessment, cable routes, charger positions and a clear quote.",
+  },
+  {
+    icon: ic("icon_electrical_transparent.png"),
+    title: "Charger Installation",
+    desc: "Wallbox and pedestal installs, from single-phase homes to three-phase sites.",
+  },
+  {
+    icon: ic("icon_transformer.png"),
+    title: "Supply & Distribution Upgrades",
+    desc: "Consumer unit, distribution board and cabling upgrades to support charging.",
+  },
+  {
+    icon: ic("icon_building_automation_transparent.png"),
+    title: "Network & Backend Setup",
+    desc: "Charger networking, user access, tariffs and remote monitoring.",
+  },
+  {
+    icon: ic("03_Energy_Management.png"),
+    title: "Solar & Battery Pairing",
+    desc: "Connecting chargers to solar PV and battery storage where suitable.",
+  },
+  {
+    icon: ic("icon_maintenance_transparent.png"),
+    title: "Servicing & Maintenance",
+    desc: "Scheduled inspections, firmware updates, repairs and ongoing support.",
+  },
 ];
 
 const commonFaults = [
-  { icon: ic("icon_electrical_transparent.png"), title: "Charger Won't Start", desc: "Trace supply, communication and contactor faults that stop a session starting." },
-  { icon: ic("06_Safety_Security.png"), title: "RCD & Breaker Tripping", desc: "Find earth leakage, wiring and protection faults causing repeated trips." },
-  { icon: ic("09_Temperature_Control.png"), title: "Slow or Reduced Charging", desc: "Check for thermal derating, voltage drop and limits set by load management." },
-  { icon: ic("22_Audio_Visual.png"), title: "App & Connectivity Issues", desc: "Restore Wi-Fi, 4G and backend links, and fix app pairing problems." },
-  { icon: ic("23_Sensor_Control.png"), title: "Load Balancing Faults", desc: "Correct CT clamp, meter and controller issues in load management systems." },
-  { icon: ic("04_Specialist_Diagnostics.png"), title: "Error Codes & Lock-Outs", desc: "Diagnose fault codes, cable lock problems and communication errors." },
+  {
+    icon: ic("icon_electrical_transparent.png"),
+    title: "Charger Won't Start",
+    desc: "Trace supply, communication and contactor faults that stop a session starting.",
+  },
+  {
+    icon: ic("06_Safety_Security.png"),
+    title: "RCD & Breaker Tripping",
+    desc: "Find earth leakage, wiring and protection faults causing repeated trips.",
+  },
+  {
+    icon: ic("09_Temperature_Control.png"),
+    title: "Slow or Reduced Charging",
+    desc: "Check for thermal derating, voltage drop and limits set by load management.",
+  },
+  {
+    icon: ic("22_Audio_Visual.png"),
+    title: "App & Connectivity Issues",
+    desc: "Restore Wi-Fi, 4G and backend links, and fix app pairing problems.",
+  },
+  {
+    icon: ic("23_Sensor_Control.png"),
+    title: "Load Balancing Faults",
+    desc: "Correct CT clamp, meter and controller issues in load management systems.",
+  },
+  {
+    icon: ic("04_Specialist_Diagnostics.png"),
+    title: "Error Codes & Lock-Outs",
+    desc: "Diagnose fault codes, cable lock problems and communication errors.",
+  },
 ];
 
 const complianceCards = [
-  { icon: ic("icon_shield.png"), title: "BS 7671 Compliance", desc: "Installed to the current wiring regulations and IET EV charging guidance." },
-  { icon: ic("06_Safety_Security.png"), title: "Earthing & Protection", desc: "Earthing arrangement checks, RCD protection and surge protection." },
-  { icon: ic("04_Specialist_Diagnostics.png"), title: "Testing & Certification", desc: "Full inspection and testing with electrical certification on completion." },
-  { icon: ic("icon_transformer.png"), title: "Supply & DNO Notification", desc: "Supply capacity checks and network operator notifications where required." },
-  { icon: ic("23_Sensor_Control.png"), title: "Smart Charge Regulations", desc: "Smart-capable chargers configured to meet UK smart charge point rules." },
-  { icon: ic("icon_chart.png"), title: "Documentation & Handover", desc: "Test results, commissioning records and clear user handover." },
+  {
+    icon: ic("icon_shield.png"),
+    title: "BS 7671 Compliance",
+    desc: "Installed to the current wiring regulations and IET EV charging guidance.",
+  },
+  {
+    icon: ic("06_Safety_Security.png"),
+    title: "Earthing & Protection",
+    desc: "Earthing arrangement checks, RCD protection and surge protection.",
+  },
+  {
+    icon: ic("04_Specialist_Diagnostics.png"),
+    title: "Testing & Certification",
+    desc: "Full inspection and testing with electrical certification on completion.",
+  },
+  {
+    icon: ic("icon_transformer.png"),
+    title: "Supply & DNO Notification",
+    desc: "Supply capacity checks and network operator notifications where required.",
+  },
+  {
+    icon: ic("23_Sensor_Control.png"),
+    title: "Smart Charge Regulations",
+    desc: "Smart-capable chargers configured to meet UK smart charge point rules.",
+  },
+  {
+    icon: ic("icon_chart.png"),
+    title: "Documentation & Handover",
+    desc: "Test results, commissioning records and clear user handover.",
+  },
 ];
 
 const processSteps = [
-  { icon: ClipboardList, title: "Survey", desc: "We assess your supply, site layout, vehicles and charging needs." },
-  { icon: Ruler, title: "Design", desc: "We specify chargers, cabling and load management for your site." },
-  { icon: Plug, title: "Install", desc: "Safe, tidy installation with minimal disruption." },
-  { icon: Gauge, title: "Test", desc: "Full inspection and testing, with load management checked under load." },
-  { icon: BadgeCheck, title: "Commission", desc: "We commission, certify and hand over with a clear walkthrough." },
-  { icon: Headphones, title: "Support", desc: "Servicing, monitoring and fast fault response." },
+  {
+    icon: ClipboardList,
+    title: "Survey",
+    desc: "We assess your supply, site layout, vehicles and charging needs.",
+  },
+  {
+    icon: Ruler,
+    title: "Design",
+    desc: "We specify chargers, cabling and load management for your site.",
+  },
+  {
+    icon: Plug,
+    title: "Install",
+    desc: "Safe, tidy installation with minimal disruption.",
+  },
+  {
+    icon: Gauge,
+    title: "Test",
+    desc: "Full inspection and testing, with load management checked under load.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Commission",
+    desc: "We commission, certify and hand over with a clear walkthrough.",
+  },
+  {
+    icon: Headphones,
+    title: "Support",
+    desc: "Servicing, monitoring and fast fault response.",
+  },
 ];
 
 const featuredSystems = [
-  { title: "Home Wallboxes", desc: "Smart 7kW single-phase chargers for driveways and garages.", image: `${IMG_DIR}modern-house-exterior.jpg`, href: resolveHref() },
-  { title: "Workplace Chargers", desc: "Shared charging for staff, visitors and company vehicles.", image: `${IMG_DIR}ev-charging-row.jpg`, href: resolveHref() },
-  { title: "Fleet & Depot Charging", desc: "Multi-bay 22kW charging with managed overnight loads.", image: `${IMG_DIR}warehouse-interior.jpg`, href: resolveHref() },
-  { title: "Solar & Battery Storage", desc: "Solar PV and storage paired with EV charging.", image: `${IMG_DIR}solar-panels-rooftop.jpg`, href: resolveHref("/solutions/energy") },
-  { title: "Load Management Controllers", desc: "Dynamic load balancing hardware and CT monitoring.", image: `${IMG_DIR}plc-control-panel.jpg`, href: resolveHref("/solutions/energy") },
-  { title: "Distribution Upgrades", desc: "Boards and supply upgrades to make room for charging.", image: `${IMG_DIR}electrical-switchboard.jpg`, href: resolveHref() },
+  {
+    title: "Home Wallboxes",
+    desc: "Smart 7kW single-phase chargers for driveways and garages.",
+    image: `${IMG_DIR}modern-house-exterior.jpg`,
+    href: resolveHref(),
+  },
+  {
+    title: "Workplace Chargers",
+    desc: "Shared charging for staff, visitors and company vehicles.",
+    image: `${IMG_DIR}ev-charging-row.jpg`,
+    href: resolveHref(),
+  },
+  {
+    title: "Fleet & Depot Charging",
+    desc: "Multi-bay 22kW charging with managed overnight loads.",
+    image: `${IMG_DIR}warehouse-interior.jpg`,
+    href: resolveHref(),
+  },
+  {
+    title: "Solar & Battery Storage",
+    desc: "Solar PV and storage paired with EV charging.",
+    image: `${IMG_DIR}solar-panels-rooftop.jpg`,
+    href: resolveHref("/solutions/energy"),
+  },
+  {
+    title: "Load Management Controllers",
+    desc: "Dynamic load balancing hardware and CT monitoring.",
+    image: `${IMG_DIR}plc-control-panel.jpg`,
+    href: resolveHref("/solutions/energy"),
+  },
+  {
+    title: "Distribution Upgrades",
+    desc: "Boards and supply upgrades to make room for charging.",
+    image: `${IMG_DIR}electrical-switchboard.jpg`,
+    href: resolveHref(),
+  },
 ];
 
 const featuredProjects = [
-  { title: "Residential EV Installation", desc: "7kW smart charger with solar integration.", image: `${IMG_DIR}modern-house-exterior.png`, href: "/projects" },
-  { title: "Commercial EV Infrastructure", desc: "Multiple 22kW chargers with load management.", image: `${IMG_DIR}ev-charging-station.jpg`, href: "/projects" },
-  { title: "Three-Phase Supply Upgrade", desc: "Full distribution upgrade for a commercial charging site.", image: `${IMG_DIR}switchgear-panel-row.jpg`, href: "/projects" },
+  {
+    title: "Residential EV Installation",
+    desc: "7kW smart charger with solar integration.",
+    image: `${IMG_DIR}modern-house-exterior.png`,
+    href: "/projects",
+  },
+  {
+    title: "Commercial EV Infrastructure",
+    desc: "Multiple 22kW chargers with load management.",
+    image: `${IMG_DIR}ev-charging-station.jpg`,
+    href: "/projects",
+  },
+  {
+    title: "Three-Phase Supply Upgrade",
+    desc: "Full distribution upgrade for a commercial charging site.",
+    image: `${IMG_DIR}switchgear-panel-row.jpg`,
+    href: "/projects",
+  },
 ];
 
 export default function EvClient() {
@@ -98,7 +293,6 @@ export default function EvClient() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -111,11 +305,24 @@ export default function EvClient() {
       >
         <PageHero
           pageLabel="EV Charging & Load Management"
-          heading={["EV Charging &", "Load Management.", "Smart. Safe. Future-Ready."]}
+          heading={[
+            "EV Charging &",
+            "Load Management.",
+            "Smart. Safe. Future-Ready.",
+          ]}
           description="Syntrad designs, installs and maintains EV charging for homes, businesses and fleets. From a single smart home charger to multi-bay commercial sites with solar integration and load management, we deliver safe, compliant charging that works with the power you already have."
           buttons={[
-            { label: "Book an EV Site Survey", href: resolveHref(), icon: ArrowRight },
-            { label: "Request Technical Support", href: "#technical-advice", icon: Headphones, variant: "outline" },
+            {
+              label: "Book an EV Site Survey",
+              href: resolveHref(),
+              icon: ArrowRight,
+            },
+            {
+              label: "Request Technical Support",
+              href: "#technical-advice",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           features={heroFeatures}
           visual={
@@ -154,7 +361,6 @@ export default function EvClient() {
       <section className="border-b border-white/10">
         <Container className="pt-2 pb-9">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:divide-x lg:divide-white/10">
-
             <div className="lg:pr-8">
               <SectionHeading title="EV Installation & Support Services" />
               <div className="mt-6">
@@ -182,7 +388,6 @@ export default function EvClient() {
                 />
               </div>
             </div>
-
           </div>
         </Container>
       </section>
@@ -251,7 +456,6 @@ export default function EvClient() {
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }

@@ -58,7 +58,7 @@ export const LogoImage = [
 
 export const footerData = {
   brand: {
-    logo: "/assets/logo.png",
+    logo: "/assets/Logo/syntrad_logo.png",
     tagline: "Precision. Power. Reliability.",
     description: "Advanced engineering, electronics and specialist equipment solutions. Built for performance. Designed for reliability.",
     copyright: "© 2027 Syntrad Ltd. All rights reserved.",

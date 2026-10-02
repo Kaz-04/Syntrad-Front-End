@@ -5,8 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, ShieldCheck, Zap, Settings2, MapPin, CheckCircle2,
-  Flame, ToggleLeft, Thermometer, Snowflake, Cog, Radio, Activity,
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  Settings2,
+  MapPin,
+  CheckCircle2,
+  Flame,
+  ToggleLeft,
+  Thermometer,
+  Snowflake,
+  Cog,
+  Radio,
+  Activity,
 } from "lucide-react";
 
 import PageHero from "../../components/PageHero";
@@ -16,15 +27,66 @@ import Container from "../../components/container";
 import ContactPopup from "../../components/ContactPopup";
 
 const heroButtons = [
-  { label: "Request Wellness System Support", href: "/contact", icon: ArrowRight },
-  { label: "Discuss a New Installation", href: "#discuss-installation", icon: ArrowRight, variant: "outline" },
+  {
+    label: "Request Wellness System Support",
+    href: "/contact",
+    icon: ArrowRight,
+  },
+  {
+    label: "Discuss a New Installation",
+    href: "#discuss-installation",
+    icon: ArrowRight,
+    variant: "outline",
+  },
 ];
 
 const trustPoints = [
-  { icon: ShieldCheck, title: "Specialist Expertise", desc: <>Real experience across<br />wellness systems.</> },
-  { icon: Zap, title: "Rapid Response", desc: <>Fast turnaround to get<br />you back up and running.</> },
-  { icon: Settings2, title: "End-to-End Support", desc: <>From installation to<br />long-term solutions.</> },
-  { icon: MapPin, title: "London Based", desc: <>Proudly serving homes,<br />gyms, spas and businesses<br />across the UK.</> },
+  {
+    icon: ShieldCheck,
+    title: "Specialist Expertise",
+    desc: (
+      <>
+        Real experience across
+        <br />
+        wellness systems.
+      </>
+    ),
+  },
+  {
+    icon: Zap,
+    title: "Rapid Response",
+    desc: (
+      <>
+        Fast turnaround to get
+        <br />
+        you back up and running.
+      </>
+    ),
+  },
+  {
+    icon: Settings2,
+    title: "End-to-End Support",
+    desc: (
+      <>
+        From installation to
+        <br />
+        long-term solutions.
+      </>
+    ),
+  },
+  {
+    icon: MapPin,
+    title: "London Based",
+    desc: (
+      <>
+        Proudly serving homes,
+        <br />
+        gyms, spas and businesses
+        <br />
+        across the UK.
+      </>
+    ),
+  },
 ];
 
 const featureBlocks = [
@@ -59,14 +121,62 @@ const featureBlocks = [
 ];
 
 const keyComponents = [
-  { icon: Flame, title: "Heaters & Contactors", desc: "Installation, repair and replacement of sauna heaters and contactors.", img: "/assets/images/sauna-interior.jpg", href: "/contact" },
-  { icon: ToggleLeft, title: "Controls & Automation", desc: "Advanced control systems for precise temperature management and automation.", img: "/assets/images/plc-control-panel.jpg", href: "/contact" },
-  { icon: Thermometer, title: "Temperature Sensors", desc: "Reliable temperature sensing and calibration for safe, consistent operation.", img: "/assets/images/electrical-panel-room.jpg", href: "/contact" },
-  { icon: Snowflake, title: "Chillers", desc: "Supply, installation and service of high-performance chillers for cold plunge systems.", img: "/assets/images/hvac-cooling-unit.jpg", href: "/contact" },
-  { icon: Cog, title: "Pumps & Filtration", desc: "Pumps, filtration and water treatment systems for clean, reliable performance.", img: "/assets/images/industrial-pumps-piping.jpg", href: "/contact" },
-  { icon: Radio, title: "Remote Monitoring", desc: "Smart monitoring and remote access for complete peace of mind.", img: "/assets/images/rcs.png", href: "/contact" },
-  { icon: ShieldCheck, title: "Safety Controls", desc: "Safety systems, fault protection and compliant electrical installations.", img: "/assets/images/switchgear-panel-row.jpg", href: "/contact" },
-  { icon: Activity, title: "System Diagnostics", desc: "Expert fault finding and diagnostics to keep your wellness systems running.", img: "/assets/images/circuit-board-testing.jpg", href: "/contact" },
+  {
+    icon: Flame,
+    title: "Heaters & Contactors",
+    desc: "Installation, repair and replacement of sauna heaters and contactors.",
+    img: "/assets/images/sauna-interior.jpg",
+    href: "/contact",
+  },
+  {
+    icon: ToggleLeft,
+    title: "Controls & Automation",
+    desc: "Advanced control systems for precise temperature management and automation.",
+    img: "/assets/images/plc-control-panel.jpg",
+    href: "/contact",
+  },
+  {
+    icon: Thermometer,
+    title: "Temperature Sensors",
+    desc: "Reliable temperature sensing and calibration for safe, consistent operation.",
+    img: "/assets/images/electrical-panel-room.jpg",
+    href: "/contact",
+  },
+  {
+    icon: Snowflake,
+    title: "Chillers",
+    desc: "Supply, installation and service of high-performance chillers for cold plunge systems.",
+    img: "/assets/images/hvac-cooling-unit.jpg",
+    href: "/contact",
+  },
+  {
+    icon: Cog,
+    title: "Pumps & Filtration",
+    desc: "Pumps, filtration and water treatment systems for clean, reliable performance.",
+    img: "/assets/images/industrial-pumps-piping.jpg",
+    href: "/contact",
+  },
+  {
+    icon: Radio,
+    title: "Remote Monitoring",
+    desc: "Smart monitoring and remote access for complete peace of mind.",
+    img: "/assets/images/rcs.png",
+    href: "/contact",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Safety Controls",
+    desc: "Safety systems, fault protection and compliant electrical installations.",
+    img: "/assets/images/switchgear-panel-row.jpg",
+    href: "/contact",
+  },
+  {
+    icon: Activity,
+    title: "System Diagnostics",
+    desc: "Expert fault finding and diagnostics to keep your wellness systems running.",
+    img: "/assets/images/circuit-board-testing.jpg",
+    href: "/contact",
+  },
 ];
 
 const fadeUp = {
@@ -83,7 +193,6 @@ export default function SaunaColdPlunge() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -96,14 +205,18 @@ export default function SaunaColdPlunge() {
       >
         <PageHero
           pageLabel="Sauna & Cold Plunge"
-          heading={["Sauna & Cold Plunge.", "Specialist Installation.", "Reliable Wellness Systems."]}
+          heading={[
+            "Sauna & Cold Plunge.",
+            "Specialist Installation.",
+            "Reliable Wellness Systems.",
+          ]}
           description="Specialist installation support, controls, heaters, contactors, chillers, pumps, filtration, temperature control, automation and system diagnostics for homes, gyms, spas and wellness facilities."
           buttons={heroButtons}
           features={trustPoints}
           visual={
             <>
               <img
-                src="/assets/hero/lwf.png"
+                src="/assets/Hero/lwf.png"
                 alt="Sauna and cold plunge wellness suite"
                 className="absolute inset-0 w-full h-full object-contain object-right md:scale-[1.1] md:origin-right md:translate-x-[8%]"
               />
@@ -128,35 +241,53 @@ export default function SaunaColdPlunge() {
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {featureBlocks.map(({ title, desc, checklist, buttonLabel, href, img }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                className="relative h-[360px] sm:h-[400px] bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg overflow-hidden transition-colors"
-              >
-                <Image src={img} alt={title} fill sizes="50vw" className="object-cover" />
+            {featureBlocks.map(
+              ({ title, desc, checklist, buttonLabel, href, img }) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUp}
+                  className="relative h-[360px] sm:h-[400px] bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg overflow-hidden transition-colors"
+                >
+                  <Image
+                    src={img}
+                    alt={title}
+                    fill
+                    sizes="50vw"
+                    className="object-cover"
+                  />
 
-                <div className="relative z-10 h-full flex flex-col p-5 sm:p-6">
-                  <span className="block w-6 h-[2px] bg-red-600 mb-2 shadow-[0_0_6px_rgba(0,0,0,0.8)]" />
-                  <h3 className="font-display font-semibold text-[18px] sm:text-[20px] leading-[1.2] text-white mb-1.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">{title}</h3>
-                  <p className="text-gray-300 text-[12px] sm:text-[12.5px] leading-[1.45] mb-3 max-w-[260px] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">{desc}</p>
-                  <ul className="space-y-1 mb-4">
-                    {checklist.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-[11.5px] text-gray-300 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
-                        <CheckCircle2 size={13} className="text-red-500 shrink-0 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={href}
-                    className="mt-auto inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-[12.5px] font-semibold px-4 py-2 rounded-md transition-colors w-fit"
-                  >
-                    {buttonLabel} <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="relative z-10 h-full flex flex-col p-5 sm:p-6">
+                    <span className="block w-6 h-[2px] bg-red-600 mb-2 shadow-[0_0_6px_rgba(0,0,0,0.8)]" />
+                    <h3 className="font-display font-semibold text-[18px] sm:text-[20px] leading-[1.2] text-white mb-1.5 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                      {title}
+                    </h3>
+                    <p className="text-gray-300 text-[12px] sm:text-[12.5px] leading-[1.45] mb-3 max-w-[260px] [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">
+                      {desc}
+                    </p>
+                    <ul className="space-y-1 mb-4">
+                      {checklist.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-center gap-2 text-[11.5px] text-gray-300 [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]"
+                        >
+                          <CheckCircle2
+                            size={13}
+                            className="text-red-500 shrink-0 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={href}
+                      className="mt-auto inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-[12.5px] font-semibold px-4 py-2 rounded-md transition-colors w-fit"
+                    >
+                      {buttonLabel} <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </motion.div>
+              ),
+            )}
           </motion.div>
         </Container>
       </section>
@@ -187,7 +318,13 @@ export default function SaunaColdPlunge() {
                 className="relative bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-r-lg overflow-hidden transition-colors"
               >
                 <div className="relative h-[180px] w-full">
-                  <Image src={img} alt={title} fill sizes="25vw" className="object-cover" />
+                  <Image
+                    src={img}
+                    alt={title}
+                    fill
+                    sizes="25vw"
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
 
                   <div className="absolute inset-x-0 bottom-0 pb-3 z-10 flex flex-col">
@@ -197,8 +334,12 @@ export default function SaunaColdPlunge() {
                       className="text-red-500 mb-1.5 ml-3 drop-shadow-[0_0_14px_rgba(220,38,38,0.8)]"
                     />
                     <div className="px-3 flex flex-col">
-                      <h3 className="font-display font-semibold text-[12px] leading-[1.25] text-white mb-1">{title}</h3>
-                      <p className="text-gray-300 text-[10px] leading-[1.4] mb-2">{desc}</p>
+                      <h3 className="font-display font-semibold text-[12px] leading-[1.25] text-white mb-1">
+                        {title}
+                      </h3>
+                      <p className="text-gray-300 text-[10px] leading-[1.4] mb-2">
+                        {desc}
+                      </p>
                       <Link
                         href={href}
                         className="text-red-500 hover:text-red-400 text-[10.5px] font-medium inline-flex items-center gap-1 w-fit transition-colors"
@@ -216,14 +357,19 @@ export default function SaunaColdPlunge() {
       </section>
 
       <UrgentCall
-        title={<>Ready to install or need support<br />with your wellness system?</>}
+        title={
+          <>
+            Ready to install or need support
+            <br />
+            with your wellness system?
+          </>
+        }
         subtitle="Our specialist engineers are here to help. Reliable solutions. Healthier environments."
         buttonLabel="Get in Touch Today"
         buttonHref="/contact"
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }

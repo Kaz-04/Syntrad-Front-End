@@ -1,10 +1,15 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Eye, Lock, BarChart3, Layers, ArrowRight, Headphones,
+  Eye,
+  Lock,
+  BarChart3,
+  Layers,
+  ArrowRight,
+  Headphones,
 } from "lucide-react";
 
 import PageHero from "../../components/PageHero";
@@ -13,13 +18,16 @@ import UrgentCall from "../../components/UrgentCall";
 import Container from "../../components/container";
 import ContactPopup from "../../components/ContactPopup";
 
-const HERO_DIR = "/assets/hero/";
+const HERO_DIR = "/assets/Hero/";
 const IMG_DIR = "/assets/images/";
 const ICON_DIR = "/assets/icons/";
 
 function Glyph({ png, size = 48, scale = 1, className = "" }) {
   return (
-    <div className={`shrink-0 flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+    <div
+      className={`shrink-0 flex items-center justify-center ${className}`}
+      style={{ width: size, height: size }}
+    >
       <img
         src={`${ICON_DIR}${png}`}
         alt=""
@@ -36,53 +44,193 @@ const resolveHref = (href, projectType) =>
 const DEFAULT_TYPE = "Connected Infrastructure & IoT";
 
 const heroFeatures = [
-  { icon: Eye, title: "Real-Time Visibility", desc: "Monitor assets and environments 24/7." },
-  { icon: Lock, title: "Secure Connectivity", desc: "Reliable, encrypted and resilient." },
-  { icon: BarChart3, title: "Data-Driven Decisions", desc: "Actionable insights for better outcomes." },
-  { icon: Layers, title: "Scalable Solutions", desc: "Built to grow with your infrastructure." },
+  {
+    icon: Eye,
+    title: "Real-Time Visibility",
+    desc: "Monitor assets and environments 24/7.",
+  },
+  {
+    icon: Lock,
+    title: "Secure Connectivity",
+    desc: "Reliable, encrypted and resilient.",
+  },
+  {
+    icon: BarChart3,
+    title: "Data-Driven Decisions",
+    desc: "Actionable insights for better outcomes.",
+  },
+  {
+    icon: Layers,
+    title: "Scalable Solutions",
+    desc: "Built to grow with your infrastructure.",
+  },
 ];
 
 const connectivitySolutions = [
-  { png: "23_Sensor_Control.png", title: "Remote Connectivity", desc: "Secure VPN, cellular, Wi-Fi and satellite connectivity for reliable remote access.", projectType: DEFAULT_TYPE },
-  { png: "15_Smart_Home_Control.png", title: "IoT Gateways", desc: "Industrial-grade gateways that connect, protect and process data at the edge.", projectType: DEFAULT_TYPE },
-  { png: "icon_building_automation_transparent.png", title: "Edge Computing", desc: "Local data processing to reduce latency and ensure business continuity.", projectType: DEFAULT_TYPE },
-  { png: "01_Smart_Home.png", title: "Cloud Connectivity", desc: "Seamless and secure connections to cloud platforms and services.", projectType: DEFAULT_TYPE },
-  { png: "icon_electrical_transparent.png", title: "Network Infrastructure", desc: "Design, implementation and management of robust IT/OT networks.", projectType: DEFAULT_TYPE },
-  { png: "03_Energy_Management.png", title: "IoT SIM & Data Plans", desc: "Flexible, global data connectivity for IoT devices and assets.", projectType: DEFAULT_TYPE },
+  {
+    png: "23_Sensor_Control.png",
+    title: "Remote Connectivity",
+    desc: "Secure VPN, cellular, Wi-Fi and satellite connectivity for reliable remote access.",
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    png: "15_Smart_Home_Control.png",
+    title: "IoT Gateways",
+    desc: "Industrial-grade gateways that connect, protect and process data at the edge.",
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    png: "icon_building_automation_transparent.png",
+    title: "Edge Computing",
+    desc: "Local data processing to reduce latency and ensure business continuity.",
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    png: "01_Smart_Home.png",
+    title: "Cloud Connectivity",
+    desc: "Seamless and secure connections to cloud platforms and services.",
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    png: "icon_electrical_transparent.png",
+    title: "Network Infrastructure",
+    desc: "Design, implementation and management of robust IT/OT networks.",
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    png: "03_Energy_Management.png",
+    title: "IoT SIM & Data Plans",
+    desc: "Flexible, global data connectivity for IoT devices and assets.",
+    projectType: DEFAULT_TYPE,
+  },
 ];
 
 const monitoringControl = [
-  { png: "04_Specialist_Diagnostics.png", title: "Real-Time Monitoring", desc: "Live dashboards and alerts for assets, systems and environments." },
-  { png: "15_Smart_Home_Control.png", title: "Remote Control", desc: "Securely control devices and equipment from anywhere." },
-  { png: "06_Safety_Security.png", title: "Alarm & Notification", desc: "Instant alerts via email, SMS or app for critical events." },
-  { png: "icon_chart.png", title: "Historical Analytics", desc: "Analyse trends, detect issues early and optimise performance." },
-  { png: "22_Audio_Visual.png", title: "Custom Dashboards", desc: "Role-based dashboards tailored to your operations." },
+  {
+    png: "04_Specialist_Diagnostics.png",
+    title: "Real-Time Monitoring",
+    desc: "Live dashboards and alerts for assets, systems and environments.",
+  },
+  {
+    png: "15_Smart_Home_Control.png",
+    title: "Remote Control",
+    desc: "Securely control devices and equipment from anywhere.",
+  },
+  {
+    png: "06_Safety_Security.png",
+    title: "Alarm & Notification",
+    desc: "Instant alerts via email, SMS or app for critical events.",
+  },
+  {
+    png: "icon_chart.png",
+    title: "Historical Analytics",
+    desc: "Analyse trends, detect issues early and optimise performance.",
+  },
+  {
+    png: "22_Audio_Visual.png",
+    title: "Custom Dashboards",
+    desc: "Role-based dashboards tailored to your operations.",
+  },
 ];
 
 const networkSystems = [
-  { png: "23_Sensor_Control.png", title: "Sensor Networks", desc: "Deploy wired and wireless sensors for any environment." },
-  { png: "icon_building_automation_transparent.png", title: "IoT Control Systems", desc: "PLC, RTU and microcontroller solutions for automation." },
-  { png: "01_Smart_Home.png", title: "Wireless Solutions", desc: "LoRaWAN, Zigbee, MQTT and other IoT protocols." },
-  { png: "icon_gears.png", title: "Device Management", desc: "Provision, configure and update devices at scale." },
-  { png: "icon_shield.png", title: "Cybersecurity", desc: "End-to-end security for devices, networks and data." },
+  {
+    png: "23_Sensor_Control.png",
+    title: "Sensor Networks",
+    desc: "Deploy wired and wireless sensors for any environment.",
+  },
+  {
+    png: "icon_building_automation_transparent.png",
+    title: "IoT Control Systems",
+    desc: "PLC, RTU and microcontroller solutions for automation.",
+  },
+  {
+    png: "01_Smart_Home.png",
+    title: "Wireless Solutions",
+    desc: "LoRaWAN, Zigbee, MQTT and other IoT protocols.",
+  },
+  {
+    png: "icon_gears.png",
+    title: "Device Management",
+    desc: "Provision, configure and update devices at scale.",
+  },
+  {
+    png: "icon_shield.png",
+    title: "Cybersecurity",
+    desc: "End-to-end security for devices, networks and data.",
+  },
 ];
 
 const integrationBenefits = [
-  { png: "04_Specialist_Diagnostics.png", title: "Unified Data", desc: "Integrate data from multiple sources into one platform." },
-  { png: "03_Energy_Management.png", title: "Operational Efficiency", desc: "Automate workflows and reduce manual overhead." },
-  { png: "icon_chart.png", title: "Cost Savings", desc: "Optimise resources and reduce downtime." },
-  { png: "05_Bespoke_Engineering.png", title: "Scalability", desc: "Flexible solutions that grow with your needs." },
-  { png: "06_Safety_Security.png", title: "Compliance Ready", desc: "Secure, traceable and audit-ready by design." },
-  { png: "17_Eco_Energy.png", title: "Future-Proof", desc: "Modern technology built for long-term reliability." },
+  {
+    png: "04_Specialist_Diagnostics.png",
+    title: "Unified Data",
+    desc: "Integrate data from multiple sources into one platform.",
+  },
+  {
+    png: "03_Energy_Management.png",
+    title: "Operational Efficiency",
+    desc: "Automate workflows and reduce manual overhead.",
+  },
+  {
+    png: "icon_chart.png",
+    title: "Cost Savings",
+    desc: "Optimise resources and reduce downtime.",
+  },
+  {
+    png: "05_Bespoke_Engineering.png",
+    title: "Scalability",
+    desc: "Flexible solutions that grow with your needs.",
+  },
+  {
+    png: "06_Safety_Security.png",
+    title: "Compliance Ready",
+    desc: "Secure, traceable and audit-ready by design.",
+  },
+  {
+    png: "17_Eco_Energy.png",
+    title: "Future-Proof",
+    desc: "Modern technology built for long-term reliability.",
+  },
 ];
 
 const useCases = [
-  { title: "Water & Wastewater Monitoring", desc: "Quality, level and flow monitoring in real time.", image: `${IMG_DIR}industrial-pumps-piping.jpg`, href: "/sectors/commercial-industrial" },
-  { title: "Energy & Utilities Management", desc: "Monitor assets and optimise energy performance.", image: `${IMG_DIR}solar-panels-rooftop.jpg`, href: "/solutions/energy" },
-  { title: "Industrial Asset Monitoring", desc: "Track equipment health and predict maintenance.", image: `${IMG_DIR}factory-production-line.jpg`, href: "/sectors/commercial-industrial" },
-  { title: "Smart Building Solutions", desc: "Monitor HVAC, lighting, energy and occupancy.", image: `${IMG_DIR}city-skyline-night.jpg`, href: "/sectors/commercial-industrial" },
-  { title: "Smart City Infrastructure", desc: "Connected street lighting, traffic and environmental monitoring.", image: `${IMG_DIR}highway-light-trails.jpg`, projectType: DEFAULT_TYPE },
-  { title: "Logistics & Fleet Tracking", desc: "Real-time location, status and condition tracking.", image: `${IMG_DIR}warehouse-interior.jpg`, href: "/sectors/commercial-industrial" },
+  {
+    title: "Water & Wastewater Monitoring",
+    desc: "Quality, level and flow monitoring in real time.",
+    image: `${IMG_DIR}industrial-pumps-piping.jpg`,
+    href: "/sectors/commercial-industrial",
+  },
+  {
+    title: "Energy & Utilities Management",
+    desc: "Monitor assets and optimise energy performance.",
+    image: `${IMG_DIR}solar-panels-rooftop.jpg`,
+    href: "/solutions/energy",
+  },
+  {
+    title: "Industrial Asset Monitoring",
+    desc: "Track equipment health and predict maintenance.",
+    image: `${IMG_DIR}factory-production-line.jpg`,
+    href: "/sectors/commercial-industrial",
+  },
+  {
+    title: "Smart Building Solutions",
+    desc: "Monitor HVAC, lighting, energy and occupancy.",
+    image: `${IMG_DIR}city-skyline-night.jpg`,
+    href: "/sectors/commercial-industrial",
+  },
+  {
+    title: "Smart City Infrastructure",
+    desc: "Connected street lighting, traffic and environmental monitoring.",
+    image: `${IMG_DIR}highway-light-trails.jpg`,
+    projectType: DEFAULT_TYPE,
+  },
+  {
+    title: "Logistics & Fleet Tracking",
+    desc: "Real-time location, status and condition tracking.",
+    image: `${IMG_DIR}warehouse-interior.jpg`,
+    href: "/sectors/commercial-industrial",
+  },
 ];
 
 const caseStudy = {
@@ -93,9 +241,17 @@ const caseStudy = {
 };
 
 const caseStudyStats = [
-  { png: "23_Sensor_Control.png", value: "200+", label: "IoT Sensors Deployed" },
+  {
+    png: "23_Sensor_Control.png",
+    value: "200+",
+    label: "IoT Sensors Deployed",
+  },
   { png: "icon_chart.png", value: "25%", label: "Reduction in Downtime" },
-  { png: "03_Energy_Management.png", value: "30%", label: "Improvement in Efficiency" },
+  {
+    png: "03_Energy_Management.png",
+    value: "30%",
+    label: "Improvement in Efficiency",
+  },
   { png: "icon_headset.png", value: "24/7", label: "Remote Visibility" },
 ];
 
@@ -113,7 +269,6 @@ export default function IotClient() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -129,8 +284,17 @@ export default function IotClient() {
           heading={["Connected Infrastructure", "& IoT Solutions."]}
           description="Syntrad delivers connected infrastructure and IoT solutions that intelligently monitor, control and optimise operations. From sensor networks and edge devices to cloud dashboards and secure connectivity, we help you turn data into real-time decisions."
           buttons={[
-            { label: "Discuss a Project", href: resolveHref(undefined, DEFAULT_TYPE), icon: ArrowRight },
-            { label: "Request Technical Support", href: "#technical-advice", icon: Headphones, variant: "outline" },
+            {
+              label: "Discuss a Project",
+              href: resolveHref(undefined, DEFAULT_TYPE),
+              icon: ArrowRight,
+            },
+            {
+              label: "Request Technical Support",
+              href: "#technical-advice",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           features={heroFeatures}
           visual={
@@ -154,26 +318,32 @@ export default function IotClient() {
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {connectivitySolutions.map(({ png, scale, title, desc, projectType }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                className="group relative flex flex-col items-center text-center bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg px-3 pt-3 pb-3.5 transition-colors"
-              >
-                <Glyph png={png} scale={scale} size={60} className="mb-2" />
-                <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] mb-2 text-gray-100 transition-colors group-hover:text-red-400">{title}</h3>
-                <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">{desc}</p>
-                <span className="mt-auto pt-3 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
-                  Enquire Now <ArrowRight size={11} />
-                </span>
+            {connectivitySolutions.map(
+              ({ png, scale, title, desc, projectType }) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUp}
+                  className="group relative flex flex-col items-center text-center bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg px-3 pt-3 pb-3.5 transition-colors"
+                >
+                  <Glyph png={png} scale={scale} size={60} className="mb-2" />
+                  <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] mb-2 text-gray-100 transition-colors group-hover:text-red-400">
+                    {title}
+                  </h3>
+                  <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">
+                    {desc}
+                  </p>
+                  <span className="mt-auto pt-3 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
+                    Enquire Now <ArrowRight size={11} />
+                  </span>
 
-                <Link
-                  href={resolveHref(undefined, projectType)}
-                  aria-label={`${title}: start an enquiry`}
-                  className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500"
-                />
-              </motion.div>
-            ))}
+                  <Link
+                    href={resolveHref(undefined, projectType)}
+                    aria-label={`${title}: start an enquiry`}
+                    className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500"
+                  />
+                </motion.div>
+              ),
+            )}
           </motion.div>
         </Container>
       </section>
@@ -181,7 +351,6 @@ export default function IotClient() {
       <section className="border-b border-white/10">
         <Container className="pt-2 pb-9">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-x-10 gap-y-8">
-
             <div className="min-w-0">
               <SectionHeading title="Monitoring & Control" />
 
@@ -199,8 +368,12 @@ export default function IotClient() {
                     className="bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg p-3 transition-colors"
                   >
                     <Glyph png={png} scale={scale} size={52} className="mb-2" />
-                    <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1.5 text-gray-100">{title}</h3>
-                    <p className="text-[#8a8a8a] text-[10px] leading-[1.45]">{desc}</p>
+                    <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1.5 text-gray-100">
+                      {title}
+                    </h3>
+                    <p className="text-[#8a8a8a] text-[10px] leading-[1.45]">
+                      {desc}
+                    </p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -216,10 +389,23 @@ export default function IotClient() {
                   viewport={{ once: true, amount: 0.1 }}
                 >
                   {integrationBenefits.map(({ png, scale, title, desc }) => (
-                    <motion.div key={title} variants={fadeUp} className="px-2.5 flex flex-col items-center text-center">
-                      <Glyph png={png} scale={scale} size={34} className="mb-1.5" />
-                      <h3 className="font-display font-semibold text-[10px] leading-[1.25] mb-1 text-gray-100">{title}</h3>
-                      <p className="text-[#8a8a8a] text-[8.5px] leading-[1.4]">{desc}</p>
+                    <motion.div
+                      key={title}
+                      variants={fadeUp}
+                      className="px-2.5 flex flex-col items-center text-center"
+                    >
+                      <Glyph
+                        png={png}
+                        scale={scale}
+                        size={34}
+                        className="mb-1.5"
+                      />
+                      <h3 className="font-display font-semibold text-[10px] leading-[1.25] mb-1 text-gray-100">
+                        {title}
+                      </h3>
+                      <p className="text-[#8a8a8a] text-[8.5px] leading-[1.4]">
+                        {desc}
+                      </p>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -239,17 +425,24 @@ export default function IotClient() {
                 viewport={{ once: true, amount: 0.1 }}
               >
                 {networkSystems.map(({ png, scale, title, desc }) => (
-                  <motion.div key={title} variants={fadeUp} className="flex items-center gap-3 py-3">
+                  <motion.div
+                    key={title}
+                    variants={fadeUp}
+                    className="flex items-center gap-3 py-3"
+                  >
                     <Glyph png={png} scale={scale} size={38} />
                     <div className="min-w-0">
-                      <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1 text-gray-100">{title}</h3>
-                      <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">{desc}</p>
+                      <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1 text-gray-100">
+                        {title}
+                      </h3>
+                      <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">
+                        {desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
             </div>
-
           </div>
         </Container>
       </section>
@@ -279,13 +472,19 @@ export default function IotClient() {
                   />
                 </div>
                 <div className="px-3 py-3 text-center">
-                  <h3 className="font-display font-semibold text-[12px] leading-[1.25] mb-1 text-gray-100">{title}</h3>
-                  <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">{desc}</p>
+                  <h3 className="font-display font-semibold text-[12px] leading-[1.25] mb-1 text-gray-100">
+                    {title}
+                  </h3>
+                  <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">
+                    {desc}
+                  </p>
                 </div>
 
                 <Link
                   href={resolveHref(href, projectType)}
-                  aria-label={href ? `${title}: view page` : `${title}: start an enquiry`}
+                  aria-label={
+                    href ? `${title}: view page` : `${title}: start an enquiry`
+                  }
                   className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500"
                 />
               </motion.div>
@@ -310,9 +509,15 @@ export default function IotClient() {
             />
 
             <div className="flex-1 min-w-0 lg:pr-4">
-              <p className="text-red-500 text-[9.5px] font-semibold tracking-[0.08em] uppercase mb-1">Case Study</p>
-              <h3 className="font-display font-semibold text-[17px] leading-[1.25] mb-1.5 text-white">{caseStudy.title}</h3>
-              <p className="text-[#999] text-[10.5px] leading-[1.5] max-w-[520px]">{caseStudy.desc}</p>
+              <p className="text-red-500 text-[9.5px] font-semibold tracking-[0.08em] uppercase mb-1">
+                Case Study
+              </p>
+              <h3 className="font-display font-semibold text-[17px] leading-[1.25] mb-1.5 text-white">
+                {caseStudy.title}
+              </h3>
+              <p className="text-[#999] text-[10.5px] leading-[1.5] max-w-[520px]">
+                {caseStudy.desc}
+              </p>
               <Link
                 href={caseStudy.href}
                 className="mt-2 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold hover:text-red-400 transition-colors"
@@ -323,10 +528,17 @@ export default function IotClient() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-4 lg:divide-x lg:divide-white/10 shrink-0 lg:w-[440px]">
               {caseStudyStats.map(({ png, scale, value, label }) => (
-                <div key={label} className="px-3 flex flex-col items-center text-center">
+                <div
+                  key={label}
+                  className="px-3 flex flex-col items-center text-center"
+                >
                   <Glyph png={png} scale={scale} size={34} className="mb-1" />
-                  <p className="font-display text-[22px] leading-none font-medium text-white">{value}</p>
-                  <p className="text-[#999] text-[9px] leading-[1.3] mt-1">{label}</p>
+                  <p className="font-display text-[22px] leading-none font-medium text-white">
+                    {value}
+                  </p>
+                  <p className="text-[#999] text-[9px] leading-[1.3] mt-1">
+                    {label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -342,7 +554,6 @@ export default function IotClient() {
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }

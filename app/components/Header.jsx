@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-import Link from 'next/link';
+import Link from "next/link";
 import {
   Menu,
   X,
@@ -14,10 +14,10 @@ import {
   ArrowRight,
   Settings2,
   Wrench,
-} from 'lucide-react';
+} from "lucide-react";
 
-import Container from './container';
-import { resetNavTrail } from './navTrail';
+import Container from "./container";
+import { resetNavTrail } from "./navTrail";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,19 +26,20 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-red-800/30">
       <Container>
         <div className="flex items-center justify-between h-16 sm:h-20">
-
-          <Link href="/" onClick={resetNavTrail} className="flex items-center shrink-0">
+          <Link
+            href="/"
+            onClick={resetNavTrail}
+            className="flex items-center shrink-0"
+          >
             <img
-              src="/assets/logo/syntrad_logo.png"
+              src="/assets/Logo/syntrad_logo.png"
               alt="Syntrad"
               className="h-20 w-auto"
             />
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-
             <nav className="flex items-center gap-5">
-
               <NavLink href="/">Home</NavLink>
 
               <NavLink href="/repair-and-service">Repair & Service</NavLink>
@@ -50,7 +51,6 @@ export default function Header() {
               <NavLink href="/about">About</NavLink>
 
               <NavLink href="/contact">Contact</NavLink>
-
             </nav>
 
             <Link
@@ -61,7 +61,6 @@ export default function Header() {
               Start a Project
               <ArrowRight size={16} />
             </Link>
-
           </div>
 
           <button
@@ -70,31 +69,54 @@ export default function Header() {
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-
         </div>
 
         {menuOpen && (
           <div className="md:hidden pb-4">
             <nav className="space-y-1">
-              <MobileLink href="/" icon={<Home size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/"
+                icon={<Home size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 Home
               </MobileLink>
 
-              <MobileLink href="/repair-and-service" icon={<Wrench size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/repair-and-service"
+                icon={<Wrench size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 Repair & Service
               </MobileLink>
 
-              <MobileLink href="/engineering" icon={<Settings2 size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/engineering"
+                icon={<Settings2 size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 Engineering
               </MobileLink>
 
-              <MobileLink href="/projects" icon={<Briefcase size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/projects"
+                icon={<Briefcase size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 Projects
               </MobileLink>
-              <MobileLink href="/about" icon={<Info size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/about"
+                icon={<Info size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 About
               </MobileLink>
-              <MobileLink href="/contact" icon={<Phone size={18} />} onClick={() => setMenuOpen(false)}>
+              <MobileLink
+                href="/contact"
+                icon={<Phone size={18} />}
+                onClick={() => setMenuOpen(false)}
+              >
                 Contact
               </MobileLink>
 

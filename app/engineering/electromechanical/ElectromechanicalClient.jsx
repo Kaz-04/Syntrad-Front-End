@@ -1,12 +1,25 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck, Zap, Wrench, MapPin, ArrowRight, Headphones,
-  AlertTriangle, CheckCircle2, Factory, Fan, Droplets, FlaskConical, Utensils,
-  Activity, PoundSterling, Timer,
+  ShieldCheck,
+  Zap,
+  Wrench,
+  MapPin,
+  ArrowRight,
+  Headphones,
+  AlertTriangle,
+  CheckCircle2,
+  Factory,
+  Fan,
+  Droplets,
+  FlaskConical,
+  Utensils,
+  Activity,
+  PoundSterling,
+  Timer,
 } from "lucide-react";
 
 import PageHero from "../../components/PageHero";
@@ -15,13 +28,16 @@ import UrgentCall from "../../components/UrgentCall";
 import Container from "../../components/container";
 import ContactPopup from "../../components/ContactPopup";
 
-const HERO_DIR = "/assets/hero/";
+const HERO_DIR = "/assets/Hero/";
 const IMG_DIR = "/assets/images/";
 const ICON_DIR = "/assets/icons/";
 
 function Glyph({ png, size = 48, scale = 1, className = "" }) {
   return (
-    <div className={`shrink-0 flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+    <div
+      className={`shrink-0 flex items-center justify-center ${className}`}
+      style={{ width: size, height: size }}
+    >
       <img
         src={`${ICON_DIR}${png}`}
         alt=""
@@ -38,30 +54,136 @@ const resolveHref = (href, projectType = DEFAULT_TYPE) =>
   href ?? `/contact?type=${encodeURIComponent(projectType)}`;
 
 const heroFeatures = [
-  { icon: ShieldCheck, title: "Engineering Excellence", desc: "Certified, experienced and solution-driven" },
-  { icon: Zap, title: "Rapid Response", desc: "Fast turnarounds and minimal downtime" },
-  { icon: Wrench, title: "End-to-End Delivery", desc: "Design, build, integrate and support" },
-  { icon: MapPin, title: "London Based", desc: "Serving clients across the UK" },
+  {
+    icon: ShieldCheck,
+    title: "Engineering Excellence",
+    desc: "Certified, experienced and solution-driven",
+  },
+  {
+    icon: Zap,
+    title: "Rapid Response",
+    desc: "Fast turnarounds and minimal downtime",
+  },
+  {
+    icon: Wrench,
+    title: "End-to-End Delivery",
+    desc: "Design, build, integrate and support",
+  },
+  {
+    icon: MapPin,
+    title: "London Based",
+    desc: "Serving clients across the UK",
+  },
 ];
 
 const capabilities = [
-  { png: "icon_gears.png", title: "System Design & Integration", desc: "Mechanical and electrical co-design for seamless performance and efficiency." },
-  { png: "icon_motor.png", title: "Motors, Drives & Control", desc: "Selection, integration and programming of motors, VFDs and motion control systems." },
-  { png: "icon_pump.png", title: "Pumps & Fluid Systems", desc: "Centrifugal, positive displacement and process pumps with smart monitoring." },
-  { png: "icon_actuator.png", title: "Actuation & Motion Systems", desc: "Electric, hydraulic and pneumatic actuation engineered for precision and reliability." },
-  { png: "icon_contactor.png", title: "Switching & Power Distribution", desc: "Contactors, breakers and protection systems for safe, reliable power management." },
-  { png: "icon_maintenance_transparent.png", title: "Lifecycle Support & Optimisation", desc: "Maintenance, retrofits and upgrades to extend asset life and improve performance." },
+  {
+    png: "icon_gears.png",
+    title: "System Design & Integration",
+    desc: "Mechanical and electrical co-design for seamless performance and efficiency.",
+  },
+  {
+    png: "icon_motor.png",
+    title: "Motors, Drives & Control",
+    desc: "Selection, integration and programming of motors, VFDs and motion control systems.",
+  },
+  {
+    png: "icon_pump.png",
+    title: "Pumps & Fluid Systems",
+    desc: "Centrifugal, positive displacement and process pumps with smart monitoring.",
+  },
+  {
+    png: "icon_actuator.png",
+    title: "Actuation & Motion Systems",
+    desc: "Electric, hydraulic and pneumatic actuation engineered for precision and reliability.",
+  },
+  {
+    png: "icon_contactor.png",
+    title: "Switching & Power Distribution",
+    desc: "Contactors, breakers and protection systems for safe, reliable power management.",
+  },
+  {
+    png: "icon_maintenance_transparent.png",
+    title: "Lifecycle Support & Optimisation",
+    desc: "Maintenance, retrofits and upgrades to extend asset life and improve performance.",
+  },
 ];
 
 const components = [
-  { png: "icon_motor.png", title: <>Induction &<br />Servo Motors</> },
-  { png: "icon_vfd.png", title: <>Variable Frequency<br />Drives (VFDs)</> },
-  { png: "icon_gearbox.png", title: <>Gearboxes &<br />Couplings</> },
-  { png: "icon_pump.png", title: <>Pumps &<br />Compressors</> },
-  { png: "icon_actuator.png", title: <>Actuators (Electric,<br />Hydraulic, Pneumatic)</> },
-  { png: "icon_contactor.png", title: <>Contactors, Relays<br />& Protection Devices</> },
-  { png: "icon_control_panel.png", title: <>Control Panels<br />& MCCs</> },
-  { png: "icon_sensor.png", title: <>Sensors &<br />Instrumentation</> },
+  {
+    png: "icon_motor.png",
+    title: (
+      <>
+        Induction &<br />
+        Servo Motors
+      </>
+    ),
+  },
+  {
+    png: "icon_vfd.png",
+    title: (
+      <>
+        Variable Frequency
+        <br />
+        Drives (VFDs)
+      </>
+    ),
+  },
+  {
+    png: "icon_gearbox.png",
+    title: (
+      <>
+        Gearboxes &<br />
+        Couplings
+      </>
+    ),
+  },
+  {
+    png: "icon_pump.png",
+    title: (
+      <>
+        Pumps &<br />
+        Compressors
+      </>
+    ),
+  },
+  {
+    png: "icon_actuator.png",
+    title: (
+      <>
+        Actuators (Electric,
+        <br />
+        Hydraulic, Pneumatic)
+      </>
+    ),
+  },
+  {
+    png: "icon_contactor.png",
+    title: (
+      <>
+        Contactors, Relays
+        <br />& Protection Devices
+      </>
+    ),
+  },
+  {
+    png: "icon_control_panel.png",
+    title: (
+      <>
+        Control Panels
+        <br />& MCCs
+      </>
+    ),
+  },
+  {
+    png: "icon_sensor.png",
+    title: (
+      <>
+        Sensors &<br />
+        Instrumentation
+      </>
+    ),
+  },
 ];
 
 const faults = [
@@ -125,7 +247,10 @@ const stagger = {
 
 function ListPanel({ title, items, Icon, footer, children }) {
   return (
-    <motion.div variants={fadeUp} className="flex flex-col rounded-lg border border-white/10 bg-[#0a0a0a] p-4 min-w-0">
+    <motion.div
+      variants={fadeUp}
+      className="flex flex-col rounded-lg border border-white/10 bg-[#0a0a0a] p-4 min-w-0"
+    >
       <SectionHeading title={title} />
 
       {items && (
@@ -133,8 +258,15 @@ function ListPanel({ title, items, Icon, footer, children }) {
           {items.map(({ icon: ItemIcon, label }) => {
             const I = ItemIcon || Icon;
             return (
-              <li key={label} className="flex items-center gap-2.5 text-[#b5b5b5] text-[10.5px] leading-[1.35]">
-                <I size={13} strokeWidth={1.6} className="text-red-500 shrink-0" />
+              <li
+                key={label}
+                className="flex items-center gap-2.5 text-[#b5b5b5] text-[10.5px] leading-[1.35]"
+              >
+                <I
+                  size={13}
+                  strokeWidth={1.6}
+                  className="text-red-500 shrink-0"
+                />
                 <span>{label}</span>
               </li>
             );
@@ -146,7 +278,9 @@ function ListPanel({ title, items, Icon, footer, children }) {
 
       {footer && (
         <div className="mt-auto pt-4">
-          <p className="pt-3 border-t border-white/10 text-gray-200 text-[10.5px] leading-[1.4]">{footer}</p>
+          <p className="pt-3 border-t border-white/10 text-gray-200 text-[10.5px] leading-[1.4]">
+            {footer}
+          </p>
         </div>
       )}
     </motion.div>
@@ -158,7 +292,6 @@ export default function ElectromechanicalClient() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -175,7 +308,12 @@ export default function ElectromechanicalClient() {
           description="Syntrad designs, integrates and supports electromechanical systems that power the world around us. From motors and pumps to actuators, contactors and drives, we deliver precision-engineered solutions with seamless mechanical and electrical integration for performance-critical environments."
           buttons={[
             { label: "Discuss a Project", href: "/contact", icon: ArrowRight },
-            { label: "Request Technical Support", href: "#technical-advice", icon: Headphones, variant: "outline" },
+            {
+              label: "Request Technical Support",
+              href: "#technical-advice",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           features={heroFeatures}
           visual={
@@ -199,26 +337,32 @@ export default function ElectromechanicalClient() {
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {capabilities.map(({ png, scale, title, desc, href, projectType }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                className="group relative flex flex-col items-start text-left bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg px-3.5 pt-3.5 pb-4 min-h-[200px] transition-colors"
-              >
-                <Glyph png={png} scale={scale} size={64} className="mb-3" />
-                <h3 className="font-display font-semibold text-[12.5px] leading-[1.3] mb-2 text-gray-100 transition-colors group-hover:text-red-400">{title}</h3>
-                <p className="text-[#8a8a8a] text-[10.5px] leading-[1.5]">{desc}</p>
-                <span className="mt-auto pt-3 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
-                  Learn more <ArrowRight size={11} />
-                </span>
+            {capabilities.map(
+              ({ png, scale, title, desc, href, projectType }) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUp}
+                  className="group relative flex flex-col items-start text-left bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg px-3.5 pt-3.5 pb-4 min-h-[200px] transition-colors"
+                >
+                  <Glyph png={png} scale={scale} size={64} className="mb-3" />
+                  <h3 className="font-display font-semibold text-[12.5px] leading-[1.3] mb-2 text-gray-100 transition-colors group-hover:text-red-400">
+                    {title}
+                  </h3>
+                  <p className="text-[#8a8a8a] text-[10.5px] leading-[1.5]">
+                    {desc}
+                  </p>
+                  <span className="mt-auto pt-3 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
+                    Learn more <ArrowRight size={11} />
+                  </span>
 
-                <Link
-                  href={resolveHref(href, projectType)}
-                  aria-label={`${title}: start an enquiry`}
-                  className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500"
-                />
-              </motion.div>
-            ))}
+                  <Link
+                    href={resolveHref(href, projectType)}
+                    aria-label={`${title}: start an enquiry`}
+                    className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500"
+                  />
+                </motion.div>
+              ),
+            )}
           </motion.div>
         </Container>
       </section>
@@ -235,9 +379,15 @@ export default function ElectromechanicalClient() {
             viewport={{ once: true, amount: 0.1 }}
           >
             {components.map(({ png, scale, title }, i) => (
-              <motion.div key={i} variants={fadeUp} className="px-2 flex flex-col items-center text-center">
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="px-2 flex flex-col items-center text-center"
+              >
                 <Glyph png={png} scale={scale} size={56} className="mb-2" />
-                <h3 className="font-display font-medium text-[10.5px] leading-[1.3] text-gray-100">{title}</h3>
+                <h3 className="font-display font-medium text-[10.5px] leading-[1.3] text-gray-100">
+                  {title}
+                </h3>
               </motion.div>
             ))}
           </motion.div>
@@ -283,7 +433,6 @@ export default function ElectromechanicalClient() {
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
-
             <motion.div variants={fadeUp} className="min-w-0">
               <SectionHeading title="Featured Case Study" />
               <img
@@ -294,17 +443,30 @@ export default function ElectromechanicalClient() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="min-w-0 lg:pt-10">
-              <p className="text-red-500 text-[8.5px] font-semibold tracking-[0.08em] uppercase mb-1">{caseStudy.sector}</p>
-              <h3 className="font-display font-semibold text-[17px] leading-[1.25] mb-2 text-white">{caseStudy.title}</h3>
-              <p className="text-[#999] text-[10.5px] leading-[1.5]">{caseStudy.desc}</p>
+              <p className="text-red-500 text-[8.5px] font-semibold tracking-[0.08em] uppercase mb-1">
+                {caseStudy.sector}
+              </p>
+              <h3 className="font-display font-semibold text-[17px] leading-[1.25] mb-2 text-white">
+                {caseStudy.title}
+              </h3>
+              <p className="text-[#999] text-[10.5px] leading-[1.5]">
+                {caseStudy.desc}
+              </p>
 
               <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-y-3 sm:divide-x sm:divide-white/10">
                 {caseStudyStats.map(({ icon: Icon, value, label }) => (
                   <div key={label} className="sm:px-2 first:pl-0">
                     <p className="flex items-center gap-1 font-display text-[13px] leading-none font-semibold text-white">
-                      <Icon size={11} strokeWidth={1.8} className="text-red-500 shrink-0" />{value}
+                      <Icon
+                        size={11}
+                        strokeWidth={1.8}
+                        className="text-red-500 shrink-0"
+                      />
+                      {value}
                     </p>
-                    <p className="text-[#999] text-[8.5px] leading-[1.3] mt-1">{label}</p>
+                    <p className="text-[#999] text-[8.5px] leading-[1.3] mt-1">
+                      {label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -317,7 +479,11 @@ export default function ElectromechanicalClient() {
               </Link>
             </motion.div>
 
-            <ListPanel title="Scope of Work" items={scopeOfWork} Icon={CheckCircle2}>
+            <ListPanel
+              title="Scope of Work"
+              items={scopeOfWork}
+              Icon={CheckCircle2}
+            >
               <Link
                 href="/projects"
                 className="mt-4 self-start px-3.5 py-1.5 rounded-md text-[10.5px] font-semibold text-white inline-flex items-center gap-2 border border-red-600/80 hover:bg-red-600 transition-colors"
@@ -337,7 +503,6 @@ export default function ElectromechanicalClient() {
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }

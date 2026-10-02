@@ -1,10 +1,19 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Settings, CircuitBoard, ShieldCheck, Wrench, Target, Brain, Handshake,
-  Award, Zap, Headphones, ArrowRight,
+  Settings,
+  CircuitBoard,
+  ShieldCheck,
+  Wrench,
+  Target,
+  Brain,
+  Handshake,
+  Award,
+  Zap,
+  Headphones,
+  ArrowRight,
 } from "lucide-react";
 
 import PageHero from "../components/PageHero";
@@ -13,7 +22,8 @@ import UrgentCall from "../components/UrgentCall";
 import Container from "../components/container";
 import { directorData } from "../../public/assets/assets";
 
-const KAZ_LINKEDIN_URL = directorData.linkedin || "https://www.linkedin.com/in/your-profile-here";
+const KAZ_LINKEDIN_URL =
+  directorData.linkedin || "https://www.linkedin.com/in/your-profile-here";
 
 const directorParagraphs = [
   "Kaz Moorjani leads Syntrad Ltd with a hands-on, engineering-first approach. With deep expertise in electronics, automation and specialist equipment, he ensures every project is delivered to the highest standard of quality, reliability and safety.",
@@ -22,34 +32,131 @@ const directorParagraphs = [
 ];
 
 const whatIsChecklist = [
-  { icon: Settings, text: "Engineering-led company with multidisciplinary expertise" },
-  { icon: CircuitBoard, text: "Solutions tailored to complex, high-value environments" },
-  { icon: ShieldCheck, text: "Focus on reliability, safety and long-term performance" },
-  { icon: Wrench, text: "Practical partner from concept through to completion" },
+  {
+    icon: Settings,
+    text: "Engineering-led company with multidisciplinary expertise",
+  },
+  {
+    icon: CircuitBoard,
+    text: "Solutions tailored to complex, high-value environments",
+  },
+  {
+    icon: ShieldCheck,
+    text: "Focus on reliability, safety and long-term performance",
+  },
+  {
+    icon: Wrench,
+    text: "Practical partner from concept through to completion",
+  },
 ];
 
 const standForCards = [
-  { icon: Target, title: "Precision", desc: "We design and deliver engineered solutions with accuracy, attention to detail and a focus on doing things right." },
-  { icon: ShieldCheck, title: "Reliability", desc: "We build systems and partnerships you can depend on. Performance, safety and resilience are at the core of everything we do." },
-  { icon: Brain, title: "Technical Depth", desc: "Deep expertise across engineering disciplines allows us to solve complex problems and deliver innovative, effective solutions." },
-  { icon: Handshake, title: "Client Trust", desc: "We earn trust through clear communication, integrity and consistent delivery of results that create value." },
+  {
+    icon: Target,
+    title: "Precision",
+    desc: "We design and deliver engineered solutions with accuracy, attention to detail and a focus on doing things right.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Reliability",
+    desc: "We build systems and partnerships you can depend on. Performance, safety and resilience are at the core of everything we do.",
+  },
+  {
+    icon: Brain,
+    title: "Technical Depth",
+    desc: "Deep expertise across engineering disciplines allows us to solve complex problems and deliver innovative, effective solutions.",
+  },
+  {
+    icon: Handshake,
+    title: "Client Trust",
+    desc: "We earn trust through clear communication, integrity and consistent delivery of results that create value.",
+  },
 ];
 
 const capabilities = [
-  { icon: "/assets/icons/icon_transformer.png", title: "Electrical Engineering", desc: "Design, analysis and integration of electrical power and control systems." },
-  { icon: "/assets/icons/icon_electrical_transparent.png", title: "Electronics Engineering", desc: "Hardware design, embedded systems and electronic solutions for complex applications." },
-  { icon: "/assets/icons/icon_robot_arm.png", title: "Automation Systems", desc: "Automation and control systems that improve efficiency, safety and operational performance." },
-  { icon: "/assets/icons/23_Sensor_Control.png", title: "Connected Infrastructure", desc: "Smart, connected systems and IoT solutions for monitoring, control and data-driven decisions." },
-  { icon: "/assets/icons/04_Specialist_Diagnostics.png", title: "Specialist Equipment", desc: "Design and integration of specialist machinery and high-performance equipment." },
-  { icon: "/assets/icons/05_Bespoke_Engineering.png", title: "Bespoke Projects", desc: "Tailored engineering solutions for unique challenges and specialised needs." },
+  {
+    icon: "/assets/icons/icon_transformer.png",
+    title: "Electrical Engineering",
+    desc: "Design, analysis and integration of electrical power and control systems.",
+  },
+  {
+    icon: "/assets/icons/icon_electrical_transparent.png",
+    title: "Electronics Engineering",
+    desc: "Hardware design, embedded systems and electronic solutions for complex applications.",
+  },
+  {
+    icon: "/assets/icons/icon_robot_arm.png",
+    title: "Automation Systems",
+    desc: "Automation and control systems that improve efficiency, safety and operational performance.",
+  },
+  {
+    icon: "/assets/icons/23_Sensor_Control.png",
+    title: "Connected Infrastructure",
+    desc: "Smart, connected systems and IoT solutions for monitoring, control and data-driven decisions.",
+  },
+  {
+    icon: "/assets/icons/04_Specialist_Diagnostics.png",
+    title: "Specialist Equipment",
+    desc: "Design and integration of specialist machinery and high-performance equipment.",
+  },
+  {
+    icon: "/assets/icons/05_Bespoke_Engineering.png",
+    title: "Bespoke Projects",
+    desc: "Tailored engineering solutions for unique challenges and specialised needs.",
+  },
 ];
 
 const whyClients = [
-  { icon: Settings, text: <>Engineering-led<br />mindset</> },
-  { icon: Handshake, text: <>Hands-on approach<br />from start to finish</> },
-  { icon: Award, text: <>Proven expertise in<br />complex systems</> },
-  { icon: ShieldCheck, text: <>Commitment to quality,<br />safety and compliance</> },
-  { icon: Zap, text: <>Responsive, reliable<br />and easy to work with</> },
+  {
+    icon: Settings,
+    text: (
+      <>
+        Engineering-led
+        <br />
+        mindset
+      </>
+    ),
+  },
+  {
+    icon: Handshake,
+    text: (
+      <>
+        Hands-on approach
+        <br />
+        from start to finish
+      </>
+    ),
+  },
+  {
+    icon: Award,
+    text: (
+      <>
+        Proven expertise in
+        <br />
+        complex systems
+      </>
+    ),
+  },
+  {
+    icon: ShieldCheck,
+    text: (
+      <>
+        Commitment to quality,
+        <br />
+        safety and compliance
+      </>
+    ),
+  },
+  {
+    icon: Zap,
+    text: (
+      <>
+        Responsive, reliable
+        <br />
+        and easy to work with
+      </>
+    ),
+  },
 ];
 
 const fadeUp = {
@@ -64,24 +171,40 @@ const stagger = {
 export default function AboutClient() {
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div className="[&>section]:min-h-[300px] md:[&>section]:min-h-[340px] [&>section]:border-b-0">
         <PageHero
           heading={
             <>
-              <span className="text-white">Built Around Engineering,<br />Reliability and Practical<br /></span>
-              <span className="text-red-600 drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]">Problem-Solving.</span>
+              <span className="text-white">
+                Built Around Engineering,
+                <br />
+                Reliability and Practical
+                <br />
+              </span>
+              <span className="text-red-600 drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]">
+                Problem-Solving.
+              </span>
             </>
           }
           description="Syntrad is an engineering-led company focused on complex systems, electronics, automation, specialist equipment and high-value technical solutions. We partner with businesses to solve difficult problems, improve performance and deliver results that matter."
           buttons={[
-            { label: "Discuss a Project", href: "/contact", icon: ArrowRight, variant: "filled" },
-            { label: "Request Technical Support", href: "/contact", icon: Headphones, variant: "outline" },
+            {
+              label: "Discuss a Project",
+              href: "/contact",
+              icon: ArrowRight,
+              variant: "filled",
+            },
+            {
+              label: "Request Technical Support",
+              href: "/contact",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           visual={
             <>
               <Image
-                src="/assets/hero/pro.png"
+                src="/assets/Hero/pro.png"
                 alt="Syntrad Engineering"
                 fill
                 priority
@@ -113,10 +236,15 @@ export default function AboutClient() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.p variants={fadeUp}>
-                Syntrad was founded on a simple belief: engineering should solve real problems and create real value.
+                Syntrad was founded on a simple belief: engineering should solve
+                real problems and create real value.
               </motion.p>
               <motion.p variants={fadeUp}>
-                We work with organisations across multiple sectors to design, build, integrate and support complex technical solutions. From initial concept and system design to deployment and long-term support, we take a hands-on, engineering-first approach to every project.
+                We work with organisations across multiple sectors to design,
+                build, integrate and support complex technical solutions. From
+                initial concept and system design to deployment and long-term
+                support, we take a hands-on, engineering-first approach to every
+                project.
               </motion.p>
             </motion.div>
 
@@ -128,9 +256,19 @@ export default function AboutClient() {
               viewport={{ once: true, amount: 0.2 }}
             >
               {whatIsChecklist.map(({ icon: Icon, text }) => (
-                <motion.li key={text} variants={fadeUp} className="flex items-center gap-3">
-                  <Icon size={20} strokeWidth={1.5} className="text-red-500 shrink-0" />
-                  <span className="text-gray-200 text-[12.5px] leading-[1.4]">{text}</span>
+                <motion.li
+                  key={text}
+                  variants={fadeUp}
+                  className="flex items-center gap-3"
+                >
+                  <Icon
+                    size={20}
+                    strokeWidth={1.5}
+                    className="text-red-500 shrink-0"
+                  />
+                  <span className="text-gray-200 text-[12.5px] leading-[1.4]">
+                    {text}
+                  </span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -157,7 +295,9 @@ export default function AboutClient() {
               <p className="text-red-500 text-[11px] font-semibold tracking-widest uppercase mb-1">
                 Director &amp; Lead Engineer
               </p>
-              <h3 className="font-display text-2xl font-bold mb-3">{directorData.name}</h3>
+              <h3 className="font-display text-2xl font-bold mb-3">
+                {directorData.name}
+              </h3>
               <div className="space-y-2.5 text-gray-300 text-[12px] leading-[1.6]">
                 {directorParagraphs.map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
@@ -198,11 +338,15 @@ export default function AboutClient() {
                   size={40}
                   strokeWidth={1.2}
                   className="text-red-500 shrink-0"
-                  style={{ filter: 'drop-shadow(0 0 5px rgba(239,68,68,0.6))' }}
+                  style={{ filter: "drop-shadow(0 0 5px rgba(239,68,68,0.6))" }}
                 />
                 <div>
-                  <h3 className="font-display font-semibold text-[14px] leading-[1.25] mb-1.5 text-white">{title}</h3>
-                  <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">{desc}</p>
+                  <h3 className="font-display font-semibold text-[14px] leading-[1.25] mb-1.5 text-white">
+                    {title}
+                  </h3>
+                  <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">
+                    {desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -227,9 +371,17 @@ export default function AboutClient() {
                 variants={fadeUp}
                 className="bg-[#0e0e0e] border border-white/10 hover:border-red-700/50 rounded-lg p-4 transition-colors flex flex-col items-center text-center"
               >
-                <img src={icon} alt="" className="w-14 h-14 object-contain mb-3" />
-                <h3 className="font-display font-semibold text-[13.5px] leading-[1.25] mb-2">{title}</h3>
-                <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">{desc}</p>
+                <img
+                  src={icon}
+                  alt=""
+                  className="w-14 h-14 object-contain mb-3"
+                />
+                <h3 className="font-display font-semibold text-[13.5px] leading-[1.25] mb-2">
+                  {title}
+                </h3>
+                <p className="text-[#8a8a8a] text-[10.5px] leading-[1.45]">
+                  {desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -256,8 +408,14 @@ export default function AboutClient() {
                   variants={fadeUp}
                   className="flex items-center gap-3 px-5 py-3 border-t border-white/10 first:border-t-0 lg:border-t-0 lg:border-l lg:first:border-l-0"
                 >
-                  <Icon size={26} strokeWidth={1.4} className="text-red-500 shrink-0" />
-                  <span className="text-gray-200 text-[12px] leading-[1.35]">{text}</span>
+                  <Icon
+                    size={26}
+                    strokeWidth={1.4}
+                    className="text-red-500 shrink-0"
+                  />
+                  <span className="text-gray-200 text-[12px] leading-[1.35]">
+                    {text}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
@@ -266,12 +424,17 @@ export default function AboutClient() {
       </section>
 
       <UrgentCall
-        title={<>Have a system, fault or project that<br />needs serious technical attention?</>}
+        title={
+          <>
+            Have a system, fault or project that
+            <br />
+            needs serious technical attention?
+          </>
+        }
         subtitle="Our engineers are ready to help. Fast response. Expert solutions. Minimal downtime."
         buttonLabel="Get in Touch Today"
         buttonHref="/contact"
       />
-
     </main>
   );
 }

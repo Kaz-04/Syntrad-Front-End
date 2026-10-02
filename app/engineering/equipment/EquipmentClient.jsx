@@ -1,11 +1,18 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Headphones, Wrench, Search, Users, ShieldCheck,
-  ConciergeBell, ClipboardList, Clock,
+  ArrowRight,
+  Headphones,
+  Wrench,
+  Search,
+  Users,
+  ShieldCheck,
+  ConciergeBell,
+  ClipboardList,
+  Clock,
 } from "lucide-react";
 
 import PageHero from "../../components/PageHero";
@@ -20,7 +27,10 @@ const ICON_DIR = "/assets/icons/";
 function Glyph({ png, icon: Icon, size = 48, scale = 1, className = "" }) {
   if (png) {
     return (
-      <div className={`shrink-0 flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+      <div
+        className={`shrink-0 flex items-center justify-center ${className}`}
+        style={{ width: size, height: size }}
+      >
         <img
           src={`${ICON_DIR}${png}`}
           alt=""
@@ -31,12 +41,15 @@ function Glyph({ png, icon: Icon, size = 48, scale = 1, className = "" }) {
     );
   }
   return (
-    <div className={`shrink-0 flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+    <div
+      className={`shrink-0 flex items-center justify-center ${className}`}
+      style={{ width: size, height: size }}
+    >
       <Icon
         size={Math.round(size * 0.7)}
         strokeWidth={1.5}
         className="text-red-500"
-        style={{ filter: 'drop-shadow(0 0 5px rgba(239,68,68,0.8))' }}
+        style={{ filter: "drop-shadow(0 0 5px rgba(239,68,68,0.8))" }}
       />
     </div>
   );
@@ -46,52 +59,197 @@ const EQUIPMENT_TYPE = "Other Specialist Equipment";
 const contactLink = (type) => `/contact?type=${encodeURIComponent(type)}`;
 
 const heroFeatures = [
-  { icon: Wrench, title: "Bespoke Engineering", desc: "Tailored solutions for unique challenges." },
-  { icon: Search, title: "Advanced Diagnostics", desc: "Identify issues early and prevent downtime." },
-  { icon: Users, title: "Expert Support", desc: "Skilled engineers across multiple disciplines." },
-  { icon: ShieldCheck, title: "Built for Reliability", desc: "Engineered for safety, compliance and uptime." },
+  {
+    icon: Wrench,
+    title: "Bespoke Engineering",
+    desc: "Tailored solutions for unique challenges.",
+  },
+  {
+    icon: Search,
+    title: "Advanced Diagnostics",
+    desc: "Identify issues early and prevent downtime.",
+  },
+  {
+    icon: Users,
+    title: "Expert Support",
+    desc: "Skilled engineers across multiple disciplines.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Built for Reliability",
+    desc: "Engineered for safety, compliance and uptime.",
+  },
 ];
 
 const sectors = [
-  { png: "icon_gym_transparent.png", title: "Leisure, Wellness & Fitness", image: "/assets/images/gym-equipment-floor.jpg", href: "/repair-and-service/sauna&cold-plunge" },
-  { icon: ConciergeBell, title: "Hospitality & Catering", image: "/assets/images/cc.png", href: "/sectors/hospitality-catering" },
-  { png: "icon_transformer.png", title: "Commercial & Industrial", image: "/assets/images/warehouse-interior.jpg", href: "/sectors/commercial-industrial" },
-  { png: "01_Smart_Home.png", title: "Premium Residential", image: "/assets/images/modern-house-exterior.jpg", href: "/sectors/premium-residential" },
-  { png: "06_Safety_Security.png", title: "Specialist Technical Environments", image: "/assets/images/data-center-racks.jpg", href: "/sectors/specialist-technical-environments" },
+  {
+    png: "icon_gym_transparent.png",
+    title: "Leisure, Wellness & Fitness",
+    image: "/assets/images/gym-equipment-floor.jpg",
+    href: "/repair-and-service/sauna&cold-plunge",
+  },
+  {
+    icon: ConciergeBell,
+    title: "Hospitality & Catering",
+    image: "/assets/images/cc.png",
+    href: "/sectors/hospitality-catering",
+  },
+  {
+    png: "icon_transformer.png",
+    title: "Commercial & Industrial",
+    image: "/assets/images/warehouse-interior.jpg",
+    href: "/sectors/commercial-industrial",
+  },
+  {
+    png: "01_Smart_Home.png",
+    title: "Premium Residential",
+    image: "/assets/images/modern-house-exterior.jpg",
+    href: "/sectors/premium-residential",
+  },
+  {
+    png: "06_Safety_Security.png",
+    title: "Specialist Technical Environments",
+    image: "/assets/images/data-center-racks.jpg",
+    href: "/sectors/specialist-technical-environments",
+  },
 ];
 
 const equipmentTypes = [
-  { png: "icon_building_automation_transparent.png", title: "Control Systems & Panels", desc: "Custom control panels, PLCs, HMIs and SCADA system design, build and optimisation.", href: contactLink("Automation & Control Systems") },
-  { png: "icon_robot_arm.png", title: "Specialist Machinery & Automation", desc: "Bespoke machines and automation solutions designed for precision and reliability.", href: contactLink("Bespoke Engineering") },
-  { png: "04_Specialist_Diagnostics.png", title: "Test, Measurement & Diagnostics", desc: "Advanced test rigs and diagnostic equipment for performance and fault analysis.", href: contactLink("PCB & Electronic Diagnostics") },
-  { png: "icon_transformer.png", title: "Pumps, Drives & Motion Systems", desc: "Installation, repair and upgrades for pumps, drives and motion assemblies.", href: contactLink("Pumps, Motors & Drives") },
-  { png: "icon_maintenance_transparent.png", title: "Fabricated & Process Equipment", desc: "Custom fabricated equipment for industrial, process and specialist applications.", href: contactLink("Other Specialist Equipment") },
-  { png: "icon_gears.png", title: "Upgrades, Retrofits & Integrations", desc: "Modernise, integrate and extend equipment life with engineered upgrade solutions.", href: contactLink("Heritage & Precision Equipment") },
+  {
+    png: "icon_building_automation_transparent.png",
+    title: "Control Systems & Panels",
+    desc: "Custom control panels, PLCs, HMIs and SCADA system design, build and optimisation.",
+    href: contactLink("Automation & Control Systems"),
+  },
+  {
+    png: "icon_robot_arm.png",
+    title: "Specialist Machinery & Automation",
+    desc: "Bespoke machines and automation solutions designed for precision and reliability.",
+    href: contactLink("Bespoke Engineering"),
+  },
+  {
+    png: "04_Specialist_Diagnostics.png",
+    title: "Test, Measurement & Diagnostics",
+    desc: "Advanced test rigs and diagnostic equipment for performance and fault analysis.",
+    href: contactLink("PCB & Electronic Diagnostics"),
+  },
+  {
+    png: "icon_transformer.png",
+    title: "Pumps, Drives & Motion Systems",
+    desc: "Installation, repair and upgrades for pumps, drives and motion assemblies.",
+    href: contactLink("Pumps, Motors & Drives"),
+  },
+  {
+    png: "icon_maintenance_transparent.png",
+    title: "Fabricated & Process Equipment",
+    desc: "Custom fabricated equipment for industrial, process and specialist applications.",
+    href: contactLink("Other Specialist Equipment"),
+  },
+  {
+    png: "icon_gears.png",
+    title: "Upgrades, Retrofits & Integrations",
+    desc: "Modernise, integrate and extend equipment life with engineered upgrade solutions.",
+    href: contactLink("Heritage & Precision Equipment"),
+  },
 ];
 
 const capabilities = [
-  { png: "05_Bespoke_Engineering.png", title: "Bespoke Design", desc: "Tailored engineering solutions for unique operational needs.", href: contactLink("Bespoke Engineering") },
-  { png: "icon_gears.png", title: "Mechanical Engineering", desc: "Precision design and manufacture for complex systems and assemblies.", href: contactLink("Electromechanical Systems") },
-  { png: "icon_electrical_transparent.png", title: "Electrical Engineering", desc: "Control system design, cabling, panel build and commissioning.", href: contactLink("Electrical & Electronic Engineering") },
-  { png: "15_Smart_Home_Control.png", title: "Software & Control", desc: "PLC, HMI and SCADA programming with seamless integration.", href: contactLink("Automation & Control Systems") },
-  { png: "23_Sensor_Control.png", title: "Integration Services", desc: "System integration, upgrades and third-party equipment interfaces.", href: contactLink("Connected Infrastructure & IoT") },
-  { png: "icon_shield.png", title: "Documentation & Compliance", desc: "Technical documentation, certification and regulatory compliance support.", href: contactLink("Electrical & Electronic Engineering") },
+  {
+    png: "05_Bespoke_Engineering.png",
+    title: "Bespoke Design",
+    desc: "Tailored engineering solutions for unique operational needs.",
+    href: contactLink("Bespoke Engineering"),
+  },
+  {
+    png: "icon_gears.png",
+    title: "Mechanical Engineering",
+    desc: "Precision design and manufacture for complex systems and assemblies.",
+    href: contactLink("Electromechanical Systems"),
+  },
+  {
+    png: "icon_electrical_transparent.png",
+    title: "Electrical Engineering",
+    desc: "Control system design, cabling, panel build and commissioning.",
+    href: contactLink("Electrical & Electronic Engineering"),
+  },
+  {
+    png: "15_Smart_Home_Control.png",
+    title: "Software & Control",
+    desc: "PLC, HMI and SCADA programming with seamless integration.",
+    href: contactLink("Automation & Control Systems"),
+  },
+  {
+    png: "23_Sensor_Control.png",
+    title: "Integration Services",
+    desc: "System integration, upgrades and third-party equipment interfaces.",
+    href: contactLink("Connected Infrastructure & IoT"),
+  },
+  {
+    png: "icon_shield.png",
+    title: "Documentation & Compliance",
+    desc: "Technical documentation, certification and regulatory compliance support.",
+    href: contactLink("Electrical & Electronic Engineering"),
+  },
 ];
 
 const workflow = [
-  { icon: ClipboardList, title: "Assess", desc: "We assess the equipment, review history and identify key challenges." },
-  { png: "04_Specialist_Diagnostics.png", title: "Diagnose", desc: "Advanced diagnostics to pinpoint faults and performance bottlenecks." },
-  { png: "07_Lighting_Control.png", title: "Solution", desc: "We design the optimal solution, from repair to upgrade or full redesign." },
-  { png: "icon_maintenance_transparent.png", title: "Implement", desc: "Expert engineering and integration with minimal disruption to operations." },
-  { png: "icon_chart.png", title: "Test & Validate", desc: "Rigorous testing and validation to ensure safety, reliability and compliance." },
-  { png: "icon_headset.png", title: "Support", desc: "Ongoing support and maintenance to keep your systems performing." },
+  {
+    icon: ClipboardList,
+    title: "Assess",
+    desc: "We assess the equipment, review history and identify key challenges.",
+  },
+  {
+    png: "04_Specialist_Diagnostics.png",
+    title: "Diagnose",
+    desc: "Advanced diagnostics to pinpoint faults and performance bottlenecks.",
+  },
+  {
+    png: "07_Lighting_Control.png",
+    title: "Solution",
+    desc: "We design the optimal solution, from repair to upgrade or full redesign.",
+  },
+  {
+    png: "icon_maintenance_transparent.png",
+    title: "Implement",
+    desc: "Expert engineering and integration with minimal disruption to operations.",
+  },
+  {
+    png: "icon_chart.png",
+    title: "Test & Validate",
+    desc: "Rigorous testing and validation to ensure safety, reliability and compliance.",
+  },
+  {
+    png: "icon_headset.png",
+    title: "Support",
+    desc: "Ongoing support and maintenance to keep your systems performing.",
+  },
 ];
 
 const applications = [
-  { title: "Gym HVAC & Automation Upgrade", desc: "Design and integration of control systems to improve efficiency and reliability.", image: "/assets/images/gym-equipment-floor.jpg", href: contactLink("Automation & Control Systems") },
-  { title: "Commercial Kitchen Control System", desc: "Bespoke control panel and automation solution for high-performance kitchen equipment.", image: "/assets/images/commercial-kitchen.jpg", href: contactLink("Automation & Control Systems") },
-  { title: "Industrial Plant Modernisation", desc: "Upgrade of legacy controls with modern controls and safety compliance.", image: "/assets/images/factory-production-line.jpg", href: contactLink("Automation & Control Systems") },
-  { title: "Test & Diagnostic Equipment", desc: "Custom-built test rigs for component validation and system diagnostics.", image: "/assets/images/circuit-board-testing.jpg", href: contactLink("PCB & Electronic Diagnostics") },
+  {
+    title: "Gym HVAC & Automation Upgrade",
+    desc: "Design and integration of control systems to improve efficiency and reliability.",
+    image: "/assets/images/gym-equipment-floor.jpg",
+    href: contactLink("Automation & Control Systems"),
+  },
+  {
+    title: "Commercial Kitchen Control System",
+    desc: "Bespoke control panel and automation solution for high-performance kitchen equipment.",
+    image: "/assets/images/commercial-kitchen.jpg",
+    href: contactLink("Automation & Control Systems"),
+  },
+  {
+    title: "Industrial Plant Modernisation",
+    desc: "Upgrade of legacy controls with modern controls and safety compliance.",
+    image: "/assets/images/factory-production-line.jpg",
+    href: contactLink("Automation & Control Systems"),
+  },
+  {
+    title: "Test & Diagnostic Equipment",
+    desc: "Custom-built test rigs for component validation and system diagnostics.",
+    image: "/assets/images/circuit-board-testing.jpg",
+    href: contactLink("PCB & Electronic Diagnostics"),
+  },
 ];
 
 const featuredCaseStudy = {
@@ -121,7 +279,6 @@ export default function EquipmentClient() {
 
   return (
     <main className="w-full overflow-hidden bg-black text-white font-body pt-16 sm:pt-20">
-
       <div
         onClickCapture={(e) => {
           const link = e.target.closest("a");
@@ -134,17 +291,30 @@ export default function EquipmentClient() {
       >
         <PageHero
           pageLabel="Specialist Equipment Engineering"
-          heading={["Specialist Equipment", "Engineering. Tailored", "Support for Critical Systems."]}
+          heading={[
+            "Specialist Equipment",
+            "Engineering. Tailored",
+            "Support for Critical Systems.",
+          ]}
           headingAccentIndex={-1}
           description="We design, support and enhance specialist equipment with deep technical expertise, advanced diagnostics and precision engineering. From bespoke machinery and control systems to complex integrations and upgrades, we keep your equipment performing at its best."
           buttons={[
-            { label: "Request a Project", href: contactLink(EQUIPMENT_TYPE), icon: ArrowRight },
-            { label: "Request Technical Support", href: "#technical-advice", icon: Headphones, variant: "outline" },
+            {
+              label: "Request a Project",
+              href: contactLink(EQUIPMENT_TYPE),
+              icon: ArrowRight,
+            },
+            {
+              label: "Request Technical Support",
+              href: "#technical-advice",
+              icon: Headphones,
+              variant: "outline",
+            },
           ]}
           features={heroFeatures}
           visual={
             <img
-              src="/assets/hero/SEE.png"
+              src="/assets/Hero/see.png"
               alt="Specialist equipment engineering: bespoke control machinery"
               className="absolute inset-0 w-full h-full object-cover object-right origin-right scale-[1.08] translate-x-[6%]"
             />
@@ -177,8 +347,16 @@ export default function EquipmentClient() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/85" />
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-between px-3 py-3 text-center">
-                  <Glyph png={png} icon={icon} scale={scale} size={46} className="mt-1" />
-                  <h3 className="font-display font-medium text-[15px] leading-[1.3] text-white">{title}</h3>
+                  <Glyph
+                    png={png}
+                    icon={icon}
+                    scale={scale}
+                    size={46}
+                    className="mt-1"
+                  />
+                  <h3 className="font-display font-medium text-[15px] leading-[1.3] text-white">
+                    {title}
+                  </h3>
                   <span className="inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
                     Explore sector <ArrowRight size={11} />
                   </span>
@@ -214,9 +392,13 @@ export default function EquipmentClient() {
               >
                 <div className="flex items-center gap-2.5">
                   <Glyph png={png} icon={icon} scale={scale} size={52} />
-                  <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] text-gray-100 transition-colors group-hover:text-red-400">{title}</h3>
+                  <h3 className="font-display font-semibold text-[12.5px] leading-[1.25] text-gray-100 transition-colors group-hover:text-red-400">
+                    {title}
+                  </h3>
                 </div>
-                <p className="text-[#8a8a8a] text-[11px] leading-[1.45] mt-3">{desc}</p>
+                <p className="text-[#8a8a8a] text-[11px] leading-[1.45] mt-3">
+                  {desc}
+                </p>
                 <span className="mt-auto pt-3 inline-flex items-center gap-1 text-red-500 text-[10.5px] font-semibold">
                   Learn more <ArrowRight size={11} />
                 </span>
@@ -251,8 +433,12 @@ export default function EquipmentClient() {
               >
                 <Glyph png={png} icon={icon} scale={scale} size={46} />
                 <div className="min-w-0">
-                  <h3 className="font-display font-semibold text-[11px] leading-[1.25] mb-1 text-gray-100 transition-colors group-hover:text-red-400">{title}</h3>
-                  <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">{desc}</p>
+                  <h3 className="font-display font-semibold text-[11px] leading-[1.25] mb-1 text-gray-100 transition-colors group-hover:text-red-400">
+                    {title}
+                  </h3>
+                  <p className="text-[#8a8a8a] text-[10px] leading-[1.4]">
+                    {desc}
+                  </p>
                 </div>
 
                 <Link
@@ -278,17 +464,26 @@ export default function EquipmentClient() {
             viewport={{ once: true, amount: 0.1 }}
           >
             {workflow.map(({ icon, png, scale, title, desc }, i) => (
-              <motion.div key={title} variants={fadeUp} className="flex items-center flex-1 min-w-0">
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                className="flex items-center flex-1 min-w-0"
+              >
                 <div className="relative flex-1 min-w-0 flex items-center gap-3 rounded-[34px] border border-white/10 bg-gradient-to-r from-[#161616] to-[#0a0a0a] pl-5 pr-4 py-4 h-full">
-
                   <div className="absolute -top-2 -left-1 w-6 h-6 rounded-full border border-red-600 bg-black flex items-center justify-center">
-                    <span className="font-display font-bold text-[11px] text-red-500">{i + 1}</span>
+                    <span className="font-display font-bold text-[11px] text-red-500">
+                      {i + 1}
+                    </span>
                   </div>
 
                   <Glyph png={png} icon={icon} scale={scale} size={46} />
                   <div className="min-w-0">
-                    <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1 text-gray-100">{title}</h3>
-                    <p className="text-[#8a8a8a] text-[9.5px] leading-[1.4]">{desc}</p>
+                    <h3 className="font-display font-semibold text-[11.5px] leading-[1.25] mb-1 text-gray-100">
+                      {title}
+                    </h3>
+                    <p className="text-[#8a8a8a] text-[9.5px] leading-[1.4]">
+                      {desc}
+                    </p>
                   </div>
                 </div>
 
@@ -305,7 +500,10 @@ export default function EquipmentClient() {
 
       <section className="border-b border-white/10">
         <Container className="pt-2 pb-9">
-          <SectionHeading title="Featured Applications" action={{ label: "View all applications", href: "/projects" }} />
+          <SectionHeading
+            title="Featured Applications"
+            action={{ label: "View all applications", href: "/projects" }}
+          />
           <div className="mt-6">
             <ProjectCardGrid
               items={applications}
@@ -329,9 +527,15 @@ export default function EquipmentClient() {
             />
 
             <div className="flex-1 min-w-0">
-              <p className="text-red-500 text-[10px] font-semibold mb-1">Featured Case Study</p>
-              <h3 className="font-display font-semibold text-[16px] leading-[1.25] mb-1.5 text-white">{featuredCaseStudy.title}</h3>
-              <p className="text-[#999] text-[11px] leading-[1.5] max-w-[520px]">{featuredCaseStudy.desc}</p>
+              <p className="text-red-500 text-[10px] font-semibold mb-1">
+                Featured Case Study
+              </p>
+              <h3 className="font-display font-semibold text-[16px] leading-[1.25] mb-1.5 text-white">
+                {featuredCaseStudy.title}
+              </h3>
+              <p className="text-[#999] text-[11px] leading-[1.5] max-w-[520px]">
+                {featuredCaseStudy.desc}
+              </p>
               <Link
                 href={featuredCaseStudy.href}
                 className="mt-2 inline-flex items-center gap-1 text-red-500 text-[11px] font-semibold hover:text-red-400 transition-colors"
@@ -345,8 +549,12 @@ export default function EquipmentClient() {
                 <div key={label} className="flex items-center gap-2.5">
                   <Glyph png={png} icon={icon} scale={scale} size={38} />
                   <div>
-                    <p className="font-display text-[22px] leading-none font-bold text-white">{value}</p>
-                    <p className="text-[#999] text-[11px] leading-[1.3] mt-1">{label}</p>
+                    <p className="font-display text-[22px] leading-none font-bold text-white">
+                      {value}
+                    </p>
+                    <p className="text-[#999] text-[11px] leading-[1.3] mt-1">
+                      {label}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -363,7 +571,6 @@ export default function EquipmentClient() {
       />
 
       <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
-
     </main>
   );
 }
